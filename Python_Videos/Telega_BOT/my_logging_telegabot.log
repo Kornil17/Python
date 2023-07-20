@@ -1,0 +1,11 @@
+09/07/2023 12:25:17-Telega_bot.py: DEBUG: Debug log
+09/07/2023 12:25:17-Telega_bot.py: INFO: Info log
+09/07/2023 12:25:17-Telega_bot.py: WARNING: Warning log
+09/07/2023 12:25:17-Telega_bot.py: ERROR: Error log
+09/07/2023 12:25:17-Telega_bot.py: CRITICAL: Critical log
+09/07/2023 12:25:17-Telega_bot.py: INFO: All tasks success
+09/07/2023 12:25:17-Telega_bot.py: DEBUG: End processing
+09/07/2023 12:25:17-connectionpool.py: DEBUG: Starting new HTTPS connection (1): api.telegram.org:443
+09/07/2023 12:25:18-connectionpool.py: DEBUG: https://api.telegram.org:443 "GET /bot6378917995:AAF3Ur9M4KsgwUX5Wg3HH4YOyqvhbZQPbuw/getMe HTTP/1.1" 200 193
+09/07/2023 12:25:18-connectionpool.py: DEBUG: Starting new HTTPS connection (1): api.telegram.org:443
+09/07/2023 12:25:38-connectionpool.py: DEBUG: https://api.telegram.org:443 "GET /bot6378917995:AAF3Ur9M4KsgwUX5Wg3HH4YOyqvhbZQPbuw/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
