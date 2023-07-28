@@ -1,3 +1,6 @@
+from dataclasses import dataclass
+
+
 # class Cat:
 #     breed: str = "Siam"
 #     age: int = "15"
@@ -159,7 +162,6 @@
 # print(b.__dict__)
 
 
-
 # class Test:
 #     def getattr(self):
 #         return self.key
@@ -268,29 +270,65 @@
 # print(a)
 # print(len(a))
 # print(abs(a))
-class Clock:
-    __DAY = 86400
+# class Clock:
+#     __DAY = 86400
+#
+#     def __init__(self, seconds: int):
+#         if not isinstance(seconds, int):
+#             raise TypeError("Секунды должны быть целым числом")
+#         self.seconds = seconds % self.__DAY
+#
+#     def get_time(self):
+#         s = self.seconds % 60
+#         m = (self.seconds // 60) % 60
+#         h = (self.seconds // 3600) % 24
+#         return f"{self.get_formated(h)}:{self.get_formated(m)}:{self.get_formated(s)}"
+#
+#     @classmethod
+#     def get_formated(self, x):
+#         return str(x).rjust(2, "0")
+#
+# a = Clock(1000)
+# print(a.get_time())
+# @dataclass
+# class Test:
+#     "class Test"
+#     x: int = 0
+#     y: int = 0
+#     @classmethod
+#     def __add__(self, other):
+#         return self.y + other
+#
+#
+# a = Test(1, 5)
+# a3 = a + 10
+# print(a3)
 
-    def __init__(self, seconds: int):
-        if not isinstance(seconds, int):
-            raise TypeError("Секунды должны быть целым числом")
-        self.seconds = seconds % self.__DAY
-
-    def get_time(self):
-        s = self.seconds % 60
-        m = (self.seconds // 60) % 60
-        h = (self.seconds // 3600) % 24
-        return f"{self.get_formated(h)}:{self.get_formated(m)}:{self.get_formated(s)}"
-
-    @classmethod
-    def get_formated(self, x):
-        return str(x).rjust(2, "0")
-
-a = Clock(1000)
-print(a.get_time())
-
-
-
+# @dataclass
+# class KgToPounds:
+#     "переводим из кг в фунты"
+#     __kg: int = 0
+#     @classmethod
+#     def to_pounds(cls, _kg):
+#         print("to_pounds")
+#         return cls.__kg * 2.205
+#
+#     @classmethod
+#     def set_kg(cls, value):
+#         print("set_kg")
+#         cls.__kg = value
+#
+#
+#     @classmethod
+#     def get_kg(cls):
+#         print("get_kg")
+#         return cls.__kg
+#     name = property(get_kg, set_kg)
+#
+# n = KgToPounds(25)
+# n.__kg = 50
+# print(n.__kg)
+# del n.__kg
 
 
 
