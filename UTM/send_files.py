@@ -25,8 +25,11 @@ class UTM:
 
 
 
-    def randoms(self):
-        return random.randint(1000, 9999)
+    def randoms(self, x):
+        if x == 1:
+            return random.randint(1000, 9999)
+        elif x == 2:
+            return random.randint(1, 9999)
     def datas(self):
         return str(datetime.now())[:10]
 
@@ -69,7 +72,7 @@ class WBGZ(UTM):
                     self.result.append(self.line7)
                 elif i == 7:
                     self.line8 = self.n[i].rstrip()
-                    self.line8 = self.line8.replace("1", f"{self.randoms()}")
+                    self.line8 = self.line8.replace("1", f"{self.randoms(1)}")
                     self.result.append(self.line8)
                     self.data1 = [
                         '<gz:shipperID>030000253368</gz:shipperID>',
@@ -115,6 +118,70 @@ class WBGZ(UTM):
 
 
 
+class RP(UTM):
+    def __init__(self, results=None, gz=None):
+        if gz is None and results is None:
+            self.gz: list = list()
+            self.results_rp: list = list()
+        else:
+            self.gz: list = gz
+            self.results_rp: list = results
+    def construct_file(self):
+        print("Start function")
+        with open('/home/kornilov/PycharmProjects/pythonProject/UTM/WBGZ.xml', 'r') as wb:
+            self.wbgz = wb.readlines()
+            for i in range(len(self.wbgz)):
+                if i >= 17 and  "<gz:NCode>" in self.wbgz[i]:
+                    self.wbgz[i] = self.wbgz[i].replace("<gz:NCode>", "<ce:amc>")
+                    self.wbgz[i] = self.wbgz[i].replace("</gz:NCode>", "</ce:amc>")
+                    self.gz.append(self.wbgz[i])
+
+        with open('/mnt/Dmitriy_test/Produce_requests/RP.xml', 'r') as f:
+            self.rp = f.readlines()
+            for i in range(len(self.rp)):
+                if i == 10:
+                    self.line11 = self.rp[i].rstrip()
+                    self.line11 = self.line11.replace("030000434307", f"030000434307")
+                    self.results_rp.append(self.line11)
+                elif i == 14:
+                    self.line15 = self.rp[i].rstrip()
+                    self.line15 = self.line15.replace("1", f"{self.randoms(2)}")
+                    self.results_rp.append(self.line15)
+                elif i == 17:
+                    self.line18 = self.rp[i].rstrip()
+                    self.line18  = self.line18 .replace("1", f"{self.randoms(2)}")
+                    self.results_rp.append(self.line18)
+                elif i == 18 or i == 19:
+                    self.lines = self.rp[i].rstrip()
+                    self.lines = self.lines.replace("2023-07-12", f"{self.datas()}")
+                    self.results_rp.append(self.lines)
+                elif i == 39:
+                    self.line40 = self.rp[i].rstrip()
+                    self.line40 = self.line40.replace("2", f"{str(len(self.wbgz))}")
+                    self.results_rp.append(self.line40)
+                elif i == 48:
+                    for wbgz in range(len(self.wbgz)):
+                        self.gz = f"{self.wbgz[wbgz]}"
+                        self.results_rp.append(self.gz)
+                    self.data = [
+                        "</rpp:MarkInfo>",
+                        "</rpp:Position>",
+                        "</rpp:Content>",
+                        "</ns:RepProducedProduct_v4>",
+                         "</ns:Document>",
+                        "</ns:Documents>"]
+                    for data in range(len(self.data)):
+                        self.results_rp.append(self.data[data])
+                elif i < 47:
+                    self.results_rp.append(self.rp[i].rstrip())
+
+        os.system("touch RP.xml")
+        with open('RP.xml', 'w') as rp:
+            for data in range(len(self.results_rp)):
+                rp.write(str(self.results_rp[data]) + '\n')
+        # os.system(
+        #     "curl -F'xml_file=@/home/kornilov/PycharmProjects/pythonProject/RP.xml' http://localhost:8080/opt/in/RepProducedProduct_v4")
+
 
 
 
@@ -135,8 +202,12 @@ def main():
             print(send_files.__dict__)
             send_files.construct_file()
             command = input(f"Напишите название файла для отправки в УТМ: WBGZ,RP,TTN,AA,AR,AD или Exit для отключения,'\n'").upper()
-        # elif command  == "RP":
-        #     send_files = RP(1, 2)
+        elif command == "RP":
+            send_files = RP()
+            print(send_files.__dict__)
+            send_files.construct_file()
+            command = input(
+                f"Напишите название файла для отправки в УТМ: WBGZ,RP,TTN,AA,AR,AD или Exit для отключения,'\n'").upper()
         # elif command  == "TTN":
         #     send_files = TTN(1, 2)
         else:
