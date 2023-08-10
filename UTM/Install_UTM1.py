@@ -22,20 +22,20 @@ passw = input("Print password for sudo command:")
 
     # passw = input("Print password for sudo command:")
 
-commands_UTM = [
-                "sudo -S dpkg --purge u-trans", "sudo -S rm -rf /opt/utm/", "cd ~/Downloads/",
-                "sudo -S dpkg -i ~/DEBFiles/u-trans-4.3.0-SNAPSHOT-2596-i386-test.deb",
-                "sudo -S rm /opt/utm/transport/transportDB/db.lck", "sudo -S rm /opt/utm/transport/transportDB/dbex.lck",
-                # "sudo -S cp /home/kornilov/PycharmProjects/pythonProject/UTM/terminal-backbone-4.3.0-SNAPSHOT.jar /opt/utm/transport/lib/",
-                "sudo -S supervisorctl restart utm"]
-#
 # commands_UTM = [
 #                 "sudo -S dpkg --purge u-trans", "sudo -S rm -rf /opt/utm/", "cd ~/Downloads/",
-#                 "sudo -S dpkg -i ~/DEBFiles/u-trans-4.2.0-2544-i386-test.deb",
-#                 "sudo -S rm /opt/utm/transport/transportDB/db.lck",
-#                 "sudo -S rm /opt/utm/transport/transportDB/dbex.lck",
-#                 "sudo -S cp /home/kornilov/PycharmProjects/pythonProject/UTM/terminal-backbone-4.2.0.jar /opt/utm/transport/lib/",
-#                 "sudo -S  restart utm"]
+#                 "sudo -S dpkg -i ~/DEBFiles/u-trans-4.3.0-SNAPSHOT-2596-i386-test.deb",
+#                 "sudo -S rm /opt/utm/transport/transportDB/db.lck", "sudo -S rm /opt/utm/transport/transportDB/dbex.lck",
+#                 # "sudo -S cp /home/kornilov/PycharmProjects/pythonProject/UTM/terminal-backbone-4.3.0-SNAPSHOT.jar /opt/utm/transport/lib/",
+#                 "sudo -S supervisorctl restart utm"]
+#
+commands_UTM = [
+                "sudo -S dpkg --purge u-trans", "sudo -S rm -rf /opt/utm/", "cd ~/Downloads/",
+                "sudo -S dpkg -i ~/DEBFiles/u-trans-4.2.0-2548-i386-test.deb",
+                "sudo -S rm /opt/utm/transport/transportDB/db.lck",
+                "sudo -S rm /opt/utm/transport/transportDB/dbex.lck",
+                "sudo -S cp /home/kornilov/PycharmProjects/pythonProject/UTM/terminal-backbone-4.2.0.jar /opt/utm/transport/lib/",
+                "sudo -S  restart utm"]
 
 settings = [
     "restful.documents returnnotificationsfsm,invoiceissueam,route,referenceofdeficiencies,requestrepealiam,rejectionnoticefsm,reportusingfsm,claimissuefsm,invoiceplannedimport,requestrepealipi,requestadjustmentdata,notificationsbeginningturnover,debtabsence,returnnoticefsm,invoiceexportfsm,reportdestructionamfsm,ttnissuereturnfsm,rechecknotificationsfsm,requestmanufacturerfsm,ttnissuefsm,ttnshipmentfsm,requestrepealefsm,cancelroute,requestbalancetransfer,ticket,ticketrmcheck,frapclaims,frapclaimscor,applicationlicenses,ttninternalmovefsm,repimportedproduct_v4,repproducedproduct_v4,queryrejectrepproduced,queryrejectrepimported,waybill_v4,waybillact_v4,confirmrepealwb,actchargeon_v2,requestrepealaco,requestrepealawo,waybillticket,carriernotice,actfixbarcode,actunfixbarcode,actwriteoff_v3",

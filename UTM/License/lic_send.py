@@ -1,9 +1,3 @@
-# curl -X POST "https://lk-test.egais.ru/api-lc-license/dashboard/license/request/"
-# -H  "accept: */*" -H
-# "Authorization: " \
-# "Bearer eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjAiLCJwZXJtaXNzaW9ucyI6IlJldGFpbCIsImxvY2FsaXR5IjoiQXV0byIsInJlZ2lvbiI6IkF1dG8iLCJ1c2VyaWQiOiIxMjMifQ.6_p87gJOz4GombT13glAKqk-iTYoTpkBIc9S3qT56TNJEAIZgK_QOZTTp1TTLZXoaZ6GrTgGUUWN9tglX8cqKQ"
-# -H  "Content-Type: multipart/form-data"
-
 import requests
 from datetime import datetime
 import logging
@@ -17,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(filename)s: %(lev
 # /home/ldapusers/d_kornilov/scripts/reject.pdf
 class License:
 
-    """class constuction"""
+    """class construction"""
     def __init__(self, address, token, licenseTypeCode, requestTypeCode, inn='7841051711', file=open('/home/ldapusers/d_kornilov/scripts/reject.pdf', 'rb'), time=datetime.now().strftime("%Y-%m-%d"), orgBriefName="ООО Тестировщик", orgFullName="ООО Тестим", response=""):
         logging.debug("start __init__ function")
         self.address = address
