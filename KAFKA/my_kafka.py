@@ -1,112 +1,114 @@
 import logging
-
+import kafka
 from confluent_kafka  import Consumer
+import json.decoder
+import keyboard
 
-# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(filename)s: %(levelname)s: %(message)s', datefmt='%d/%m/%Y %I:%M:%S',
-#                     encoding='utf-8', filemode='w')
-# logging.debug("Debug log")
-# logging.info("info log")
-# logging.warning("warning log")
-# logging.error("error log")
-# logging.critical("critical log")
-#
-# class Kafkin:
-#     """Работа с  кафкой"""
-#     group = 'group-name'
-#     # def __init__(self, srv):
-#     #     self.srv = srv
-#     logging.debug("Start kafka class")
-#     @classmethod
-#     def connect(cls, srv, topic):
-#         try:
-#             logging.debug("connect function")
-#             cls.srv = srv
-#             cls.topic = topic
-#             cls.c = Consumer({
-#                 'bootstrap.servers': cls.srv,
-#                 'group.id': cls.group,
-#                 'enable.auto.commit': True,
-#                 'auto.offset.reset': 'beginning'})
-#             cls.c.subscribe([cls.topic])
-#             while True:
-#                 logging.debug("start circle")
-#                 cls.msg = cls.c.poll(1.0)
-#                 if cls.msg is None:
-#                     logging.info("end circle")
-#                     continue
-#                 elif cls.msg.error():
-#                     print(f"Consumer error: {cls.msg}")
-#                     logging.info("read message")
-#                     continue
-#                 else:
-#                     print(f"Received message: {cls.msg}")
-#         except Exception as ex:
-#             logging.debug(ex)
-#         finally:
-#             cls.c.close()
-#
-#
-#
-# class main:
-#     """Подключение к кафке"""
-#     print("Приветствую вас в программе для работы с кафкой\n")
-#     srv = input("Выберите контур для подключения 1(test), 2(sand) или 3(exit)\n")
-#     topic = input("Выберите топик ('svs-inspector', 'confirmed', 'crater') для подключения или 3(exit)\n")
-#     @classmethod
-#     def get_data(cls):
-#         try:
-#             while cls.srv != "3" or cls.topic != "3":
-#                 if cls.srv == "1":
-#                     logging.debug("connect test_kafka")
-#                     Kafkin.connect('10.10.4.28:9092', cls.topic)
-#                     cls.srv = input("Выберите контур для подключения 1(test), 2(sand) или 3(exit)\n")
-#                     topic = input("Выберите топик ('svs-inspector', 'confirmed', 'crater') для подключения или 3(exit)\n")
-#
-#                 elif cls.srv == "2":
-#                     logging.debug("connect sand_kafka")
-#                     Kafkin.connect('gitlab-ci.ru:9092', cls.topic)
-#                     cls.srv = input("Выберите контур для подключения 1(test), 2(sand) или 3(exit)\n")
-#                     topic = input("Выберите топик ('svs-inspector', 'confirmed', 'crater') для подключения или 3(exit)\n")
-#
-#                 elif cls.srv == "3":
-#                     break
-#         except Exception as ex:
-#             logging.debug(ex)
-#
-#
-#
-#
-# if __name__ == "__main__":
-#     main.get_data()
+logging.basicConfig(level=logging.ERROR, format='%(asctime)s-%(filename)s: %(levelname)s: %(message)s', datefmt='%d/%m/%Y %I:%M:%S',
+                    encoding='utf-8', filemode='w')
+logging.debug("Debug log")
+logging.info("info log")
+logging.warning("warning log")
+logging.error("error log")
+logging.critical("critical log")
+
+class Kafkin:
+    """Работа с  кафкой"""
+    group = 'group'
+    # def __init__(self, srv):
+    #     self.srv = srv
+    logging.debug("Start kafka class")
+    @classmethod
+    def connect(cls, srv, topic, consumer=None):
+            logging.debug("connect function")
+            cls.srv = srv
+            cls.topic = topic
+            cls.consumer = kafka.KafkaConsumer(bootstrap_servers=cls.srv,
+                                               group_id=cls.group,
+                                               consumer_timeout_ms=60000,
+                                               auto_offset_reset='earliest',
+                                               enable_auto_commit=False)
+            # cls.c = kafka.KafkaConsumer({
+            #     'bootstrap.servers': cls.srv,
+            #     'group.id': cls.group,
+            #     'enable.auto.commit': False,
+            #     'auto.offset.reset': 'earliest'})
+            cls.consumer.subscribe([cls.topic])
+            logging.debug("start circle")
+            try:
+                for i in cls.consumer:
+                    print(i.value.decode('utf-8'))
+            except Exception as ex:
+                logging.debug(ex)
+            finally:
+                cls.consumer.close()
+
+
+
+class main:
+    """Подключение к кафке"""
+    print("Приветствую вас в программе для работы с кафкой\n")
+    srv = input("Выберите контур для подключения 1(test), 2(sand) или 3(exit)\n")
+    topic = input("Выберите топик ('svs-inspector', 'confirmed', 'crater') для подключения или 3(exit)\n")
+    # if keyboard.press('ctrl + c'):
+    #     keyboard.send('exit')
+    @classmethod
+    def get_data(cls):
+        try:
+            while cls.srv != "3" or cls.topic != "3":
+                if cls.srv == "1":
+                    logging.debug("connect test_kafka")
+                    Kafkin.connect('10.10.4.28:9092', cls.topic)
+                    cls.srv = input("Выберите контур для подключения 1(test), 2(sand) или 3(exit)\n")
+                    topic = input("Выберите топик ('svs-inspector', 'confirmed', 'crater') для подключения или 3(exit)\n")
+
+                elif cls.srv == "2":
+                    logging.debug("connect sand_kafka")
+                    Kafkin.connect('gitlab-ci.ru:9092', cls.topic)
+                    cls.srv = input("Выберите контур для подключения 1(test), 2(sand) или 3(exit)\n")
+                    topic = input("Выберите топик ('svs-inspector', 'confirmed', 'crater') для подключения или 3(exit)\n")
+
+                elif cls.srv == "3":
+                    break
+                # elif keyboard.press('ctrl + c'):
+                #     break
+        except Exception as ex:
+            logging.debug(ex)
 
 
 
 
+if __name__ == "__main__":
+    main.get_data()
 
 
-srv = 'gitlab-ci.ru:9092'
-# srv = '10.10.4.28:9092'
-group = 'group-name'
 
-c = Consumer({
-    'bootstrap.servers': srv,
-    'group.id': group,
-    'enable.auto.commit': True,
-    'auto.offset.reset': 'beginning'})
 
-c.subscribe(['svs-inspector'])
-c.subscribe(['confirmed'])
-c.subscribe(['crater'])
-while True:
-    msg = c.poll(1.0)
-    if msg is None:
-        continue
-    if msg.error():
-        print("Consumer error: {}".format(msg.error()))
-        continue
-    print("Received message: {}".format(msg.value().decode('utf-8')))
 
-c.close()
+
+# srv = 'gitlab-ci.ru:9092'
+# # srv = '10.10.4.28:9092'
+# group = 'group-name'
+#
+# c = Consumer({
+#     'bootstrap.servers': srv,
+#     'group.id': group,
+#     'enable.auto.commit': True,
+#     'auto.offset.reset': 'beginning'})
+#
+# c.subscribe(['svs-inspector'])
+# c.subscribe(['confirmed'])
+# c.subscribe(['crater'])
+# while True:
+#     msg = c.poll(1.0)
+#     if msg is None:
+#         continue
+#     if msg.error():
+#         print("Consumer error: {}".format(msg.error()))
+#         continue
+#     print("Received message: {}".format(msg.value().decode('utf-8')))
+#
+# c.close()
 #
 #
 

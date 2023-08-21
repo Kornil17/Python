@@ -92,6 +92,14 @@ def main():
         logging.info(f"got licenseTypeCode - {licenseTypeCode}")
         requestTypeCode = int(input("Введите номер requestTypeCode для отправки\n"))
         logging.info(f"got requestTypeCode - {requestTypeCode}")
+        get_inn = int(input("Введите 1-для создания ЮЛ и 2-для создания ИП для отправки\n"))
+        logging.info(f"got get_inn - {get_inn}")
+        if get_inn == 1:
+            inn = '7841051711'
+            logging.info(f"got inn - {inn}")
+        elif get_inn == 2:
+            inn = '771510315518'
+            logging.info(f"got inn - {inn}")
     try:
         while contur != 'exit':
             logging.debug("start circle")
@@ -101,7 +109,7 @@ def main():
                     token = requests.get('http://lk-test.test-kuber-nd.fsrar.ru/api-lc-license/tools/token?role=developer', headers={'accept': '*/*'})
                     print(token.text)
                     address = 'lk-test.test-kuber-nd.fsrar.ru'
-                    send_files = License(address, token, licenseTypeCode, requestTypeCode)
+                    send_files = License(address, token, licenseTypeCode, requestTypeCode, inn)
                     # print(send_files.__dict__)
                     print(send_files.send())
                     contur = input("Выберите контур для создания документа: test, pred-prod или exit\n").lower()
@@ -123,7 +131,7 @@ def main():
                         headers={'accept': '*/*'})
                     print(token.text)
                     address = 'lk-egais.pred-kuber-nd.fsrar.ru'
-                    send_files = License(address, token, licenseTypeCode, requestTypeCode)
+                    send_files = License(address, token, licenseTypeCode, requestTypeCode, inn)
                     # print(send_files.__dict__)
                     print(send_files.send())
                     contur = input("Выберите контур для создания документа: test, pred-prod или exit\n").lower()
