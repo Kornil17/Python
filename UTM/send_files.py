@@ -64,7 +64,7 @@ class WBGZ(UTM):
                         self.result.append(self.data[data])
                 elif i == 5:
                     self.line6 = self.n[i].rstrip()
-                    self.line6 = self.line6.replace("LOC-GZ-0000004111", f"LOC-GZ-000000{self.randoms()}")
+                    self.line6 = self.line6.replace("LOC-GZ-0000004111", f"LOC-GZ-000000{self.randoms(1)}")
                     self.result.append(self.line6)
                 elif i == 6:
                     self.line7 = self.n[i].rstrip()
@@ -76,7 +76,7 @@ class WBGZ(UTM):
                     self.result.append(self.line8)
                     self.data1 = [
                         '<gz:shipperID>030000253368</gz:shipperID>',
-                        '<gz:ConsigneeID>030000434307</gz:ConsigneeID>',
+                        '<gz:ConsigneeID>030000353121</gz:ConsigneeID>',
                         '<gz:typeclaim>1</gz:typeclaim>',
                         '<gz:Content xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:gz="http://fsrar.ru/WEGAIS/goznak">',
                         '<gz:Pos>',
@@ -86,7 +86,7 @@ class WBGZ(UTM):
                         self.result.append(self.data1[data1])
                 elif i == 15:
                     self.line16 = self.n[i].rstrip()
-                    self.line16 = self.line16.replace("TEST-FB-0000004555", f"TEST-FB-000000{self.randoms()}")
+                    self.line16 = self.line16.replace("TEST-FB-0000004555", f"TEST-FB-000000{self.randoms(1)}")
                     self.result.append(self.line16)
                     self.data2 = [
                         '<gz:bc xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01"',
@@ -141,7 +141,7 @@ class RP(UTM):
             for i in range(len(self.rp)):
                 if i == 10:
                     self.line11 = self.rp[i].rstrip()
-                    self.line11 = self.line11.replace("030000434307", f"030000434307")
+                    self.line11 = self.line11.replace("030000353121", f"030000353121")
                     self.results_rp.append(self.line11)
                 elif i == 14:
                     self.line15 = self.rp[i].rstrip()

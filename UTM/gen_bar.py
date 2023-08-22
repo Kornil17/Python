@@ -28,4 +28,4 @@ class Bark():
 
 
 br = Bark()
-# print(*br.get_new(4), sep="\n")
+#print(*br.get_new(4), sep="\n")
