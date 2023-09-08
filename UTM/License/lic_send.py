@@ -3,12 +3,14 @@ from datetime import datetime
 import logging
 import certifi
 import ssl
+import json
 context=ssl.create_default_context(cafile=certifi.where())
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(filename)s: %(levelname)s: %(message)s', datefmt='%d/%m/%Y %I:%M:%S',
                     encoding='utf-8', filemode='w')
 # /mnt/Dmitriy_test/Documents/reject.pdf
 # /home/ldapusers/d_kornilov/scripts/reject.pdf
+# curl - curl -X POST "http://10.10.5.202:5005/api/AddRCWithFileAndSig" -H  "accept: text/plain" -H  "Content-Type: multipart/form-data" -F "dueCard=0.LQAL.2P3KT." -F "dueDocgroup=0.LLHZ.LLMU.LYY4.2RUOK.2RUOT." -F "aIsnDelivery=1033658" -F "duePersonExe=0.LVIP.M3PQ.2T78C." -F "aAnnotat=" -F "aNote="
 class License:
 
     """class construction"""
@@ -24,6 +26,8 @@ class License:
         self.resp = response
         self.licenseTypeCode = licenseTypeCode
         self.requestTypeCode = requestTypeCode
+        self.due = self.get_due(requestTypeCode)
+        self.card = None
         self.headers = {
             'accept': '*/*',
             'Authorization': self.token.text
@@ -35,45 +39,60 @@ class License:
                 'licenseTypeCode': self.licenseTypeCode,
                 'orgBriefName': self.orgBriefName,
                 'orgFullName': self.orgFullName,
-                'requestTypeCode': self.requestTypeCode,
+                'requestTypeCode': self.requestTypeCode
             }
-        logging.info(f"got parametrs")
+        logging.info(f"got parametrs: {self.files, self.headers}")
+
+    def get_due(self, requestTypeCode):
+        logging.debug('start get_due func')
+        if requestTypeCode == 7:
+            logging.debug('got due requestTypeCode == 7')
+            return '0.LLHZ.LLMU.LYY4.2RUOK.2RUOT.'
+        elif requestTypeCode == 3:
+            logging.debug('got due requestTypeCode == 3')
+            return '0.LLHZ.LLMU.LYY4.2RUOK.2RUOX.'
+        elif requestTypeCode == 2:
+            logging.debug('got due requestTypeCode == 2')
+            return '0.LLHZ.LLMU.LYY4.2RUOK.2RUP1.'
+        else:
+            logging.error('invalid requestTypeCode')
+            raise ValueError('invalid requestTypeCode')
+
+    def send_card(self):
+        self.headers_card = {
+            'accept': 'text/plain'
+        }
+
+        self.files_card = {
+            'dueCard': (None, '0.LQAL.2P3KT.'),
+        'dueDocgroup': (None, self.due),
+        'aIsnDelivery': (None, '1033658'),
+        'duePersonExe': (None, '0.LVIP.M3PQ.2T78C.'),
+        'aAnnotat': (None, 'test'),
+        'aNote': (None, 'test'),
+        }
+        logging.info(f'got parametrs send_card function - {self.files_card}')
+        try:
+            logging.debug('send post request')
+            self.card = requests.post('http://10.10.5.202:5005/api/AddRCWithFileAndSig', headers=self.headers_card, files=self.files_card)
+            logging.debug(f'get status code - {self.card.text}')
+            self.result = self.card.json()
+            logging.info(f'get aIsn: {self.result["aIsn"]}')
+        except Exception as ex:
+            logging.error(ex)
     def send(self):
         try:
+            logging.debug('update parametrs')
+            self.files.update({'isnDoc':  self.result["aIsn"]})
+            logging.debug(f"got self.files: {self.files}")
             logging.debug('start send function')
             self.resp = requests.post(f'http://{self.address}/api-lc-license/dashboard/license/request/', headers=self.headers, files=self.files)
             logging.debug('send post request')
             logging.debug(f'get status code - {self.resp.text}')
         except Exception as ex:
             logging.error('Error!')
-            raise logging.error(ex)
-
-
-
-# class Test(License):
-#
-#     """class send to Test contur"""
-#
-#     def __init__(self, licenseTypeCode, requestTypeCode):
-#         super().__init__(token, licenseTypeCode, requestTypeCode)
-#     def send(self):
-#         self.response = requests.post('http://lk-test.test-kuber-nd.fsrar.ru/api-lc-license/dashboard/license/request/', headers=self.headers, files=self.files)
-#
-#
-#
-#
-# class Pred(License):
-#
-#     """class send to Pred-Prod contur"""
-#
-#     def __init__(self, licenseTypeCode, requestTypeCode):
-#         super().__init__(token, licenseTypeCode, requestTypeCode)
-#
-#     def send(self):
-#         self.response = requests.post('http://lk-egais.pred-kuber-nd.fsrar.ru/api-lc-license/dashboard/license/request/',
-#                                       headers=self.headers, files=self.files)
-
-
+            logging.error(ex)
+            raise ex
 
 
 def main():
@@ -110,7 +129,7 @@ def main():
                     print(token.text)
                     address = 'lk-test.test-kuber-nd.fsrar.ru'
                     send_files = License(address, token, licenseTypeCode, requestTypeCode, inn)
-                    # print(send_files.__dict__)
+                    print(send_files.send_card())
                     print(send_files.send())
                     contur = input("Выберите контур для создания документа: test, pred-prod или exit\n").lower()
                     if contur == 'exit':
@@ -132,7 +151,7 @@ def main():
                     print(token.text)
                     address = 'lk-egais.pred-kuber-nd.fsrar.ru'
                     send_files = License(address, token, licenseTypeCode, requestTypeCode, inn)
-                    # print(send_files.__dict__)
+                    print(send_files.send_card())
                     print(send_files.send())
                     contur = input("Выберите контур для создания документа: test, pred-prod или exit\n").lower()
                     if contur == 'exit':
