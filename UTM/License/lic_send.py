@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(filename)s: %(lev
 class License:
 
     """class construction"""
-    def __init__(self, address, token, licenseTypeCode, requestTypeCode, inn='7841051711', file=open('/home/ldapusers/d_kornilov/scripts/reject.pdf', 'rb'), time=datetime.now().strftime("%Y-%m-%d"), orgBriefName="ООО Тестировщик", orgFullName="ООО Тестим", response=""):
+    def __init__(self, address, token, licenseTypeCode, requestTypeCode, inn='7841051711', file=open('/mnt/Dmitriy_test/Documents/reject.pdf', 'rb'), time=datetime.now().strftime("%Y-%m-%d"), orgBriefName="ООО Тестировщик", orgFullName="ООО Тестим", response=""):
         logging.debug("start __init__ function")
         self.address = address
         self.token = token

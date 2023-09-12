@@ -76,7 +76,7 @@ class WBGZ(UTM):
                     self.result.append(self.line8)
                     self.data1 = [
                         '<gz:shipperID>030000253368</gz:shipperID>',
-                        '<gz:ConsigneeID>030000353121</gz:ConsigneeID>',
+                        '<gz:ConsigneeID>030000353139</gz:ConsigneeID>',
                         '<gz:typeclaim>1</gz:typeclaim>',
                         '<gz:Content xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:gz="http://fsrar.ru/WEGAIS/goznak">',
                         '<gz:Pos>',

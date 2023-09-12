@@ -2,14 +2,14 @@ import os
 from datetime import datetime,timezone
 from time import sleep
 # ~/Downloads/Telegram Desktop/JACARTAUTM/JaCartaEgaisUtm_2.7.3.55_Debian_x64
-# cp /opt/utm/transport/lib/sp-1.40.jar /home/kornilov/PycharmProjects/pythonProject/UTM
+# cp /opt/utm/transport/lib/sp-1.42.jar /home/kornilov/PycharmProjects/pythonProject/UTM
 # cd /home/kornilov/PycharmProjects/pythonProject/UTM
-# sudo jar xf sp-1.40.jar
+# sudo jar xf sp-1.42.jar
 # sudo chmod +x -R /opt/encrypter/
 # cd /opt/encrypter/
 # sudo /opt/utm/jre/bin/java -cp /opt/encrypter/lib/"*" ru.centerinform.transport.conf.crypto.Encrypter /home/kornilov/PycharmProjects/pythonProject/UTM/sp/sp
 # cd /home/kornilov/PycharmProjects/pythonProject/UTM
-# sudo rm /opt/utm/transport/lib/sp-1.40.jar
+# sudo rm /opt/utm/transport/lib/sp-1.42.jar
 # jar cf sp-999.jar sp META-INF
 # sudo cp sp-999.jar /opt/utm/transport/lib/
 # sudo rm sp-999.jar
@@ -30,8 +30,8 @@ passw = input("Print password for sudo command:")
 #                 "sudo -S supervisorctl restart utm"]
 #
 commands_UTM = [
-                "sudo -S dpkg --purge u-trans", "sudo -S rm -rf /opt/utm/", "cd ~/Downloads/",
-                "sudo -S dpkg -i ~/DEBFiles/u-trans-4.2.0-2407-i386-test.deb",
+                "sudo -S dpkg --purge u-trans", "sudo -S rm -rf /opt/utm/",
+                "sudo -S dpkg -i ~/DEBFiles/u-trans-4.2.0-2562-i386-test.deb",
                 "sudo -S rm /opt/utm/transport/transportDB/db.lck",
                 "sudo -S rm /opt/utm/transport/transportDB/dbex.lck",
                 "sudo -S cp /home/kornilov/PycharmProjects/pythonProject/UTM/terminal-backbone-4.2.0.jar /opt/utm/transport/lib/",
@@ -75,11 +75,11 @@ class UTM:
         # sleep(20)
 
         os.system("cd /home/kornilov/PycharmProjects/pythonProject/UTM")
-        os.system(f"echo {passw} | sudo -S cp /opt/utm/transport/lib/sp-1.40.jar /home/kornilov/PycharmProjects/pythonProject/UTM")
+        os.system(f"echo {passw} | sudo -S cp /opt/utm/transport/lib/sp-1.42.jar /home/kornilov/PycharmProjects/pythonProject/UTM")
         os.system("cd /home/kornilov/PycharmProjects/pythonProject/UTM")
-        os.system(f"echo {passw} | sudo -S jar xf sp-1.40.jar")
-        # os.system("sudo cp /opt/sp-1.40.jar /home/kornilov/PycharmProjects/pythonProject/UTM")
-        # os.system("sudo jar xf sp-1.40.jar")
+        os.system(f"echo {passw} | sudo -S jar xf sp-1.42.jar")
+        # os.system("sudo cp /opt/sp-1.42.jar /home/kornilov/PycharmProjects/pythonProject/UTM")
+        # os.system("sudo jar xf sp-1.42.jar")
         os.system(f"echo {passw} | sudo -S chmod +x -R /opt/encrypter/")
         os.system('cd /opt/encrypter/')
         os.system(f"echo {passw} | sudo -S /opt/utm/jre/bin/java -cp /opt/encrypter/lib/'*' ru.centerinform.transport.conf.crypto.Encrypter /home/kornilov/PycharmProjects/pythonProject/UTM/sp/sp")
@@ -93,7 +93,7 @@ class UTM:
             os.system(f'echo {passw} | sudo -S /opt/utm/jre/bin/java -cp /opt/encrypter/lib/"*" ru.centerinform.transport.conf.crypto.Encrypter /home/kornilov/PycharmProjects/pythonProject/UTM/sp/sp {str(i)}')
         os.system(f'echo {passw} | sudo -S /opt/utm/jre/bin/java -cp /opt/encrypter/lib/"*" ru.centerinform.transport.conf.crypto.Encrypter /home/kornilov/PycharmProjects/pythonProject/UTM/sp/sp')
         os.system("cd /home/kornilov/PycharmProjects/pythonProject/UTM")
-        os.system(f"echo {passw} | sudo -S rm /opt/utm/transport/lib/sp-1.40.jar")
+        os.system(f"echo {passw} | sudo -S rm /opt/utm/transport/lib/sp-1.42.jar")
         os.system("cd /home/kornilov/PycharmProjects/pythonProject/UTM")
         os.system("jar cf sp-999.jar sp META-INF")
         os.system(f'echo {passw} | sudo -S cp sp-999.jar /opt/utm/transport/lib/')
@@ -111,8 +111,8 @@ class UTM:
         os.system(f"echo {passw} | sudo -S cp /opt/utm/transport/lib/sp-999.jar /home/kornilov/PycharmProjects/pythonProject/UTM")
         os.system("cd /home/kornilov/PycharmProjects/pythonProject/UTM")
         os.system(f"echo {passw} | sudo -S jar xf sp-999.jar")
-        # os.system("sudo cp /opt/sp-1.40.jar /home/kornilov/PycharmProjects/pythonProject/UTM")
-        # os.system("sudo jar xf sp-1.40.jar")
+        # os.system("sudo cp /opt/sp-1.42.jar /home/kornilov/PycharmProjects/pythonProject/UTM")
+        # os.system("sudo jar xf sp-1.42.jar")
         os.system(f"echo {passw} | sudo -S chmod +x -R /opt/encrypter/")
         os.system('cd /opt/encrypter/')
         os.system(f"echo {passw} | sudo -S /opt/utm/jre/bin/java -cp /opt/encrypter/lib/'*' ru.centerinform.transport.conf.crypto.Encrypter /home/kornilov/PycharmProjects/pythonProject/UTM/sp/sp")
