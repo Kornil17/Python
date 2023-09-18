@@ -1,0 +1,3 @@
+flask=latest
+flask_restful=latest
+flask_swagger_ui=latest
