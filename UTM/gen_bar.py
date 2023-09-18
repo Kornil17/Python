@@ -1,11 +1,11 @@
 import random
-import gen_bar2
+import UTM.gen_bar2
 from datetime import datetime,timezone
 
 
 class Bark():
     def barkod(self):
-        type = gen_bar2.Generator()
+        type = UTM.gen_bar2.Generator()
         first = type.first_numbers(3)
         second = type.second_numbers(3)
         third = type.third_numbers(8)
