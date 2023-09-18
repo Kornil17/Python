@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/ActWriteOff_v3" xmlns:ns2="http://fsrar.ru/WEGAIS/ProductRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+	<ns0:Owner>
+		<ns0:FSRAR_ID>030000504835</ns0:FSRAR_ID>
+	</ns0:Owner>
+	<ns0:Document>
+		<ns0:ActWriteOff_v3>
+			<ns1:Identity>2</ns1:Identity>
+				<ns1:Header>
+					<ns1:ActNumber>5</ns1:ActNumber>
+					<ns1:ActDate>2023-06-23</ns1:ActDate>
+					<ns1:TypeWriteOff>Пересортица</ns1:TypeWriteOff>
+					<ns1:Note>без комментария</ns1:Note>
+				</ns1:Header>
+			<ns1:Content>
+			<ns1:Position>
+					<ns1:Identity>1</ns1:Identity>
+					<ns1:Quantity>1</ns1:Quantity>
+					<ns1:InformF1F2>
+						<ns1:InformF2>
+							<ns2:F2RegId>TEST-FB-000000040956707</ns2:F2RegId>
+						</ns1:InformF2>
+					</ns1:InformF1F2>
+				<ns1:MarkCodeInfo>
+			<ns3:amc>708564591946380535177MKOONVOPJLOETZ0PNE5LBJU9F2IQ2RFHS5V1ZB2E7KFOWPQL3G8U52Y4RLEJYB5S8OMJ7OZRXAYK4P7MNDTM9FK1MSD7RONKBNY771P3MK46NZAXWRCA3N0B6HK7K9OJE</ns3:amc>
+			</ns1:MarkCodeInfo>
+			</ns1:Position>
+			</ns1:Content>
+		</ns0:ActWriteOff_v3>
+	</ns0:Document>
+</ns0:Documents>
