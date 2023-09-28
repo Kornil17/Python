@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 from random import randint
 from datetime import datetime
 import UTM.gen_bar
+import os
 class AWO:
     namespaces = {
     'xsi': "{http://www.w3.org/2001/XMLSchema-instance}",
@@ -27,6 +28,9 @@ class AWO:
         tree = ET.ElementTree(root)
         print(type(tree))
         tree.write('AWO.xml', encoding="UTF-8", xml_declaration=True)
+        self.sand()
+    def sand(self):
+        os.system("curl -F'xml_file=@/home/kornilov/PycharmProjects/pythonProject/UTM/XML_Files/AWO.xml' http://localhost:8080/opt/in/ActWriteOff_v3")
 
 
 

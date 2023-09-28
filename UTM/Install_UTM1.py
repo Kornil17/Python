@@ -31,7 +31,7 @@ passw = input("Print password for sudo command:")
 #
 commands_UTM = [
                 "sudo -S dpkg --purge u-trans", "sudo -S rm -rf /opt/utm/",
-                "sudo -S dpkg -i ~/DEBFiles/u-trans-4.2.0-2562-i386-test.deb",
+                "sudo -S dpkg -i ~/DEBFiles/u-trans-4.2.0-2569-i386-test.deb",
                 "sudo -S rm /opt/utm/transport/transportDB/db.lck",
                 "sudo -S rm /opt/utm/transport/transportDB/dbex.lck",
                 "sudo -S cp /home/kornilov/PycharmProjects/pythonProject/UTM/terminal-backbone-4.2.0.jar /opt/utm/transport/lib/",
