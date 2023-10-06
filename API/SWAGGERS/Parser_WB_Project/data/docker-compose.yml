@@ -86,3 +86,37 @@ services:
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
+
+"test back file"
+services:
+  fast_api:
+    # Путь до Dockerfile
+    build: ./backend
+    # Имя для создаваемого контейнера
+    container_name: backend-flask
+    # Создание переменных окружения в контейнере
+    environment:
+      # для отладки (при запуске в релиз убрать!)
+      - FLASK_ENV=development
+      ## Позволяет отслеживать процесс работы приложения в командной строке
+      - PYTHONUNBUFFERED=True
+      ##
+    # Перезапускаем сервис в случае падения
+    restart: on-failure
+    # Прокладывам путь для файлов. Все файлы, которые хранятся у вас в
+    # директории ./backend, появятся в директории контейнера /backend
+    volumes:
+      - ./backend:/backend
+    # Открываем порт в контейнер
+    # Порт, который будет смотреть наружу : порт который используется внутри контейнера
+    ports:
+      - "5000:5000"
+    command: python main.py
+
+
+services:
+  back:
+    container_name: back
+    build:
+        dockerfile: ./back.Dockerfile
+    restart: unless-stopped
