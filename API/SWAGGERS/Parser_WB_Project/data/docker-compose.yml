@@ -15,9 +15,108 @@ services:
     container_name: certbot
     image: certbot/certbot
     restart: unless-stopped
+    command:  certonly --webroot --webroot-path=/var/www/certbot --email dimitra4@mail.ru -d webspace.moscow
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-    command: certbot certonly --webroot -w /var/www/certbot --email dimitra4@mail.ru -d webspace.moscow
 
     #- certonly --webroot -w /var/www/certbot --force-renewal --email dimitra4@mail.ru -d webspace.moscow --agree-tos
+
+
+"вторая версия конфига"
+services:
+  nginx:
+    container_name: nginx-ssl
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./dhparam:/etc/nginx/dhparam
+      - ./certbot/conf:/etc/nginx/ssl
+      - ./certbot/data:/usr/share/nginx/html/letsencrypt
+
+
+
+  certbot:
+    container_name: certbot
+    image: certbot/certbot:latest
+    restart: unless-stopped
+    command:  certbot run -a manual -i nginx  -d webspace.moscow
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+      - ./certbot/data:/usr/share/nginx/html/letsencrypt
+
+"третья версия конфига"
+services:
+  webserver:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:ro
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+
+"используемая версия"
+
+services:
+  webserver:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+      - ./public/index.html:/usr/share/nginx/html/
+      - ./sites.conf:/etc/nginx/sites-available/sites.conf
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+
+"test back file"
+services:
+  fast_api:
+    # Путь до Dockerfile
+    build: ./backend
+    # Имя для создаваемого контейнера
+    container_name: backend-flask
+    # Создание переменных окружения в контейнере
+    environment:
+      # для отладки (при запуске в релиз убрать!)
+      - FLASK_ENV=development
+      ## Позволяет отслеживать процесс работы приложения в командной строке
+      - PYTHONUNBUFFERED=True
+      ##
+    # Перезапускаем сервис в случае падения
+    restart: on-failure
+    # Прокладывам путь для файлов. Все файлы, которые хранятся у вас в
+    # директории ./backend, появятся в директории контейнера /backend
+    volumes:
+      - ./backend:/backend
+    # Открываем порт в контейнер
+    # Порт, который будет смотреть наружу : порт который используется внутри контейнера
+    ports:
+      - "5000:5000"
+    command: python main.py
+
+
+services:
+  back:
+    container_name: back
+    build:
+        dockerfile: ./back.Dockerfile
+    restart: unless-stopped

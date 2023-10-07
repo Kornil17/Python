@@ -52,7 +52,7 @@ async def websocket_endpoint(websocket: WebSocket):
         await websocket.send_text(f"Message text was: {data}")
 
 if __name__ == '__main__':
-    uvicorn.run("test:app", host="127.0.0.2", port=8080, reload=True)
+    uvicorn.run("FAST_API:app", host="0.0.0.0", port=8080, reload=True)
 #
 #
 #

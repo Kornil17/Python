@@ -19,7 +19,7 @@
   },
   "servers": [
     {
-      "url": "http://172.17.0.3:8000"
+      "url": "http://172.17.0.4:8000"
     }
   ],
   "tags": [
@@ -28,7 +28,7 @@
       "description": "All test request",
       "externalDocs": {
         "description": "Please click)",
-        "url": "http://172.17.0.3:8000"
+        "url": "http://172.17.0.4:8000"
       }
     }
   ],

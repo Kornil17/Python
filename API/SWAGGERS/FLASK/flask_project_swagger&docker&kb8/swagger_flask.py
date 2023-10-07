@@ -95,12 +95,12 @@ def get_names():
 def get_total_balance():
     total_balance: float = 0.0
     for user in fake_database['users']:
-        total_balance += user['balance']
-    return total_balance
+        total_balance += float(user['balance'])
+    return str(total_balance)
 
 
 @app.route('/gets', methods=['GET'])
-def gets(skip: int = 0, limit: int = 0):
+def gets(skip: int = 0, limit: int = 2):
     return fake_database['users'][skip:skip + limit]
 
 
@@ -116,5 +116,5 @@ def deluser(user_id: int=-1):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
-#
+    app.run(host='172.17.0.1', port=8000)
+# "url": "http://172.17.0.3:8000"
