@@ -5,8 +5,8 @@ import requests
 import logging
 from openpyxl import load_workbook
 
-# test: http://lk-egais.monitor-utm.ru/api-lc-rating/dashboard/rating/updateRating
-# sand:
+# test: https://lk-test.egais.ru/api-lc-rating/dashboard/rating/updateRating
+# sand: http://lk-egais.monitor-utm.ru/api-lc-rating/dashboard/rating/updateRating
 # params = {'advice': '1','chartId': '1','comment': '1','newRate': '1'}
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(filename)s: %(levelname)s: %(message)s', datefmt='%d/%m/%Y %I:%M:%S',
                     encoding='utf-8', filemode='w')
