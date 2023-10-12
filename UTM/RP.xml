@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:Documents Version="1.0" 
+              xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2" 
+              xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2" 
+              xmlns:rpp="http://fsrar.ru/WEGAIS/RepProducedProduct_v4" 
+              xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3"
+              >
+	<ns:Owner>
+		<ns:FSRAR_ID>030000434307</ns:FSRAR_ID>
+	</ns:Owner>
+	<ns:Document>
+		<ns:RepProducedProduct_v4>
+			<rpp:Identity>1</rpp:Identity>
+			<rpp:Header>
+				<rpp:Type>OperProduction</rpp:Type>
+				<rpp:NUMBER>1</rpp:NUMBER>
+				<rpp:Date>2023-07-12</rpp:Date>
+				<rpp:ProducedDate>2023-07-12</rpp:ProducedDate>
+				<rpp:Producer>
+		          <oref:UL>
+		  					<oref:ClientRegId>030000434307</oref:ClientRegId>
+		  					<oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+		  					<oref:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:ShortName>
+		  					<oref:INN>7841051711</oref:INN>
+		  					<oref:KPP>770101007</oref:KPP>
+		  					<oref:address>
+		  						<oref:Country>643</oref:Country>
+		  						<oref:RegionCode>77</oref:RegionCode>
+			  					<oref:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</oref:description>
+				  			</oref:address>
+		          </oref:UL>   
+				</rpp:Producer>
+				<rpp:Note>for testing only</rpp:Note>
+			</rpp:Header>
+			<rpp:Content>
+        		<rpp:Position>
+					<rpp:ProductCode>0300004343070000124</rpp:ProductCode> 
+					<rpp:Quantity>4</rpp:Quantity>
+					<rpp:alcPercent>8</rpp:alcPercent>
+					<rpp:Party>20161</rpp:Party>
+					<rpp:Identity>1</rpp:Identity>
+					<rpp:Comment1>Комментарий 1</rpp:Comment1>
+					<rpp:Comment2>Комментарий 2</rpp:Comment2>
+					<rpp:Comment3>Комментарий 3</rpp:Comment3>
+					<rpp:MarkInfo>
+<ce:amc>608709612220730723627GVWAXRTLEFSIQF6XRQ3OOFI7A9SO9SBVE5G7AG1E1AESEYEV6O8I93H4ZKYBCC9S8SOD8CNVGJAL2T6MJKLI6LD8LOR5SEFPGYU415F8JK92EOYPZPME9G1R6CU3Q7WPX</ce:amc>
+<ce:amc>604134199728030723165VUGHTHICOJHHJS5QCH6TBIP2V1OG2XBFS9J6XH2N2YLEAOYD7R9T59P7HVBBLA6O4CNU8ORHJWCY8J3RPOYR9IO1TVS2GLADSGJ865O2GE63ZOTVCQGO7Q9T7MA3Q4MOX</ce:amc>
+<ce:amc>907426987580270723177QZFGZRWJDXITTD4JNM1EKYJ5H4NE8SVTD2X5DP3N8IATROBT8Z9I44N7NHUDWV1R8WNB4GSORUSH6S8QNQSQ4EZ7UBR8JBWHAUX319T2SP41MERRFSRN3Z1F9VN1C2DOJ</ce:amc>
+<ce:amc>903678958118230723788LPISEJRBPDJWYW2KID2EACI7J2KH5GIQP7Q5FF5H4MKIBDQH2A6J92Z4DNJEDH7E4OXK6BOOXAUG8D8SOQWZ3NB1PDX1ESABYAQ348K6XD75YNQIUSFY8A7H3ZP3I8RFX</ce:amc>
+                 </rpp:MarkInfo>
+        		</rpp:Position>
+      		</rpp:Content>
+		</ns:RepProducedProduct_v4>
+	</ns:Document>
+</ns:Documents>

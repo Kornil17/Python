@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProperty scope="context" name="utmLogInfoMaxFileSize" source="utm.log.info.max-file-size" defaultValue="10MB"/>
+    <springProperty scope="context" name="utmLogInfoMaxHistory" source="utm.log.info.max-history" defaultValue="3"/>
+    <springProperty scope="context" name="utmLogInfoTotalSizeCap" source="utm.log.info.total-size-cap" defaultValue="1GB"/>
+
+    <springProperty scope="context" name="utmLogTransactionMaxFileSize" source="utm.log.transaction.max-file-size" defaultValue="10MB"/>
+    <springProperty scope="context" name="utmLogTransactionMaxHistory" source="utm.log.transaction.max-history" defaultValue="3"/>
+    <springProperty scope="context" name="utmLogTransactionTotalSizeCap" source="utm.log.transaction.total-size-cap" defaultValue="1GB"/>
+
+    <appender name="cmd" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{ISO8601} %highlight(%-5level) [%magenta(%t)] %yellow(%C{1.}): %msg%n%throwable
+            </Pattern>
+        </layout>
+    </appender>
+
+
+    <appender name="main" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${app.home:-.}/l/transport_info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${app.home:-.}/l/archived/transport_info.%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
+            <totalSizeCap>${utmLogInfoTotalSizeCap}</totalSizeCap>
+            <maxHistory>${utmLogInfoMaxHistory}</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${utmLogInfoMaxFileSize}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d %-5p %c - %m%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="transactions" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${app.home:-.}/l/transport_transaction.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${app.home:-.}/l/archived/transport_transaction.%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
+            <totalSizeCap>${utmLogTransactionTotalSizeCap}</totalSizeCap>
+            <maxHistory>${utmLogTransactionMaxHistory}</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${utmLogTransactionMaxFileSize}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d %-5p %c - %m%n</pattern>
+        </encoder>
+    </appender>
+
+
+
+    <springProfile name="default,test,prod">
+         <logger name="ru.centerinform" level="DEBUG" />
+        <logger name="transactionLogger" level="info" additivity="false">
+            <appender-ref ref="transactions" />
+        </logger>
+        <root level="INFO">
+            <appender-ref ref="main"/>
+        </root>
+    </springProfile>
+
+
+    <springProfile name="dev">
+        <logger name="ru.centerinform" level="TRACE"/>
+        <root level="INFO">
+<!--            <appender-ref ref="main"/>-->
+            <appender-ref ref="cmd"/>
+        </root>
+    </springProfile>
+
+
+    <springProfile name="cloud">
+        <logger name="ru.centerinform" level="TRACE"/>
+        <root level="INFO">
+            <appender-ref ref="cmd"/>
+        </root>
+    </springProfile>
+
+
+</configuration>

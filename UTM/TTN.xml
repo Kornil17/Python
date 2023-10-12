@@ -1,0 +1,96 @@
+<ns:Documents xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2" xmlns:wb="http://fsrar.ru/WEGAIS/TTNSingle_v4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+	<ns:Owner>
+		<ns:FSRAR_ID>030000434307</ns:FSRAR_ID>
+	</ns:Owner>
+	<ns:Document>
+		<ns:WayBill_v4>
+			<wb:Identity>567</wb:Identity>
+			<wb:Header>
+				<wb:NUMBER>242</wb:NUMBER>
+				<wb:Date>2023-07-13</wb:Date>
+				<wb:ShippingDate>2023-07-13</wb:ShippingDate>
+				<wb:Type>WBInvoiceFromMe</wb:Type>
+				<wb:Shipper>
+					<oref:UL>
+						<oref:INN>7841051711</oref:INN>
+						<oref:KPP>770101007</oref:KPP>
+						<oref:ClientRegId>030000434307</oref:ClientRegId>
+						<oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+						<oref:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:ShortName>
+						<oref:address>
+							<oref:Country>643</oref:Country>
+							<oref:RegionCode>77</oref:RegionCode>
+							<oref:description>117105,РОССИЯ,Москва Г, Варшавское ш, д. 37 А, стр. 8,,</oref:description>
+						</oref:address>
+					</oref:UL>
+				</wb:Shipper>
+				<wb:Consignee>
+				<oref:UL>
+						<oref:INN>7841051711</oref:INN>
+						<oref:KPP>583643001</oref:KPP>
+						<oref:ClientRegId>030000372744</oref:ClientRegId>
+						<oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+						<oref:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:ShortName>
+						<oref:address>
+							<oref:Country>643</oref:Country>
+							<oref:RegionCode>58</oref:RegionCode>
+							<oref:description>440008,РОССИЯ,ПЕНЗЕНСКАЯ ОБЛ,,ПЕНЗА Г,,КОММУНИСТИЧЕСКАЯ УЛ,ДОМ 28,,</oref:description>
+						</oref:address>
+					</oref:UL>
+				</wb:Consignee>
+				<wb:Transport>
+					<wb:TRANSPORT_TYPE>car</wb:TRANSPORT_TYPE>
+					<wb:TRAN_TYPE>Автомобильный транспорт</wb:TRAN_TYPE>
+					<wb:ChangeOwnership>IsChange</wb:ChangeOwnership>
+					<wb:TRANSPORT_REGNUMBER>Хино т630см174</wb:TRANSPORT_REGNUMBER>
+					<wb:TRAN_DRIVER>Петров Валерий Валентинович</wb:TRAN_DRIVER>
+					<wb:TRAN_LOADPOINT>Россия,,Адыгея Республика,,,,,,,Тахтамукайский муниципальный район, Тахтамукайское сельское поселение, аул Тахтамукай, ул. Адыгейская, здание 97/1А |  | строение 4, "Складской комплекс, II этап строительства", назначение: нежилое, 1 этаж, помещение № 114 (S=7815,71 кв.м)</wb:TRAN_LOADPOINT>
+					<wb:TRAN_UNLOADPOINT>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45| 1-й этаж - магазин "Красное&amp;Белое"</wb:TRAN_UNLOADPOINT>
+				</wb:Transport>
+				<wb:Base/>
+				<wb:Note/>
+			</wb:Header>
+			<wb:Content>
+				<wb:Position>
+					<wb:Identity>1</wb:Identity>
+				<wb:Product>
+                       <pref:FullName>Вино безумное от восторга</pref:FullName>
+                        <pref:AlcCode>0300003727440000016</pref:AlcCode>
+ 			<pref:ProductVCode>4011</pref:ProductVCode>
+			<pref:UnitType>Packed</pref:UnitType>
+                        <pref:Producer>
+                            <oref:UL>
+                                 <oref:ClientRegId>030000434307</oref:ClientRegId>
+                                <oref:INN>7841051711</oref:INN>
+                                <oref:KPP>770101007</oref:KPP>
+                                <oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+                                <oref:ShortName>АО "ЦЕНТРИНФОРМ"</oref:ShortName>
+                                <oref:address>
+                                    <oref:Country>643</oref:Country>
+                                    <oref:RegionCode>77</oref:RegionCode>
+                                    <oref:description>117105,РОССИЯ,Москва Г, Варшавское ш, д. 37 А, стр. 8,,</oref:description>
+                                </oref:address>
+                            </oref:UL>
+                        </pref:Producer>
+					</wb:Product>
+					<wb:Quantity>3</wb:Quantity>
+					<wb:Price>108.48</wb:Price>
+					<wb:FARegId>TEST-FA-000000036459173</wb:FARegId>
+					<wb:InformF2>
+						<ce:F2RegId>TEST-FB-000000040959304</ce:F2RegId>
+						<ce:MarkInfo>
+							<ce:boxpos>
+								<ce:boxnumber>01000000032510423900088333</ce:boxnumber>
+								<ce:amclist>
+									<ce:amc>509699860318150723998XNCQCJRCYSCDPO3PIZ3YXXS6V8MY4JAFF2D3ZM1M3CCFDKQR5C6I77Y3LQFBJV7J1NGL8EHMXOWT9X3VRVXY8JP5JBU4BJPOWIO359M1SX67ICEUPRCO5N3K8IW4S9WWF</ce:amc>
+                                    <ce:amc>303832801003020723272NSQVWLGIDTGEGY3OFW4TMZJ1Z1OI2DMWN8I7HB7D9XXQKOHG5K3C14H5WNDPDK7N9FVC8AVZRQXZ6V2TOEBI1EY1TQS7BPFZEAF218N6QP34EMUFVQGX6Q8W2BQ3T8YKG</ce:amc>
+                                    <ce:amc>803870102383150723319CPHWYHUAUWPCNQ4BNM7XSYS7P3FO2RLEP8I1SD4S8ODYKLPO4S2H43N8QDIBYQ2O9UMU9EQMUZWX3Y2RCVFK4YA3CMZ4KQPWNVE568C8QB49HKBIMRLP4J5X8AW4I6BKQ</ce:amc>
+								</ce:amclist>
+							</ce:boxpos>
+						</ce:MarkInfo>
+					</wb:InformF2>
+				</wb:Position>
+			</wb:Content>
+		</ns:WayBill_v4>
+	</ns:Document>
+</ns:Documents>

@@ -1,0 +1,390 @@
+API testing Report 
+Number of request : 1
+
+[{"id":"3tHTpXsBBMimr5uHCfw-","ownerId":"020000147384","inn":"5249002485","kpp":"524901001","name":"ТСЖ № 52","legalAddress":"Нижегородская обл., , г. Дзержинск, , пр-кт Свердлова, 4, , , ","actualAddress":"Нижегородская обл., , г. Дзержинск, , ул. Лермонтова, 3, , , "}]
+
+Status code - 200
+
+Number of request : 2
+
+[{"id":"ds_SpXsBBMimr5uH2p0b","ownerId":"000000000000","inn":"0000000000","kpp":"000000000","name":"Первичная постановка на баланс","legalAddress":"Первичная постановка на баланс","actualAddress":"Первичная постановка на баланс"}]
+
+Status code - 200
+
+Number of request : 3
+
+[{"id":"qeLVpXsBBMimr5uHBxEC","ownerId":"030000432322","inn":"1004017208","kpp":"101401001","name":"0","legalAddress":"0","actualAddress":"0"}]
+
+Status code - 200
+
+Number of request : 4
+
+[{"id":"reDUpXsBBMimr5uHrEUA","ownerId":"030000314566","inn":"7709985544","kpp":"773401001","name":"\"Красное\"","legalAddress":"г.Москва, , , , улица Твардовского, 12, 2, пом. I","actualAddress":"г.Москва, , , , улица Твардовского, 12, 2, "}]
+
+Status code - 200
+
+Number of request : 5
+
+[{"id":"reDUpXsBBMimr5uHrEUA","ownerId":"030000314566","inn":"7709985544","kpp":"773401001","name":"\"Красное\"","legalAddress":"г.Москва, , , , улица Твардовского, 12, 2, пом. I","actualAddress":"г.Москва, , , , улица Твардовского, 12, 2, "}]
+
+Status code - 200
+
+Number of request : 6
+
+[{"id":"VtPTpXsBBMimr5uHNQG5","ownerId":"020000214064","inn":"0816023186","kpp":"081601001","name":"Red-кафе","legalAddress":"Калмыкия Респ, , Элиста г, , им Номто Очирова ул, 4, , ,","actualAddress":"Калмыкия Респ, , Элиста г, , им Номто Очирова ул, 4, , ,"}]
+
+Status code - 200
+
+Number of request : 7
+
+[{"id":"VtPTpXsBBMimr5uHNQG5","ownerId":"020000214064","inn":"0816023186","kpp":"081601001","name":"Red-кафе","legalAddress":"Калмыкия Респ, , Элиста г, , им Номто Очирова ул, 4, , ,","actualAddress":"Калмыкия Респ, , Элиста г, , им Номто Очирова ул, 4, , ,"}]
+
+Status code - 200
+
+Number of request : 8
+
+[]
+
+Status code - 200
+
+Number of request : 9
+
+[{"id":"reDUpXsBBMimr5uHrEUA","ownerId":"030000314566","inn":"7709985544","kpp":"773401001","name":"\"Красное\"","legalAddress":"г.Москва, , , , улица Твардовского, 12, 2, пом. I","actualAddress":"г.Москва, , , , улица Твардовского, 12, 2, "}]
+
+Status code - 200
+
+Number of request : 10
+
+{"timestamp":"2023-06-13T15:06:12.805+00:00","status":500,"error":"Internal Server Error","path":"/organizations"}
+
+Status code - 500
+
+Number of request : 11
+
+[]
+
+Status code - 200
+
+Number of request : 12
+
+[]
+
+Status code - 200
+
+Number of request : 13
+
+[]
+
+Status code - 200
+
+Number of request : 14
+
+[]
+
+Status code - 200
+
+Number of request : 15
+
+[]
+
+Status code - 200
+
+Number of request : 16
+
+[]
+
+Status code - 200
+
+Number of request : 17
+
+[]
+
+Status code - 200
+
+Number of request : 18
+
+[]
+
+Status code - 200
+
+Number of request : 19
+
+{"timestamp":"2023-06-13T15:06:13.272+00:00","status":500,"error":"Internal Server Error","path":"/events"}
+
+Status code - 500
+
+Number of request : 20
+
+[]
+
+Status code - 200
+
+Number of request : 21
+
+{"timestamp":"2023-06-13T15:06:13.365+00:00","status":500,"error":"Internal Server Error","path":"/events"}
+
+Status code - 500
+
+Number of request : 22
+
+{"timestamp":"2023-06-13T15:06:13.416+00:00","status":500,"error":"Internal Server Error","path":"/events"}
+
+Status code - 500
+
+Number of request : 23
+
+{"timestamp":"2023-06-13T15:06:13.456+00:00","status":500,"error":"Internal Server Error","path":"/events"}
+
+Status code - 500
+
+Number of request : 24
+
+{"timestamp":"2023-06-13T15:06:13.495+00:00","status":500,"error":"Internal Server Error","path":"/events"}
+
+Status code - 500
+
+Number of request : 25
+
+{"timestamp":"2023-06-13T15:06:13.569+00:00","status":404,"error":"Not Found","path":"/document-fixations/documents%0A"}
+
+Status code - 404
+
+Number of request : 26
+
+{"timestamp":"2023-06-13T15:06:13.658+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 27
+
+{"data":[{"id":11872952,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.946287","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-866bb06e-434c-5f00-f857-89d89019da5f","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872953,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.961910","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-e4cf0709-064f-9daa-1c54-4f60b3a2c225","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872954,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.978211","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-bac31f2c-a0e0-24fc-5af4-9c291fc7dc5e","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872955,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.000353","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-f3d023b9-bd11-9c09-1649-1b0a9161366e","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872956,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.014376","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-d985c994-4297-20ae-3b77-1db4ea094baa","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872957,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.026599","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0ecdca37-fdb0-f406-aa19-653fba069148","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872958,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.046984","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-197717ff-48b4-d9a0-24d4-2f2735ba907d","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872959,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.060797","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-d8e98687-351e-335d-99dc-34f472b9b759","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872960,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.074489","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0f1b0167-1044-79df-dd49-ea60cb66e881","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872961,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.086776","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-875190a1-2c6d-07ae-e9cc-4a68b06c7e82","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}}],"totalCount":10166169}
+
+Status code - 200
+
+Number of request : 28
+
+{"data":[{"id":11872951,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.923653","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0c0d50f6-d7a6-2403-cf2b-ea2d9baba4ca","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872952,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.946287","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-866bb06e-434c-5f00-f857-89d89019da5f","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872953,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.961910","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-e4cf0709-064f-9daa-1c54-4f60b3a2c225","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872954,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.978211","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-bac31f2c-a0e0-24fc-5af4-9c291fc7dc5e","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872955,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.000353","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-f3d023b9-bd11-9c09-1649-1b0a9161366e","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872956,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.014376","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-d985c994-4297-20ae-3b77-1db4ea094baa","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872957,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.026599","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0ecdca37-fdb0-f406-aa19-653fba069148","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872958,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.046984","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-197717ff-48b4-d9a0-24d4-2f2735ba907d","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872959,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.060797","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-d8e98687-351e-335d-99dc-34f472b9b759","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872960,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.074489","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0f1b0167-1044-79df-dd49-ea60cb66e881","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}}],"totalCount":10166169}
+
+Status code - 200
+
+Number of request : 29
+
+[{"id":"reDUpXsBBMimr5uHrEUA","ownerId":"030000314566","inn":"7709985544","kpp":"773401001","name":"\"Красное\"","legalAddress":"г.Москва, , , , улица Твардовского, 12, 2, пом. I","actualAddress":"г.Москва, , , , улица Твардовского, 12, 2, "}]
+
+Status code - 200
+
+Number of request : 30
+
+{"timestamp":"2023-06-13T15:06:13.824+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 31
+
+{"data":[{"id":11872951,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.923653","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0c0d50f6-d7a6-2403-cf2b-ea2d9baba4ca","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}}],"totalCount":10166169}
+
+Status code - 200
+
+Number of request : 32
+
+{"data":[],"totalCount":10166169}
+
+Status code - 200
+
+Number of request : 33
+
+{"data":[{"id":1,"serial":0,"fsrarid":"123456789012","state":0,"timestamp":"2019-04-02T12:11:20.624395","timestamp_update":"2023-05-29T16:37:55.900451","duration":131171195,"uri":"MD5","type":"Cheque","organization":{"id":null,"ownerId":null,"inn":null,"kpp":null,"name":null,"legalAddress":null,"actualAddress":null}},{"id":2,"serial":0,"fsrarid":"030000434319","state":0,"timestamp":"2019-04-02T13:44:46.779090","timestamp_update":"2023-05-29T16:37:55.900451","duration":131165589,"uri":"testHashFile","type":"WB_DOC_SINGLE","organization":{"id":"duLVpXsBBMimr5uHBxkE","ownerId":"030000434319","inn":"682711893916","kpp":"","name":"ИП ВОЛКОВ ДМИТРИЙ ВЛАДИМИРОВИЧ","legalAddress":"Тамбовская обл., г.Мичуринск, ул.Некрасова, д.9","actualAddress":"Тамбовская обл., г.Мичуринск, ул.Некрасова, д.9"}},{"id":19,"serial":0,"fsrarid":"030000409718","state":0,"timestamp":"2019-04-15T12:13:41.646018","timestamp_update":"2023-05-29T16:37:55.900451","duration":130047854,"uri":"b5f58382b48e197cf6f6f00795bc86ab","organization":{"id":"XeHUpXsBBMimr5uH2bkM","ownerId":"030000409718","inn":"7612048788","kpp":"761201001","name":"МАУК \"ДОМ КИНО\"","legalAddress":"Россия, 152613, ЯРОСЛАВСКАЯ ОБЛАСТЬ, КРАСНОАРМЕЙСКИЙ БУЛЬВАР, УГЛИЧ ГОРОД, УГЛИЧСКИЙ РАЙОН, ДОМ 3 ,","actualAddress":"Россия, 152613, ЯРОСЛАВСКАЯ ОБЛАСТЬ, КРАСНОАРМЕЙСКИЙ БУЛЬВАР, УГЛИЧ ГОРОД, УГЛИЧСКИЙ РАЙОН, ДОМ 3 ,"}},{"id":27,"serial":0,"fsrarid":"030000434321","state":0,"timestamp":"2019-04-15T15:11:01.114152","timestamp_update":"2023-05-29T16:37:55.900451","duration":130037214,"uri":"b5f58382b48e197cf6f6f00795bc8612","type":"Cheque","organization":{"id":"eOLVpXsBBMimr5uHBxkE","ownerId":"030000434321","inn":"301700367808","kpp":"","name":"ИП БАТУЕВ ДМИТРИЙ АНАТОЛЬЕВИЧ","legalAddress":"г. Астрахань, пл. Заводская, д. 44, кв. 14","actualAddress":"г. Астрахань, пл. Заводская, д. 44, кв. 14"}},{"id":28,"serial":0,"fsrarid":"030000434350","state":0,"timestamp":"2019-04-15T15:51:55.997217","timestamp_update":"2023-05-29T16:37:55.900451","duration":130034759,"uri":"06099a1a6e925245290f09b7090fa8a5","type":"Cheque","organization":{"id":"leLVpXsBBMimr5uHBxkE","ownerId":"030000434350","inn":"920251604703","kpp":"","name":"ИП АХМЕДОВ ДМИТРИЙ ВЛАДИМИРОВИЧ","legalAddress":"299022, Севастополь г, Горпищенко ул, дом № 73, квартира 63","actualAddress":"299022, Севастополь г, Горпищенко ул, дом № 73, квартира 63"}},{"id":30,"serial":0,"fsrarid":"030000409715","state":0,"timestamp":"2019-04-17T17:02:00.215973","timestamp_update":"2023-05-29T16:37:55.900451","duration":129857755,"uri":"a140c4cebeffc2d2f7e6227f3969c8c4","organization":{"id":"WuHUpXsBBMimr5uH2bkM","ownerId":"030000409715","inn":"5245016536","kpp":"524501001","name":"ООО \"ООО\"","legalAddress":"Россия, 607600, НИЖЕГОРОДСКАЯ ОБЛАСТЬ, ЛЕНИНА УЛИЦА, БОГОРОДСК ГОРОД, БОГОРОДСКИЙ РАЙОН, ДОМОВЛАДЕНИЕ 181 ПАВИЛЬОН 2,","actualAddress":"Россия, 607600, НИЖЕГОРОДСКАЯ ОБЛАСТЬ, ЛЕНИНА УЛИЦА, БОГОРОДСК ГОРОД, БОГОРОДСКИЙ РАЙОН, ДОМОВЛАДЕНИЕ 181 ПАВИЛЬОН 2,"}},{"id":31,"serial":0,"fsrarid":"030000409715","state":0,"timestamp":"2019-04-17T17:39:33.870253","timestamp_update":"2023-05-29T16:37:55.900451","duration":129855502,"uri":"ef90f25972f808841b08508e21a92391","organization":{"id":"WuHUpXsBBMimr5uH2bkM","ownerId":"030000409715","inn":"5245016536","kpp":"524501001","name":"ООО \"ООО\"","legalAddress":"Россия, 607600, НИЖЕГОРОДСКАЯ ОБЛАСТЬ, ЛЕНИНА УЛИЦА, БОГОРОДСК ГОРОД, БОГОРОДСКИЙ РАЙОН, ДОМОВЛАДЕНИЕ 181 ПАВИЛЬОН 2,","actualAddress":"Россия, 607600, НИЖЕГОРОДСКАЯ ОБЛАСТЬ, ЛЕНИНА УЛИЦА, БОГОРОДСК ГОРОД, БОГОРОДСКИЙ РАЙОН, ДОМОВЛАДЕНИЕ 181 ПАВИЛЬОН 2,"}},{"id":32,"serial":0,"fsrarid":"030000409715","state":0,"timestamp":"2019-04-17T17:49:13.500517","timestamp_update":"2023-05-29T16:37:55.900451","duration":129854922,"uri":"bce66c70faf1ec9683b82d60f3f24b17","organization":{"id":"WuHUpXsBBMimr5uH2bkM","ownerId":"030000409715","inn":"5245016536","kpp":"524501001","name":"ООО \"ООО\"","legalAddress":"Россия, 607600, НИЖЕГОРОДСКАЯ ОБЛАСТЬ, ЛЕНИНА УЛИЦА, БОГОРОДСК ГОРОД, БОГОРОДСКИЙ РАЙОН, ДОМОВЛАДЕНИЕ 181 ПАВИЛЬОН 2,","actualAddress":"Россия, 607600, НИЖЕГОРОДСКАЯ ОБЛАСТЬ, ЛЕНИНА УЛИЦА, БОГОРОДСК ГОРОД, БОГОРОДСКИЙ РАЙОН, ДОМОВЛАДЕНИЕ 181 ПАВИЛЬОН 2,"}},{"id":34,"serial":0,"fsrarid":"030000409713","state":0,"timestamp":"2019-04-22T16:10:40.881176","timestamp_update":"2023-05-29T16:37:55.900451","duration":129428835,"uri":"033c7ee17ddfa4dc887b14f4ced1f710","type":"ActUnFixBCode","organization":{"id":"WOHUpXsBBMimr5uH2bkM","ownerId":"030000409713","inn":"6322022810","kpp":"632201001","name":"ООО \"СДК\"","legalAddress":"Россия, 445005, САМАРСКАЯ ОБЛАСТЬ, ГИДРОТЕХНИЧЕСКАЯ УЛИЦА, ТОЛЬЯТТИ ГОРОД, 33 , 140","actualAddress":"Россия, 445005, САМАРСКАЯ ОБЛАСТЬ, ГИДРОТЕХНИЧЕСКАЯ УЛИЦА, ТОЛЬЯТТИ ГОРОД, 33 , 140"}},{"id":35,"serial":0,"fsrarid":"030000409712","state":0,"timestamp":"2019-04-22T18:33:09.394311","timestamp_update":"2023-05-29T16:37:55.900451","duration":129420286,"uri":"e9cf37260cd25117fe934e7e0e8ed727","type":"ReportProductProduce_v3","organization":{"id":"V-HUpXsBBMimr5uH2bkM","ownerId":"030000409712","inn":"772703085870","kpp":"","name":"ИП ПРОСИНА ЕКАТЕРИНА АНАТОЛЬЕВНА","legalAddress":"108818 Москва, поселение Десеновское, деревня Пенино, ул. Заречная. д.6, пом. 1,3","actualAddress":"108818 Москва, поселение Десеновское, деревня Пенино, ул. Заречная. д.6, пом. 1,3"}}],"totalCount":10166169}
+
+Status code - 200
+
+Number of request : 34
+
+[{"id":"reDUpXsBBMimr5uHrEUA","ownerId":"030000314566","inn":"7709985544","kpp":"773401001","name":"\"Красное\"","legalAddress":"г.Москва, , , , улица Твардовского, 12, 2, пом. I","actualAddress":"г.Москва, , , , улица Твардовского, 12, 2, "}]
+
+Status code - 200
+
+Number of request : 35
+
+{"timestamp":"2023-06-13T15:06:17.453+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 36
+
+{"timestamp":"2023-06-13T15:06:17.481+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 37
+
+{"timestamp":"2023-06-13T15:06:17.518+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 38
+
+{"timestamp":"2023-06-13T15:06:17.545+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 39
+
+{"timestamp":"2023-06-13T15:06:17.580+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 40
+
+{"data":[{"id":11872951,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.923653","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0c0d50f6-d7a6-2403-cf2b-ea2d9baba4ca","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872952,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.946287","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-866bb06e-434c-5f00-f857-89d89019da5f","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872953,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.961910","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-e4cf0709-064f-9daa-1c54-4f60b3a2c225","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872954,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:36.978211","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-bac31f2c-a0e0-24fc-5af4-9c291fc7dc5e","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872955,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.000353","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-f3d023b9-bd11-9c09-1649-1b0a9161366e","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872956,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.014376","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-d985c994-4297-20ae-3b77-1db4ea094baa","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872957,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.026599","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0ecdca37-fdb0-f406-aa19-653fba069148","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872958,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.046984","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-197717ff-48b4-d9a0-24d4-2f2735ba907d","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872959,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.060797","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-d8e98687-351e-335d-99dc-34f472b9b759","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}},{"id":11872960,"serial":0,"fsrarid":"030000504835","state":0,"timestamp":"2022-07-02T17:59:37.074489","timestamp_update":"2023-05-29T16:37:55.900451","duration":28593498,"uri":"030000504835-0f1b0167-1044-79df-dd49-ea60cb66e881","type":"cheque","organization":{"id":"6uPVpXsBBMimr5uHByw9","ownerId":"030000504835","inn":"7841051711","kpp":"246343001","name":"АО \"ЦЕНТРИНФОРМ\"","legalAddress":"Россия, 191123, САНКТ-ПЕТЕРБУРГ ГОРОД, ШПАЛЕРНАЯ УЛИЦА, ДОМ 26 ,","actualAddress":"660028,РОССИЯ,,,КРАСНОЯРСК Г,,ТЕЛЕВИЗОРНАЯ УЛ,ДОМ 1,СТРОЕНИЕ 9,"}}],"totalCount":10166169}
+
+Status code - 200
+
+Number of request : 41
+
+{"timestamp":"2023-06-13T15:06:17.652+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 42
+
+{"timestamp":"2023-06-13T15:06:17.682+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 43
+
+{"timestamp":"2023-06-13T15:06:17.717+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents"}
+
+Status code - 500
+
+Number of request : 44
+
+{"data":[],"totalCount":0}
+
+Status code - 200
+
+Number of request : 45
+
+{"data":[],"totalCount":0}
+
+Status code - 200
+
+Number of request : 46
+
+{"data":[],"totalCount":0}
+
+Status code - 200
+
+Number of request : 47
+
+{"data":[],"totalCount":0}
+
+Status code - 200
+
+Number of request : 48
+
+{"data":[],"totalCount":0}
+
+Status code - 200
+
+Number of request : 49
+
+{"data":[],"totalCount":0}
+
+Status code - 200
+
+Number of request : 50
+
+{"data":[],"totalCount":0}
+
+Status code - 200
+
+Number of request : 51
+
+{"timestamp":"2023-06-13T15:06:23.380+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents/1%0A"}
+
+Status code - 500
+
+Number of request : 52
+
+{"timestamp":"2023-06-13T15:06:23.426+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents/-1%0A"}
+
+Status code - 500
+
+Number of request : 53
+
+{"timestamp":"2023-06-13T15:06:23.469+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents/0%0A"}
+
+Status code - 500
+
+Number of request : 54
+
+{"timestamp":"2023-06-13T15:06:23.508+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents/text%0A"}
+
+Status code - 500
+
+Number of request : 55
+
+{"timestamp":"2023-06-13T15:06:23.590+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/documents/%D1%82%D0%B5%D0%BA%D1%81%D1%82%0A"}
+
+Status code - 500
+
+Number of request : 56
+
+{"timestamp":"2023-06-13T15:06:23.653+00:00","status":404,"error":"Not Found","path":"/document-fixations/counters%0A"}
+
+Status code - 404
+
+Number of request : 57
+
+{"timestamp":"2023-06-13T15:06:23.684+00:00","status":500,"error":"Internal Server Error","path":"/document-fixations/counters"}
+
+Status code - 500
+
+Number of request : 58
+
+[{"title":null,"items":[{"label":"сутки","value":0},{"label":"месяц","value":0},{"label":"год","value":0}]},{"title":null,"items":[{"label":"месяц","value":0},{"label":"год","value":0}]}]
+
+Status code - 200
+
+Number of request : 59
+
+[{"title":null,"items":[{"label":"сутки","value":0},{"label":"месяц","value":0},{"label":"год","value":0}]},{"title":null,"items":[{"label":"месяц","value":0},{"label":"год","value":0}]}]
+
+Status code - 200
+
+Number of request : 60
+
+[{"title":null,"items":[{"label":"сутки","value":0},{"label":"месяц","value":0},{"label":"год","value":0}]},{"title":null,"items":[{"label":"месяц","value":0},{"label":"год","value":0}]}]
+
+Status code - 200
+
+Number of request : 61
+
+[{"title":null,"items":[{"label":"сутки","value":0},{"label":"месяц","value":0},{"label":"год","value":0}]},{"title":null,"items":[{"label":"месяц","value":0},{"label":"год","value":0}]}]
+
+Status code - 200
+
+Number of request : 62
+
+[{"title":null,"items":[{"label":"сутки","value":0},{"label":"месяц","value":0},{"label":"год","value":0}]},{"title":null,"items":[{"label":"месяц","value":0},{"label":"год","value":0}]}]
+
+Status code - 200
+
+Number of request : 63
+
+[{"title":null,"items":[{"label":"сутки","value":0},{"label":"месяц","value":0},{"label":"год","value":0}]},{"title":null,"items":[{"label":"месяц","value":0},{"label":"год","value":0}]}]
+
+Status code - 200
+
+Number of request : 64
+
+[{"title":null,"items":[{"label":"сутки","value":0},{"label":"месяц","value":0},{"label":"год","value":0}]},{"title":null,"items":[{"label":"месяц","value":0},{"label":"год","value":0}]}]
+
+Status code - 200
+
+Number of request : 65
+
+[{"title":null,"items":[{"label":"сутки","value":0},{"label":"месяц","value":0},{"label":"год","value":0}]},{"title":null,"items":[{"label":"месяц","value":0},{"label":"год","value":0}]}]
+
+Status code - 200
