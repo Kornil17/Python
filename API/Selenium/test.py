@@ -15,3 +15,4 @@ try:
     browser.close()
 finally:
     browser.quit()
+

@@ -1,6 +1,6 @@
 import logging
 import kafka
-from confluent_kafka  import Consumer
+from confluent_kafka import Consumer
 class Kafka:
     def __init__(self):
         self.connect = self.connection()
