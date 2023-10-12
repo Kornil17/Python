@@ -15,3 +15,5 @@ class Kafka:
                             auto_offset_reset='earliest',
                             enable_auto_commit=False)
         return result_connection
+
+# new
