@@ -48,6 +48,22 @@ class Kafka:
         finally:
             self.consumer.close()
             logging.info('Close the kafka connection')
-kafkin = Kafka(input('Write topic\n'))
-logging.info(f'Get topic named as: {kafkin.topic}')
-kafkin.read_message()
+
+def main():
+    try:
+        logging.debug('start main func')
+        action = int(input('choose action: 1-write, 2-read, 3-exit. Just numbers!!\n'))
+        if action != 3:
+            if action == 1:
+                pass
+        else:
+            logging.debug('Goodbay! Have a nice day!)')
+
+        kafkin = Kafka(input('Write topic\n'))
+        logging.info(f'Get topic named as: {kafkin.topic}')
+        kafkin.read_message()
+    except Exception as ex:
+        logging.error(f'Exception: {ex}')
+
+if __name__ == '__main__':
+    main()
