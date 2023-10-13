@@ -1,0 +1,69 @@
+12/10/2023 02:43:39-my_kafka.py: INFO: info log
+12/10/2023 02:43:39-my_kafka.py: WARNING: warning log
+12/10/2023 02:43:39-my_kafka.py: ERROR: error log
+12/10/2023 02:43:39-my_kafka.py: CRITICAL: critical log
+12/10/2023 02:43:45-my_kafka.py: INFO: got contur: sand
+12/10/2023 02:44:18-my_kafka.py: INFO: got topic: 'svs-inspector'
+12/10/2023 02:44:22-my_kafka.py: INFO: got action: read
+12/10/2023 02:44:27-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read'}
+12/10/2023 02:44:27-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read', 'consumer': None}
+12/10/2023 02:44:27-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: connecting to gitlab-ci.ru:9092 [('5.63.157.118', 9092) IPv4]
+12/10/2023 02:44:27-conn.py: INFO: Probing node bootstrap-0 broker version
+12/10/2023 02:44:27-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: Connection complete.
+12/10/2023 02:44:27-conn.py: INFO: Broker version identified as 2.5.0
+12/10/2023 02:44:27-conn.py: INFO: Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+12/10/2023 02:44:27-my_kafka.py: INFO: got consumer paramets: ('gitlab-ci.ru:9092',)
+12/10/2023 02:44:27-my_kafka.py: ERROR: Topic name "'svs-inspector'" is illegal, it contains a character other than ASCII alphanumerics, ".", "_" and "-"
+12/10/2023 02:44:29-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read'}
+12/10/2023 02:44:29-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read', 'consumer': None}
+12/10/2023 02:44:29-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: connecting to gitlab-ci.ru:9092 [('5.63.157.118', 9092) IPv4]
+12/10/2023 02:44:29-conn.py: INFO: Probing node bootstrap-0 broker version
+12/10/2023 02:44:29-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: Connection complete.
+12/10/2023 02:44:30-conn.py: INFO: Broker version identified as 2.5.0
+12/10/2023 02:44:30-conn.py: INFO: Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+12/10/2023 02:44:30-my_kafka.py: INFO: got consumer paramets: ('gitlab-ci.ru:9092',)
+12/10/2023 02:44:30-my_kafka.py: ERROR: Topic name "'svs-inspector'" is illegal, it contains a character other than ASCII alphanumerics, ".", "_" and "-"
+12/10/2023 02:44:31-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read'}
+12/10/2023 02:44:31-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read', 'consumer': None}
+12/10/2023 02:44:31-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: connecting to gitlab-ci.ru:9092 [('5.63.157.118', 9092) IPv4]
+12/10/2023 02:44:31-conn.py: INFO: Probing node bootstrap-0 broker version
+12/10/2023 02:44:31-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: Connection complete.
+12/10/2023 02:44:31-conn.py: INFO: Broker version identified as 2.5.0
+12/10/2023 02:44:31-conn.py: INFO: Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+12/10/2023 02:44:31-my_kafka.py: INFO: got consumer paramets: ('gitlab-ci.ru:9092',)
+12/10/2023 02:44:31-my_kafka.py: ERROR: Topic name "'svs-inspector'" is illegal, it contains a character other than ASCII alphanumerics, ".", "_" and "-"
+12/10/2023 02:44:33-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read'}
+12/10/2023 02:44:33-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read', 'consumer': None}
+12/10/2023 02:44:33-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: connecting to gitlab-ci.ru:9092 [('5.63.157.118', 9092) IPv4]
+12/10/2023 02:44:33-conn.py: INFO: Probing node bootstrap-0 broker version
+12/10/2023 02:44:33-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: Connection complete.
+12/10/2023 02:44:33-conn.py: INFO: Broker version identified as 2.5.0
+12/10/2023 02:44:33-conn.py: INFO: Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+12/10/2023 02:44:33-my_kafka.py: INFO: got consumer paramets: ('gitlab-ci.ru:9092',)
+12/10/2023 02:44:33-my_kafka.py: ERROR: Topic name "'svs-inspector'" is illegal, it contains a character other than ASCII alphanumerics, ".", "_" and "-"
+12/10/2023 02:45:35-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'sand', 'group_id': 'group-id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earlist', 'enable_auto_commit': 'True', 'topic': 'svs-inapector', 'action': 'read'}
+12/10/2023 02:45:35-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'sand', 'group_id': 'group-id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earlist', 'enable_auto_commit': 'True', 'topic': 'svs-inapector', 'action': 'read', 'consumer': None}
+12/10/2023 02:45:35-conn.py: WARNING: DNS lookup failed for sand:9092, exception was [Errno -3] Temporary failure in name resolution. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+12/10/2023 02:45:35-conn.py: ERROR: DNS lookup failed for sand:9092 (AddressFamily.AF_UNSPEC)
+12/10/2023 02:45:35-conn.py: INFO: Probing node bootstrap-0 broker version
+12/10/2023 02:45:35-conn.py: WARNING: DNS lookup failed for sand:9092, exception was [Errno -3] Temporary failure in name resolution. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+12/10/2023 02:45:35-conn.py: ERROR: DNS lookup failed for sand:9092 (AddressFamily.AF_UNSPEC)
+12/10/2023 02:45:35-my_kafka.py: ERROR: NoBrokersAvailable
+12/10/2023 02:45:37-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read'}
+12/10/2023 02:45:37-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read', 'consumer': None}
+12/10/2023 02:45:37-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: connecting to gitlab-ci.ru:9092 [('5.63.157.118', 9092) IPv4]
+12/10/2023 02:45:37-conn.py: INFO: Probing node bootstrap-0 broker version
+12/10/2023 02:45:37-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: Connection complete.
+12/10/2023 02:45:37-conn.py: INFO: Broker version identified as 2.5.0
+12/10/2023 02:45:37-conn.py: INFO: Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+12/10/2023 02:45:37-my_kafka.py: INFO: got consumer paramets: ('gitlab-ci.ru:9092',)
+12/10/2023 02:45:37-my_kafka.py: ERROR: Topic name "'svs-inspector'" is illegal, it contains a character other than ASCII alphanumerics, ".", "_" and "-"
+12/10/2023 02:45:39-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read'}
+12/10/2023 02:45:39-my_kafka.py: INFO: got parametrs: {'bootstrap_servers': 'gitlab-ci.ru:9092', 'group_id': 'group_id', 'consumer_timeout_ms': 60000, 'auto_offset_reset': 'earliest', 'enable_auto_commit': False, 'topic': "'svs-inspector'", 'action': 'read', 'consumer': None}
+12/10/2023 02:45:39-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: connecting to gitlab-ci.ru:9092 [('5.63.157.118', 9092) IPv4]
+12/10/2023 02:45:39-conn.py: INFO: Probing node bootstrap-0 broker version
+12/10/2023 02:45:39-conn.py: INFO: <BrokerConnection node_id=bootstrap-0 host=gitlab-ci.ru:9092 <connecting> [IPv4 ('5.63.157.118', 9092)]>: Connection complete.
+12/10/2023 02:45:39-conn.py: INFO: Broker version identified as 2.5.0
+12/10/2023 02:45:39-conn.py: INFO: Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+12/10/2023 02:45:39-my_kafka.py: INFO: got consumer paramets: ('gitlab-ci.ru:9092',)
+12/10/2023 02:45:39-my_kafka.py: ERROR: Topic name "'svs-inspector'" is illegal, it contains a character other than ASCII alphanumerics, ".", "_" and "-"
