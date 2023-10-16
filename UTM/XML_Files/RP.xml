@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v4" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+	<ns0:Owner>
+		<ns0:FSRAR_ID>030000434307</ns0:FSRAR_ID>
+	</ns0:Owner>
+	<ns0:Document>
+		<ns0:RepProducedProduct_v4>
+			<ns1:Identity>9315</ns1:Identity>
+			<ns1:Header>
+				<ns1:Type>OperProduction</ns1:Type>
+				<ns1:NUMBER>7225</ns1:NUMBER>
+				<ns1:Date>2023-10-16</ns1:Date>
+				<ns1:ProducedDate>2023-10-16</ns1:ProducedDate>
+				<ns1:Producer>
+		          <ns2:UL>
+		  					<ns2:ClientRegId>030000434307</ns2:ClientRegId>
+		  					<ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+		  					<ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+		  					<ns2:INN>7841051711</ns2:INN>
+		  					<ns2:KPP>770101007</ns2:KPP>
+		  					<ns2:address>
+		  						<ns2:Country>643</ns2:Country>
+		  						<ns2:RegionCode>77</ns2:RegionCode>
+			  					<ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+				  			</ns2:address>
+		          </ns2:UL>   
+				</ns1:Producer>
+				<ns1:Note>for testing only</ns1:Note>
+			</ns1:Header>
+			<ns1:Content>
+        		<ns1:Position>
+					<ns1:ProductCode>0300004343070000124</ns1:ProductCode> 
+					<ns1:Quantity>4</ns1:Quantity>
+					<ns1:alcPercent>8</ns1:alcPercent>
+					<ns1:Party>20161</ns1:Party>
+					<ns1:Identity>1</ns1:Identity>
+					<ns1:Comment1>Комментарий 1</ns1:Comment1>
+					<ns1:Comment2>Комментарий 2</ns1:Comment2>
+					<ns1:Comment3>Комментарий 3</ns1:Comment3>
+					<ns1:MarkInfo>
+<ns3:amc>604651566730831023457IKKWTZOOMEQLVZ3OQJ4IOOX7W1ZJ1JLCW5B6IX6T3DZEZCDN3L3K24L3ZEGQWO5U3JAG4XEQYOGI4C2NEUUW9JM2RVW4YMZSAFP385D1UA71AHRLRMVE2P9L5DW3Y2PPJ</ns3:amc><ns3:amc>705382051446861023733SHXNEQOCKZXVMU5QPA5SNBT4L8IW7TLYD3N7OS8W6BNFSCME9D2B94E5TIRMTY4G1UVO6LRGHPRO3W1URXBO7ZS9YGI8TADAMSD149N3UC87YYJLRQMU5U6U2DG6K7WKK</ns3:amc><ns3:amc>609255753157211023796EYGJWPYLFBTKOI5ATG2WTQN8E2ZS7CUDY3J3FI6I7JPPQMXY1C3F28Z5WWRNYR1Y1PVF5ZVIXJIE3Y5GOXUP6RD3GIG5LLUBYVS424K8QX82NBZIDNDV6I7Q7RX8C2GJX</ns3:amc><ns3:amc>609951224902261023483QLHFJXLBAKCZZS2FGC6WBTT4Y4HK2MWXC7R4QU6Z5LEZPRRW2Y4K68P4FVZMOI8W9OCQ5DJEFSUQ1J1ZGUNE1TX4WEW5PVYPATT473G2IB51TNNUGRCP2E6O1KB5W4WOM</ns3:amc></ns1:MarkInfo>
+        		</ns1:Position>
+      		</ns1:Content>
+		</ns0:RepProducedProduct_v4>
+	</ns0:Document>
+</ns0:Documents>
