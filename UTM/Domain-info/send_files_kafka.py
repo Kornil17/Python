@@ -55,13 +55,22 @@ def main():
         action = int(input('choose action: 1-write, 2-read, 3-exit. Just numbers!!\n'))
         if action != 3:
             if action == 1:
-                pass
+                count = int(input('Введите количество сообщений для отправки\n'))
+                logging.info(f'Get count msg: {count}')
+                kafkin = Kafka(input('Write topic\n'))
+                logging.info(f'Get topic named as: {kafkin.topic}')
+                for msg in range(count):
+                    logging.debug('start produce msg circle')
+                    kafkin.produce(kafkin.topic, input('Введите сообщение\n'))
+                    logging.info(f'send {msg + 1} msg')
+            elif action == 2:
+                kafkin = Kafka(input('Write topic\n'))
+                logging.info(f'Get topic named as: {kafkin.topic}')
+                kafkin.read_message()
         else:
             logging.debug('Goodbay! Have a nice day!)')
 
-        kafkin = Kafka(input('Write topic\n'))
-        logging.info(f'Get topic named as: {kafkin.topic}')
-        kafkin.read_message()
+
     except Exception as ex:
         logging.error(f'Exception: {ex}')
 
