@@ -2,6 +2,8 @@ import logging
 # from kafka import KafkaConsumer
 # /tmp/python_venv_dm
 from confluent_kafka import Consumer, Producer
+
+# {"service":"confirmed", "message":"test", "randomValue":1}
 class Kafka:
     def __init__(self, topic):
         self.contur = 'gitlab-ci.ru:9092'
@@ -17,15 +19,25 @@ class Kafka:
         logging.debug('exit from connection function')
         return result_connection
     def produce(self, topic, messages):
-        for data in messages:
-            self.producer.poll(0)
-            self.producer.produce(topic, data.encode('utf-8'), callback=self.write_message)
+        logging.debug("start produce function")
+        self.producer.poll(0)
+        self.producer.produce(topic, messages.encode('utf-8'))
+        logging.info(f"Message: {messages} was recieved to kafka topic: {topic}")
+        print(f"Message: '{messages}' was recieved to kafka topic: '{topic}'")
+        self.producer.flush()
 
     def write_message(self, err, msg):
-        if err is not None:
-            logging.error(f'Messages delivered failed: {err}')
-        else:
-            logging.info(f'Messages delivered to {msg.topic()} and {msg.partition()}')
+        "while unless function"
+        try:
+            print('start')
+            if err is not None:
+                logging.error(f'Messages delivered failed: {err}')
+            else:
+                logging.info(f'Messages delivered to {msg.topic()} and {msg.partition()}')
+        except Exception as ex:
+            logging.error(f"Get ERROR msg: {ex}")
+        finally:
+            self.producer.flush()
     def read_message(self):
         logging.debug('start kafka read function')
         try:
