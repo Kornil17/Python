@@ -3,6 +3,8 @@ import logging
 # /tmp/python_venv_dm
 from confluent_kafka import Consumer, Producer
 
+
+logging.basicConfig(level=logging.INFO,format='%(asctime)s-%(filename)s: %(levelname)s: %(message)s', datefmt='%d/%m/%Y %I:%M:%S',encoding='utf-8')
 # {"service":"confirmed", "message":"test", "randomValue":1}
 class Kafka:
     def __init__(self, topic):
@@ -65,7 +67,7 @@ def main():
     try:
         logging.debug('start main func')
         action = int(input('choose action: 1-write, 2-read, 3-exit. Just numbers!!\n'))
-        if action != 3:
+        if action != 3 and action < 3:
             if action == 1:
                 count = int(input('Введите количество сообщений для отправки\n'))
                 logging.info(f'Get count msg: {count}')
@@ -82,9 +84,10 @@ def main():
         else:
             logging.debug('Goodbay! Have a nice day!)')
 
-
     except Exception as ex:
         logging.error(f'Exception: {ex}')
+    finally:
+        logging.debug('Goodbay! Have a nice day!)')
 
 if __name__ == '__main__':
     main()
