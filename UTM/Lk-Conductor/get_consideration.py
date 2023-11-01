@@ -8,8 +8,9 @@ class Request:
 
     def __init__(self):
         """for test"""
-        self.path = 'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/consideration/with-pagination'
-        self.token = Token.get_token()
+        self.path = 'http://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/correctionsWithPagination'
+        # self.token = Token.get_token()
+        self.token = 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInBlcm1pc3Npb25zIjoiUmV0YWlsIiwicm9sZWlkIjoiMCIsImxvY2FsaXR5IjoiQXV0byIsInJlZ2lvbiI6IkF1dG8iLCJ1c2VyaWQiOiIxMjMifQ.lD9tvdwoWBYWedm4hBWdWCf73Ea-TMMpCCSaifZ6qdk-S9_TrEKbzD6F4dVPXKigTc28jPeDTRhZQ1Lpu2t9fg'
         self.headers = {
             'accept': '*/*',
             'Authorization': self.token
