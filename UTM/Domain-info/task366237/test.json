@@ -1,0 +1,112 @@
+{
+    "id": "e3b258ae-d064-45b0-b71e-8279ffa2fbda",
+    "serviceId": "info-epgu",
+    "requestId": "36237e82-fadc-49a3-bb2d-34fb35f5406d",
+    "requestType": "EPGU",
+    "xsltId": 10,
+    "responseId": "a93eaff5-db06-41e3-a322-3f04f8781375",
+    "messageId": "c1731889-af74-4e8b-82aa-87aa8a666694",
+    "requestContent":
+    {
+        "epgu":
+        {
+            "orderID": "09674567",
+            "department": "100000012571",
+            "serviceCode": "60013397",
+            "targetCode": "60013397-2",
+            "statementDate": "2023-09-08"
+        },
+        "applicant":
+        {
+            "ul":
+            {
+                "fullName": "СИМЭНЕРГО",
+                "shortName": "СИМЭНЕРГО",
+                "lastName": "Тестов",
+                "firstName": "Тест",
+                "patronymic": "Тестович",
+                "ogrn": "1027501146310",
+                "inn": "1681000049",
+                "kpp": "161643004"
+            },
+            "address": "672020, край. Забайкальский, г. Чита, ул. Промышленная, д. 7",
+            "email": "info@chita.beer",
+            "phone": "+7(302)2237895"
+        },
+        "agent":
+        {
+            "lastName": "",
+            "firstName": "",
+            "patronymic": "",
+            "documentId":
+            {
+                "serial": "",
+                "number": "",
+                "issuerName": "",
+                "issuerCode": "",
+                "issueDate": ""
+            },
+            "dateOfBirth": "1923-09-24",
+            "email": "",
+            "phone": ""
+        },
+        "changesInRegister":
+        {
+            "subdivisions":
+            [],
+            "aggregateProductionCapacities":
+            [],
+            "orgInfo":
+            {
+                "fullName": "",
+                "kpp": "",
+                "address": "672020, край. Забайкальский, г. Чита, ул. Промышленная, д. 7",
+                "email": "info@chita.beer"
+            },
+            "duty":
+            {
+                "payment":
+                {
+                    "number": "4350",
+                    "date": "2023-09-08"
+                }
+            }
+        },
+        "appliedDocuments":
+        [
+            {
+                "name": "test.pdf",
+                "businessName": "Документ, подтверждающий необходимость внесения изменений в реестр",
+                "type": "application/pdf",
+                "mnemonic": "c49.FileUploadComponent.izmeneniya.3037721340"
+            }
+        ],
+        "informationEgais":
+        {
+            "fsrarId": "030000353139",
+            "typeDoc": "Сведения о поставке",
+            "identifiers":
+            [
+                {
+                    "identifier": "TEST-PRODAP0000008523"
+                }
+            ],
+            "consignees":
+            [
+                {
+                    "inn": "6623024931",
+                    "kpp": "662301001"
+                }
+            ]
+        }
+    },
+    "requestTimestamp": "2023-11-01 12:23:03.628342",
+    "updateTimestamp": "2023-11-01 12:23:03.628372",
+    "kafkaPartition": 0,
+    "kafkaOffset": 0,
+    "route": "IN",
+    "attachmentPath": "/mnt/leveler/storage/2023-09-08/f913b0c3-4e19-11ee-a13d-a2fb4052a218/Application.zip",
+    "state": "OUTGOING",
+    "archivedStatus": "true",
+    "queuedStatus": "true"
+}
