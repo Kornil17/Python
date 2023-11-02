@@ -41,9 +41,13 @@ class Create:
         self.result['requestContent']['correctionEgais']['documentsCorrection'][0]['fsrarId'] = fsrar
         print(self.result['requestContent']['correctionEgais']['documentsCorrection'][0]['fsrarId'])
         return self
+    def set_branch(self, branch):
+        self.result['requestContent']['correctionEgais']['branch'] = branch
+        print(self.result['requestContent']['correctionEgais']['branch'])
+        return self
 
 # n = Create()
-# n.set_uuid().set_date().set_docid('999999').set_serviceId('brewers-service').set_typeDoc(1).set_fsrar(1).set_inn(1).set_kpp(1)
+# n.set_uuid().set_date().set_docid('999999').set_serviceId('brewers-service').set_typeDoc(1).set_fsrar(1).set_inn(1).set_kpp(1).set_branch('test')
 # print(n.result)
 
 
