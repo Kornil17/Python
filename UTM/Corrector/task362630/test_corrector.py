@@ -91,7 +91,7 @@ def test_fifth_case1(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_
     assert kafka.produce(dumps(result_json.result, ensure_ascii=False)) == True
 
 @pytest.mark.positive
-@pytest.mark.fifth_case  #  Если данные из branch (поле в documentsCorrection) не найдены в справочнике .
+@pytest.mark.fifth_case  #  Если данные из branch (поле в documentsCorrection) найдены в справочнике .
 @pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp, branch', [
     (result, 'corrector-epgu', 'Сведения о поставке', '010000000047', '7714698320', '271744622', 'МРУ Росалкогольрегулирования по ЦФО')
 ])

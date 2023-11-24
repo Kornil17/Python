@@ -1,5 +1,8 @@
-./.pytest_cache
-./.idea
 .idea
+UTM/Brewers/smev_checks/egrul/__pycache__/
+UTM/Corrector/task362630/__pycache__/
+UTM/Domain-info/task366237/__pycache__/
+WorkTasks/test_selenium/__pycache__/
+.log
 
 

@@ -81,6 +81,11 @@ from  dataclasses import dataclass
 # with context_manager() as manager:
 #     print(manager())
 # print(manager())
+import urllib.parse
+x = 'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/infoWithPagination?filter=%5B%22isProcessed%22,%22=%22,%22true%22%5D&page=0&size=20'
+# print(urllib.parse.unquote('%5B%22isProcessed%22,%22=%22,%22true%22%5D&page=0&size=20'))
+
+print(urllib.parse.unquote('%5B%22isProcessed%22,%22=%22,%22false'))
 
 
 
@@ -580,106 +585,108 @@ from pprint import pprint
 # # d = Domain.from_email('l.c')
 # print(k.domain)
 # print(t.domain, k.domain, d.domain, sep='\n')
-from math import sqrt
-from functools import total_ordering
-@total_ordering
-class Vector:
-    def __init__(self, *args):
-        self.coords = args
-    def __str__(self):
-        for cord in self.coords:
-            return f"{cord}"
-    def __eq__(self, other):
-        if isinstance(other, Vector):
-            if not self.length(self.coords, other.coords):
-                raise ValueError ('Векторы должны иметь равную длину')
-            return self.coords == other.coords
-        elif not isinstance(other, Vector):
-            if not self.length(self.coords, other):
-                raise ValueError ('Векторы должны иметь равную длину')
-            return self.coords == other
-        return NotImplemented
+# from math import sqrt
+# from functools import total_ordering
+# @total_ordering
+# class Vector:
+#     def __init__(self, *args):
+#         self.coords = args
+#     def __str__(self):
+#         for cord in self.coords:
+#             return f"{cord}"
+#     def __eq__(self, other):
+#         if isinstance(other, Vector):
+#             if not self.length(self.coords, other.coords):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             return self.coords == other.coords
+#         elif not isinstance(other, Vector):
+#             if not self.length(self.coords, other):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             return self.coords == other
+#         return NotImplemented
+#
+#     def __lt__(self, other):
+#         if isinstance(other, Vector):
+#             if not self.length(self.coords, other.coords):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             return self.coords < other.coords
+#         elif not isinstance(other, Vector):
+#             if not self.length(self.coords, other):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             return self.coords < other
+#         return NotImplemented
+#     def __add__(self, other):
+#         if isinstance(other, Vector):
+#             if not self.length(self.coords, other.coords):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             # return Vector(tuple((map(sum, zip(self.coords, other.coords)))))
+#             return Vector(self.result(self.coords, other.coords, '+'))
+#         elif not isinstance(other, Vector):
+#             if not self.length(self.coords, other):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             # return Vector(tuple((map(sum, zip(self.coords, other)))))
+#             return Vector(self.result(self.coords, other, '+'))
+#         return NotImplemented
+#
+#     def __radd__(self, other):
+#         return self.__add__(other)
+#     def __sub__(self, other):
+#         if isinstance(other, Vector):
+#             if not self.length(self.coords, other.coords):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             # return Vector(tuple((map(sum, zip(self.coords, other.coords)))))
+#             return Vector(self.result(self.coords, other.coords, '-'))
+#         elif not isinstance(other, Vector):
+#             if not self.length(self.coords, other):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             # return Vector(tuple((map(sum, zip(self.coords, other)))))
+#             return Vector(self.result(self.coords, other, '-'))
+#         return NotImplemented
+#     def __rsub__(self, other):
+#         return self.__sub__(other)
+#     def __mul__(self, other):
+#         if isinstance(other, Vector):
+#             if not self.length(self.coords, other.coords):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             # return Vector(tuple((map(sum, zip(self.coords, other.coords)))))
+#             return sum(self.result(self.coords, other.coords, '*'))
+#         elif not isinstance(other, Vector):
+#             if not self.length(self.coords, other):
+#                 raise ValueError ('Векторы должны иметь равную длину')
+#             # return Vector(tuple((map(sum, zip(self.coords, other)))))
+#             return (self.result(self.coords, other, '*'))
+#         return NotImplemented
+#     def __rmul__(self, other):
+#         return self.__mul__(other)
+#     def norm(self):
+#         result = 0
+#         for coord in self.coords:
+#             result += coord**2
+#         return sqrt(result)
+#     @staticmethod
+#     def length(a, b):
+#         return len(a) == len(b)
+#     @staticmethod
+#     def result(a, b, key):
+#         result = list()
+#         for first, second in zip(a, b):
+#             if key == '+':
+#                 result.append(first + second)
+#             elif key == '-':
+#                 result.append(first - second)
+#             elif key == '*':
+#                 result.append(first * second)
+#         return tuple(result)
+#
+# vector1 = Vector(1, 2, 3)
+# vector2 = Vector(5, 6, 7, 8)
+#
+# try:
+#     print(vector1 == vector2)
+# except ValueError as e:
+#     print(e)
 
-    def __lt__(self, other):
-        if isinstance(other, Vector):
-            if not self.length(self.coords, other.coords):
-                raise ValueError ('Векторы должны иметь равную длину')
-            return self.coords < other.coords
-        elif not isinstance(other, Vector):
-            if not self.length(self.coords, other):
-                raise ValueError ('Векторы должны иметь равную длину')
-            return self.coords < other
-        return NotImplemented
-    def __add__(self, other):
-        if isinstance(other, Vector):
-            if not self.length(self.coords, other.coords):
-                raise ValueError ('Векторы должны иметь равную длину')
-            # return Vector(tuple((map(sum, zip(self.coords, other.coords)))))
-            return Vector(self.result(self.coords, other.coords, '+'))
-        elif not isinstance(other, Vector):
-            if not self.length(self.coords, other):
-                raise ValueError ('Векторы должны иметь равную длину')
-            # return Vector(tuple((map(sum, zip(self.coords, other)))))
-            return Vector(self.result(self.coords, other, '+'))
-        return NotImplemented
-
-    def __radd__(self, other):
-        return self.__add__(other)
-    def __sub__(self, other):
-        if isinstance(other, Vector):
-            if not self.length(self.coords, other.coords):
-                raise ValueError ('Векторы должны иметь равную длину')
-            # return Vector(tuple((map(sum, zip(self.coords, other.coords)))))
-            return Vector(self.result(self.coords, other.coords, '-'))
-        elif not isinstance(other, Vector):
-            if not self.length(self.coords, other):
-                raise ValueError ('Векторы должны иметь равную длину')
-            # return Vector(tuple((map(sum, zip(self.coords, other)))))
-            return Vector(self.result(self.coords, other, '-'))
-        return NotImplemented
-    def __rsub__(self, other):
-        return self.__sub__(other)
-    def __mul__(self, other):
-        if isinstance(other, Vector):
-            if not self.length(self.coords, other.coords):
-                raise ValueError ('Векторы должны иметь равную длину')
-            # return Vector(tuple((map(sum, zip(self.coords, other.coords)))))
-            return sum(self.result(self.coords, other.coords, '*'))
-        elif not isinstance(other, Vector):
-            if not self.length(self.coords, other):
-                raise ValueError ('Векторы должны иметь равную длину')
-            # return Vector(tuple((map(sum, zip(self.coords, other)))))
-            return (self.result(self.coords, other, '*'))
-        return NotImplemented
-    def __rmul__(self, other):
-        return self.__mul__(other)
-    def norm(self):
-        result = 0
-        for coord in self.coords:
-            result += coord**2
-        return sqrt(result)
-    @staticmethod
-    def length(a, b):
-        return len(a) == len(b)
-    @staticmethod
-    def result(a, b, key):
-        result = list()
-        for first, second in zip(a, b):
-            if key == '+':
-                result.append(first + second)
-            elif key == '-':
-                result.append(first - second)
-            elif key == '*':
-                result.append(first * second)
-        return tuple(result)
-
-vector1 = Vector(1, 2, 3)
-vector2 = Vector(5, 6, 7, 8)
-
-try:
-    print(vector1 == vector2)
-except ValueError as e:
-    print(e)
-
+# import urllib.parse as p
+# print(p.quote(' '))
 
 
