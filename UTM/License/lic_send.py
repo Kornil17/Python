@@ -64,7 +64,7 @@ class License:
         }
 
         self.files_card = {
-            'dueCard': (None, '0.LQAL.2P3KT.'),
+            'dueCard': (None, '0.2R58A.'),
         'dueDocgroup': (None, self.due),
         'aIsnDelivery': (None, '1033658'),
         'duePersonExe': (None, '0.LVIP.M3PQ.2T78C.'),

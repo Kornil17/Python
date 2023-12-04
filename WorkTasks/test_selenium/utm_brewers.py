@@ -35,14 +35,11 @@ class Test:
         # self.driver.close()
 
     def test_third_page(self):
-        # time.sleep(5)
-        # self.driver.find_element(By.XPATH, "/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/main/app-brewers-registry-stepper/form/mat-horizontal-stepper/div[2]/div[3]/app-subdivision-array/app-array-view/mat-accordion/mat-expansion-panel/div/div/mat-card/mat-card-content/app-inclusion-subdivision-container/div/app-brewers-subdivision/div/div/mat-form-field[1]/div/div[1]/div").click()
-        # time.sleep(5)
-        # self.driver.find_element(By.XPATH, "///*[@id='mat-option-96']").click()
         time.sleep(5)
-        self.driver.find_element(By.XPATH, "//*[@id='mat-input-33']").send_keys('1232132132133')
-        time.sleep(2)
-        self.driver.find_element(By.XPATH, "//*[@id='mat-input-34']").send_keys('14:41:4141414:141')
+        self.driver.find_element(By.XPATH, '//*[@id="mat-select-value-7"]').click()
+        self.driver.find_element(By.XPATH, '//*[@id="mat-option-16"]').click()
+        self.driver.find_element(By.XPATH, '//*[@id="mat-input-22"]').send_keys('999')
+        self.driver.find_element(By.XPATH, '//*[@id="mat-input-23"]]').send_keys('14:41:4141414:141')
         time.sleep(2)
         self.driver.find_element(By.XPATH, "/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/main/app-brewers-registry-stepper/form/mat-horizontal-stepper/div[2]/div[3]/app-subdivision-array/app-array-view/mat-accordion/mat-expansion-panel/div/div/mat-card/mat-card-content/app-inclusion-subdivision-container/div/app-brewers-subdivision/div/app-list-view[1]/mat-accordion/mat-expansion-panel/div/div/ul/li/div[1]/div[2]/mat-form-field/div/div[1]/div").send_keys('123')
         time.sleep(2)
@@ -57,3 +54,6 @@ class Test:
         time.sleep(2)
         self.driver.find_element(By.XPATH, "").click()
         time.sleep(2)
+        self.driver.close()
+
+

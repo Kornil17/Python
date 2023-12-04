@@ -81,11 +81,11 @@ from  dataclasses import dataclass
 # with context_manager() as manager:
 #     print(manager())
 # print(manager())
-import urllib.parse
-x = 'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/infoWithPagination?filter=%5B%22isProcessed%22,%22=%22,%22true%22%5D&page=0&size=20'
-# print(urllib.parse.unquote('%5B%22isProcessed%22,%22=%22,%22true%22%5D&page=0&size=20'))
-
-print(urllib.parse.unquote('%5B%22isProcessed%22,%22=%22,%22false'))
+# import urllib.parse
+# x = 'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/infoWithPagination?filter=%5B%22isProcessed%22,%22=%22,%22true%22%5D&page=0&size=20'
+# # print(urllib.parse.unquote('%5B%22isProcessed%22,%22=%22,%22true%22%5D&page=0&size=20'))
+#
+# print(urllib.parse.unquote('%5B%22isProcessed%22,%22=%22,%22false'))
 
 
 
@@ -688,5 +688,20 @@ from pprint import pprint
 
 # import urllib.parse as p
 # print(p.quote(' '))
+# from datetime import date, time, datetime
+#
+# dates = [date(1793, 8, 23), date(1410, 3, 11), date(804, 11, 12), date(632, 6, 4),
+#          date(295, 1, 23), date(327, 8, 24), date(167, 4, 16), date(229, 1, 24),
+#          date(1239, 2, 5), date(1957, 7, 14), date(197, 8, 24), date(479, 9, 6)]
+#
+# times = [time(7, 33, 27), time(21, 2, 10), time(17, 20, 47), time(20, 8, 59),
+#          time(12, 42, 56), time(15, 9, 57), time(17, 47, 9), time(9, 40, 2),
+#          time(11, 47, 1), time(17, 27, 10), time(17, 55, 40), time(9, 14, 9)]
+# # print(*sorted([datetime.combine(x, y) for x in dates for y in times], key=lambda x: x.second), sep='\n')
+# datetimes = [datetime.combine(date, time) for date, time in zip(dates, times)]
+# print(*sorted(datetimes, key=lambda x: x.second), sep='\n')
 
 
+from json import loads, dumps
+
+print(dumps('{"id":"9fdaa271-11cd-4b4f-ac98-c5832b0a1226","serviceId":"brewers-service","requestId":"4b823d83-3d00-41c9-85b3-044c29f928d9","requestType":"EPGU","xsltId":5,"responseId":"910a12dc-7259-4890-8b27-ec7cf19de4cc","messageId":"0fce9894-8e8b-11ee-a1e1-7ac46fb75245","requestContent":{"epgu":{"orderID":"3605242047","department":"10000001087","serviceCode":"60013397","targetCode":"60013397-2","statementDate":"2023-11-29"},"applicant":{"ul":{"fullName":"АКЦИОНЕРНОЕ ОБЩЕСТВО \"ФОРШТАДТСКАЯ ПИВОВАРНЯ\"","shortName":"АО \"ФОРШТАДТСКАЯ ПИВОВАРНЯ\"","lastName":"Сербина","firstName":"Мариана","patronymic":"Валентиновна","ogrn":"1185476101909","inn":"5404083315","kpp":"540401001"},"address":"630108, обл. Новосибирская, р-н. Татарский, г. Татарск, п. Станционный, д. 16/1, офис. 307","email":"serbina-61@mail.ru","phone":"+7(983)5463277"},"changesInRegister":{"subdivisions":[{"productProductionCapacities":[{"kindOfProduct":"пиво","productionCapacity":"711077"},{"kindOfProduct":"пивные напитки","productionCapacity":"7219"},{"kindOfProduct":"сидр","productionCapacity":"3609"}],"address":"656038, Алтайский край, Барнаул г, Промышленная ул, дом № 106","newAddress":"","kpp":"222545001","newKpp":"","certNumbers":"","cadastralNumbers":[]}],"aggregateProductionCapacities":[],"orgInfo":{"fullName":"","kpp":"","address":"","email":""},"duty":{"payment":{"number":"20419","date":"2023-11-29"}}},"appliedDocuments":[{"name":"Схема 2.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"Схема 3.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"Схема 1.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"doc06442320231129073453-2-6.pdf","businessName":"Расчёт производственной мощности основного технологического оборудования","type":"application/pdf","mnemonic":"c44.FileUploadComponent.raschet.3605242047"},{"name":"doc06442320231129073453-1.pdf","businessName":"Документ, подтверждающий необходимость внесения изменений в реестр","type":"application/pdf","mnemonic":"c49.FileUploadComponent.izmeneniya.3605242048"}]},"requestTimestamp":"2023-11-29T07:44:57.018+0300","updateTimestamp":"2023-11-29T07:44:59.048+0300","kafkaPartition":0,"kafkaOffset":0,"route":"IN","attachmentPath":"/mnt/nfs2/leveler/storage/2023-11-29/0fce9894-8e8b-11ee-a1e1-7ac46fb75245/Application.zip","state":"OUTGOING","queuedStatus":true,"archivedStatus":true}',  ensure_ascii=False))

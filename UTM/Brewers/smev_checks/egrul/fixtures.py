@@ -4,7 +4,7 @@ from get_response_json import JSON
 from parse_json import Parse
 
 
-name = str(input('get file_name\n'))
+name = str(input('get file_name: rf, fias, op:\n'))
 @pytest.fixture
 def test_kafka():
     return Kafka()

@@ -6,7 +6,7 @@ class JSON:
     """formed json for egrul response"""
 
     def __init__(self, name):
-        file_names = {'rf':'egrul_rf.json', 'fias':'egrul_fias.json'}
+        file_names = {'rf':'egrul_rf.json', 'fias':'egrul_fias.json', 'op':'fns_op.json'}
         self.result = self.open_file(file_names[name])
 
     def open_file(self, file_name):
@@ -29,7 +29,7 @@ class JSON:
         self.result['clientInternalNumber'] = js['clientInternalNumber']
         return self
 
-# test = JSON('rf')
+# test = JSON('op')
 # js = {"requestId":"007461f1-6291-4095-aa51-a49482d702cc","clientInternalNumber":"3500138728"}
 # test.set_uuid(js).set_date().set_client_number(js)
 # print(json.dumps(test.result, ensure_ascii=False))
