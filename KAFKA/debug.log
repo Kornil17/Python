@@ -1,0 +1,9 @@
+2023-12-05T09:24:55.513735+0300 DEBUG start main func
+2023-12-05T09:25:06.330098+0300 INFO Get count msg: 1
+2023-12-05T09:25:14.506164+0300 DEBUG start connection function
+2023-12-05T09:25:14.510961+0300 DEBUG exit from connection function
+2023-12-05T09:25:14.511424+0300 INFO Get topic named as: test
+2023-12-05T09:25:14.511553+0300 DEBUG start produce msg circle
+2023-12-05T09:25:36.068202+0300 DEBUG Goodbay! Have a nice day!)
+2023-12-05T09:26:13.384072+0300 DEBUG start main func
+2023-12-05T09:26:14.918426+0300 DEBUG Goodbay! Have a nice day!)
