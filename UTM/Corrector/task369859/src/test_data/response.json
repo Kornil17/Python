@@ -1,0 +1,15 @@
+{
+    "serviceId": "lic-integrator",
+    "requestId": "6e9c0d07-0786-45fb-b481-3cc41f46e174",
+    "requestType": "EPGU",
+    "updateTimestamp": "2023-08-22T15:59:18.877+0300",
+    "responseContent": {
+        "serviceStatus": "2003",
+        "caseNumber": "Л-1508",
+        "attachments": [
+            {
+                "path": "/mnt/leveler/storage/2023-08-22/9ef28c76-40e8-11ee-9970-3261572d3e15/7714698320_22.08.2023.pdf"
+            }
+        ]
+    }
+}

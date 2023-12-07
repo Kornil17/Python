@@ -1,0 +1,27 @@
+{
+"request": [
+	{
+		"id" : "a8606626-94b8-42ce-81ce-dd7670a820ce",
+		"service_id" : "corrector-epgu",
+		"request_id" : "be0c38a1-4a2a-43b8-b249-be5a644598dc",
+		"request_type" : "EPGU",
+		"xslt_id" : 10,
+		"client_internal_number" : null,
+		"additional_details" : null,
+		"response_id" : "11e3e087-02ae-4f6f-8cf0-3030f2d3c59f",
+		"message_id" : "42e74870-9442-11ee-ab26-3e13d6ca2c5b",
+		"request_content" : "{\"epgu\":{\"orderID\":\"3500262335\",\"department\":\"10000001087\",\"serviceCode\":\"60012744\",\"targetCode\":\"60012744-2\",\"statementDate\":\"2023-12-06\"},\"applicant\":{\"ul\":{\"fullName\":\"ООО ЦентрИнформ2\",\"shortName\":\"ООО ЦентрИнформ2\",\"lastName\":\"\",\"firstName\":\"\",\"patronymic\":\"\",\"ogrn\":\"1177847005930\",\"inn\":\"7841051711\",\"kpp\":\"784133001\"},\"email\":\"nica2011@yandex.ru\",\"phone\":\"+7(926)3717373\"},\"correctionEgais\":{\"documentsCorrection\":[{\"fsrarId\":\"030000353139\",\"typeDoc\":\"Сведения о поставке\",\"dateDoc\":\"2023-12-06\",\"numDoc\":\"124\",\"identifier\":\"4242\",\"attributesDoc\":[{\"nameAttribute\":\"test\",\"infoInAttribute\":\"test\",\"newInfoAttribute\":\"test\"}]}],\"comment\":\"test\",\"branch\":\"МРУ Росалкогольтабакконтроля по ЦФО\"},\"appliedDocuments\":[{\"name\":\"7841051711_80145.pdf\",\"businessName\":\"Документы, подтверждающие обоснованность уточнения информации, содержащейся в ЕГАИС\",\"type\":\"application\/pdf\",\"mnemonic\":\"c12.FileUploadComponent.doc.3500262335\"}]}",
+		"response_topic" : null,
+		"request_timestamp" : "2023-12-06T14:19:22.434Z",
+		"update_timestamp" : "2023-12-06T14:19:23.323Z",
+		"state" : "OUTGOING",
+		"response_content" : null,
+		"response_type" : null,
+		"kafka_partition" : 0,
+		"kafka_offset" : 0,
+		"is_queued_status" : true,
+		"is_archived_status" : true,
+		"route" : "IN",
+		"attachment_path" : "\/mnt\/leveler\/storage\/2023-12-06\/42e74870-9442-11ee-ab26-3e13d6ca2c5b\/Application.zip"
+	}
+]}
