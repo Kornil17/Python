@@ -1,17 +1,13 @@
 from loguru import logger
-# from kafka import KafkaConsumer
 # /tmp/python_venv_dm
 from confluent_kafka import Consumer, Producer
 import os
 from json import load, dumps
+from zipfile import ZipFile
 
-
-# logging.basicConfig(level=logging.INFO,format='%(asctime)s-%(filename)s: %(levelname)s: %(message)s', datefmt='%d/%m/%Y %I:%M:%S',encoding='utf-8')
-# {"service":"confirmed", "message":"test", "randomValue":1}
 logger.add('debug.log', format='{time} {level} {message}', level='DEBUG')
 class Kafka:
     def __init__(self, contur, topic):
-        # self.contur = 'gitlab-ci.ru:9092'
         self.choose_contur = {'sand':'gitlab-ci.ru:9092', 'test':'test-kafka1.fsrar.ru:9092', 'prod':'prod-kafka01-nd.fsrar.ru'}
         self.contur = self.choose_contur[contur]
         self.topic = topic
@@ -66,10 +62,23 @@ def main():
                 kafkin = Kafka(input('Write contur (sand or test or prod)\n'), input('Write topic\n'))
                 logger.info(f'Get contur named as: {kafkin.contur}')
                 logger.info(f'Get topic named as: {kafkin.topic}')
-                for msg in range(count):
+                if count > 1:
+                    archive_name = input('Write zip path\n')
+                    with ZipFile(archive_name, mode='r') as zf:
+                        data = zf.infolist()
+                        try:
+                            for d in data:
+                                print(d.filename.split('/')[-1])
+                                if not d.is_dir() and d.filename.split('.')[-1] == 'json':
+                                    zf.extract(d.filename)
+                                    kafkin.produce(kafkin.topic, d.filename)
+                                    logger.info(f'send file - {d.filename}')
+                        except Exception as error:
+                            logger.error(f"Got error message - {error}")
+                else:
                     logger.debug('start produce msg circle')
                     kafkin.produce(kafkin.topic, input('Write file path\n'))
-                    logger.info(f'send {msg + 1} msg')
+                    logger.info(f'send msg')
             elif action == 2:
                 kafkin = Kafka(input('Write topic\n'))
                 logger.info(f'Get topic named as: {kafkin.topic}')
