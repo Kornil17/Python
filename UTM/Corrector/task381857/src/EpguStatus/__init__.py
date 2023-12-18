@@ -1,0 +1,1 @@
+print("Configurate __init__ file")

@@ -1,12 +1,12 @@
 from confluent_kafka import Producer
+from .config import KafkaContur, KafkaTopic
 from loguru import logger
 
 logger.add('debug.log', format='{time} {level} {message}', level='DEBUG')
 class Kafka:
     def __init__(self):
-        self.contur = 'gitlab-ci.ru:9092'
-        # self.contur = 'test-kafka1.fsrar.ru:9092'
-        self.topic = 'test-smev-leveler-in-response'
+        self.contur = KafkaContur.PROD.value
+        self.topic = KafkaTopic.tests.value
         self.producer = Producer({'bootstrap.servers':self.contur})
     def produce(self, messages)->None:
         try:
