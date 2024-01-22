@@ -704,4 +704,55 @@ from pprint import pprint
 
 from json import loads, dumps
 
-print(dumps('{"id":"9fdaa271-11cd-4b4f-ac98-c5832b0a1226","serviceId":"brewers-service","requestId":"4b823d83-3d00-41c9-85b3-044c29f928d9","requestType":"EPGU","xsltId":5,"responseId":"910a12dc-7259-4890-8b27-ec7cf19de4cc","messageId":"0fce9894-8e8b-11ee-a1e1-7ac46fb75245","requestContent":{"epgu":{"orderID":"3605242047","department":"10000001087","serviceCode":"60013397","targetCode":"60013397-2","statementDate":"2023-11-29"},"applicant":{"ul":{"fullName":"АКЦИОНЕРНОЕ ОБЩЕСТВО \"ФОРШТАДТСКАЯ ПИВОВАРНЯ\"","shortName":"АО \"ФОРШТАДТСКАЯ ПИВОВАРНЯ\"","lastName":"Сербина","firstName":"Мариана","patronymic":"Валентиновна","ogrn":"1185476101909","inn":"5404083315","kpp":"540401001"},"address":"630108, обл. Новосибирская, р-н. Татарский, г. Татарск, п. Станционный, д. 16/1, офис. 307","email":"serbina-61@mail.ru","phone":"+7(983)5463277"},"changesInRegister":{"subdivisions":[{"productProductionCapacities":[{"kindOfProduct":"пиво","productionCapacity":"711077"},{"kindOfProduct":"пивные напитки","productionCapacity":"7219"},{"kindOfProduct":"сидр","productionCapacity":"3609"}],"address":"656038, Алтайский край, Барнаул г, Промышленная ул, дом № 106","newAddress":"","kpp":"222545001","newKpp":"","certNumbers":"","cadastralNumbers":[]}],"aggregateProductionCapacities":[],"orgInfo":{"fullName":"","kpp":"","address":"","email":""},"duty":{"payment":{"number":"20419","date":"2023-11-29"}}},"appliedDocuments":[{"name":"Схема 2.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"Схема 3.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"Схема 1.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"doc06442320231129073453-2-6.pdf","businessName":"Расчёт производственной мощности основного технологического оборудования","type":"application/pdf","mnemonic":"c44.FileUploadComponent.raschet.3605242047"},{"name":"doc06442320231129073453-1.pdf","businessName":"Документ, подтверждающий необходимость внесения изменений в реестр","type":"application/pdf","mnemonic":"c49.FileUploadComponent.izmeneniya.3605242048"}]},"requestTimestamp":"2023-11-29T07:44:57.018+0300","updateTimestamp":"2023-11-29T07:44:59.048+0300","kafkaPartition":0,"kafkaOffset":0,"route":"IN","attachmentPath":"/mnt/nfs2/leveler/storage/2023-11-29/0fce9894-8e8b-11ee-a1e1-7ac46fb75245/Application.zip","state":"OUTGOING","queuedStatus":true,"archivedStatus":true}',  ensure_ascii=False))
+# print(dumps('{"id":"9fdaa271-11cd-4b4f-ac98-c5832b0a1226","serviceId":"brewers-service","requestId":"4b823d83-3d00-41c9-85b3-044c29f928d9","requestType":"EPGU","xsltId":5,"responseId":"910a12dc-7259-4890-8b27-ec7cf19de4cc","messageId":"0fce9894-8e8b-11ee-a1e1-7ac46fb75245","requestContent":{"epgu":{"orderID":"3605242047","department":"10000001087","serviceCode":"60013397","targetCode":"60013397-2","statementDate":"2023-11-29"},"applicant":{"ul":{"fullName":"АКЦИОНЕРНОЕ ОБЩЕСТВО \"ФОРШТАДТСКАЯ ПИВОВАРНЯ\"","shortName":"АО \"ФОРШТАДТСКАЯ ПИВОВАРНЯ\"","lastName":"Сербина","firstName":"Мариана","patronymic":"Валентиновна","ogrn":"1185476101909","inn":"5404083315","kpp":"540401001"},"address":"630108, обл. Новосибирская, р-н. Татарский, г. Татарск, п. Станционный, д. 16/1, офис. 307","email":"serbina-61@mail.ru","phone":"+7(983)5463277"},"changesInRegister":{"subdivisions":[{"productProductionCapacities":[{"kindOfProduct":"пиво","productionCapacity":"711077"},{"kindOfProduct":"пивные напитки","productionCapacity":"7219"},{"kindOfProduct":"сидр","productionCapacity":"3609"}],"address":"656038, Алтайский край, Барнаул г, Промышленная ул, дом № 106","newAddress":"","kpp":"222545001","newKpp":"","certNumbers":"","cadastralNumbers":[]}],"aggregateProductionCapacities":[],"orgInfo":{"fullName":"","kpp":"","address":"","email":""},"duty":{"payment":{"number":"20419","date":"2023-11-29"}}},"appliedDocuments":[{"name":"Схема 2.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"Схема 3.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"Схема 1.pdf","businessName":"Схема оснащения основного технологического оборудования автоматическими средствами измерения и учёта объёма готовой продукци","type":"application/pdf","mnemonic":"c46.FileUploadComponent.skhema.3605242047"},{"name":"doc06442320231129073453-2-6.pdf","businessName":"Расчёт производственной мощности основного технологического оборудования","type":"application/pdf","mnemonic":"c44.FileUploadComponent.raschet.3605242047"},{"name":"doc06442320231129073453-1.pdf","businessName":"Документ, подтверждающий необходимость внесения изменений в реестр","type":"application/pdf","mnemonic":"c49.FileUploadComponent.izmeneniya.3605242048"}]},"requestTimestamp":"2023-11-29T07:44:57.018+0300","updateTimestamp":"2023-11-29T07:44:59.048+0300","kafkaPartition":0,"kafkaOffset":0,"route":"IN","attachmentPath":"/mnt/nfs2/leveler/storage/2023-11-29/0fce9894-8e8b-11ee-a1e1-7ac46fb75245/Application.zip","state":"OUTGOING","queuedStatus":true,"archivedStatus":true}',  ensure_ascii=False))
+
+# d = {chr(i):i-97 for i in range(97, 97+26)}
+# line = '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩'
+# str = 'I love Python =)'
+# m = str.upper().maketrans(d)
+# r = line.translate(m)
+# print(r)
+
+from collections import Counter
+from collections import ChainMap
+
+# from base64 import b64decode, b64encode
+# original_string = '(Какой-нибудь ещё)'
+# encoded_bytes = b64encode(original_string.encode('utf-8'))
+# encoded_string = encoded_bytes.decode('utf-8')
+# dec = b64decode(encoded_string).decode('utf8')
+# print(encoded_string, dec, sep='\n')
+from collections import defaultdict
+
+from typing import List, Union, Dict, Any, Callable, Hashable, Iterable, Iterator
+from collections import deque
+import functools
+import sys
+from time import perf_counter
+
+
+def timer(func: callable)->Callable:
+    def wrapper(*args, **kwargs):
+        start = perf_counter()
+        result = func(*args, **kwargs)
+        end = perf_counter()
+        print(f"Time: {((end - start) / 1) * 100}", f"Memory: {sys.getsizeof(result)}",sep='\n')
+        return result
+    return wrapper
+
+from random import choice
+from dataclasses import dataclass
+from datetime import date
+import sys
+
+
+import itertools as it
+from typing import Generator
+from operator import mul, add
+from string import ascii_uppercase
+
+from itertools import dropwhile,takewhile
+
+from urllib import parse
+print(parse.unquote('http://10.10.5.202:5015/api/Organization/saveOrganizWeb?aOper=I&aIsnDoc=0&aHighNode=0&aClassifName=%D0%A1%D0%98%D0%9C%D0%AD%D0%9D%D0%95%D0%A0%D0%93%D0%9E%20(331222333456/333456789)&aDue=%20&aMailForAll=0&aIsnAddrCategory=-1&aDue_region=0.2I723.&aAddress=127434,%20%D0%B3.%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,%20%D1%83%D0%BB.%20%D0%94%D1%83%D0%B1%D0%BA%D0%B8&aFullname=%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D1%81%20%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E%20%22%D0%A2%D0%95%D0%A1%D0%A2%22&aInn=331222333456&aEmail='))
+

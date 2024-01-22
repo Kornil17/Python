@@ -17,11 +17,13 @@ def main():
     logger.info('call leveler function')
     leveler_data = Leveler.get_info_by_leveler(doc_number)
     logger.info(f'got value = {leveler_data} from func leveler')
-    result_leveler_data = {'serviceId':leveler_data[0], 'requestId':leveler_data[1], 'requestType':leveler_data[2], 'updateTi$
+    result_leveler_data = {'serviceId':leveler_data[0], 'requestId':leveler_data[1], 'requestType':leveler_data[2], 'updateTimestamp':leveler_data[3].isoformat()+'+0300', "responseContent":{"serviceStatus":"2001","caseNumber":"Е-173","attachments":[]}}
     logger.info('check status equal (2002, 2003)')
     if status in ["2002", "2003"]:
         result_leveler_data["responseContent"]["serviceStatus"] = status
-        result_leveler_data["responseContent"]["attachments"] = [{"path":leveler_data[4].replace('nfs2/', '')}]
+        result_leveler_data["responseContent"]["attachments"] = [{"path": leveler_data[4].replace('Application.zip', f'response/{doc_number}.zip')}]
+        # result_leveler_data["responseContent"]["attachments"] = [{"path": leveler_data[4].replace('Application.zip', f'response/Визуализация_ИСХ_ЦА.pdf')}]
+        # result_leveler_data["responseContent"]["attachments"].append({"path": leveler_data[4].replace('Application.zip', f'response/Pril.zip')})
     logger.info(f"formed result json {result_leveler_data}")
     logger.info('call conductor function')
     conductor_data = Conductor.get_info_by_conductor(result_leveler_data['serviceId'].replace('-', '_'), doc_number)

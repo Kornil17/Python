@@ -1,0 +1,12 @@
+2023-12-15T17:34:02.490645+0300 DEBUG start produce function
+2023-12-15T17:34:02.491792+0300 INFO Message: {"serviceId": "info_epgu", "requestId": "c40327bf-6eec-4e0a-9acd-46ad57e25e28", "requestType": "EPGU", "updateTimestamp": "2022-11-16 18:05:43+0300", "responseContent": {"serviceStatus": "2001", "caseNumber": "А-гу-104", "attachments": []}} was recieved to kafka topic: test-smev-leveler-in-response
+2023-12-15T17:34:02.491967+0300 DEBUG Flushing...
+2023-12-15T17:40:39.569871+0300 DEBUG start produce function
+2023-12-15T17:40:39.570171+0300 INFO Message: {"serviceId": "info_epgu", "requestId": "c40327bf-6eec-4e0a-9acd-46ad57e25e28", "requestType": "EPGU", "updateTimestamp": "2022-11-16 18:05:43+0300", "responseContent": {"serviceStatus": "2001", "caseNumber": "А-гу-104", "attachments": []}} was recieved to kafka topic: test-smev-leveler-in-response
+2023-12-15T17:40:39.570300+0300 DEBUG Flushing...
+2023-12-15T17:45:15.300662+0300 DEBUG start function main
+2023-12-15T17:45:17.443602+0300 INFO get doc_number 1
+2023-12-15T17:45:17.445704+0300 INFO call leveler function
+2023-12-15T17:45:17.544767+0300 INFO got value = ('EPGU', 'c40327bf-6eec-4e0a-9acd-46ad57e25e28', 'EPGU', datetime.datetime(2022, 11, 16, 18, 5, 43, 982000)) from func leveler
+2023-12-15T17:45:17.546651+0300 INFO formed result json {'serviceId': 'EPGU', 'requestId': 'c40327bf-6eec-4e0a-9acd-46ad57e25e28', 'requestType': 'EPGU', 'updateTimestamp': '2022-11-16 18:05:43+0300', 'responseContent': {'serviceStatus': '2001', 'caseNumber': 'Е-173', 'attachments': []}}
+2023-12-15T17:45:17.547934+0300 INFO call conductor function

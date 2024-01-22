@@ -47,6 +47,6 @@ class Leveler:
                                      LevelerProd.NAME.value
                                      )
         connection.execute(
-            f"select service_id, request_id, request_type, update_timestamp, attachment_path from request r where r.request_c$
+            f"select service_id, request_id, request_type, update_timestamp, attachment_path from request r where r.request_content like '%{number}%'")
         result = connection.fetchone()
         return result

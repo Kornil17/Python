@@ -8,7 +8,7 @@ class Create:
         self.result = self.open_file()
 
     def open_file(self):
-        with open('/home/kornilov/PycharmProjects/pythonProject/UTM/Domain-info/task366237/test.json') as f:
+        with open('/home/kornilov/PycharmProjects/Python/UTM/Domain-info/task366237/test.json') as f:
             jsons = loads(f.read())
         return jsons
 
@@ -54,7 +54,7 @@ class Create:
         print(self.result['requestContent']['applicant']['ul']['kpp'])
         return self
 
-
+#
 # n = Create()
 # n.set_uuid().set_date().set_docid(randint(11111111, 99999999)).set_serviceId('info-epgu').set_typeDoc('Сведения о поставке').set_fsrar('010000000047').set_inn('7714698320').set_kpp('271744622')
 # print(dumps(n.result, ensure_ascii=False))
