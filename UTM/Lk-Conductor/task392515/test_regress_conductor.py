@@ -20,7 +20,7 @@ def get_token() -> Dict[str, str]:
     token = session.get('http://lk-test.egais.ru/lk-conductor/tools/token?role=developer')
     headers = {
         'accept': '*/*',
-        'Authorization': token
+        'Authorization': token.text
     }
     return headers
 
@@ -47,7 +47,7 @@ def test_gets_corr(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
         headers = token
-        result = session.get(endpoint, verify=False)
+        result = session.get(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
@@ -68,7 +68,7 @@ def test_posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
     logger.debug(f'Start posts method with endpoint - {endpoint}')
     try:
         headers = token
-        result = session.post(endpoint, json=json_data, verify=False)
+        result = session.post(endpoint, headers=headers,  json=json_data, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
@@ -86,7 +86,7 @@ def test_puts_corr(endpoint: str) -> None:
     logger.debug(f'Start puts method with endpoint - {endpoint}')
     try:
         headers = token
-        result = session.post(endpoint, verify=False)
+        result = session.post(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
@@ -111,7 +111,7 @@ def test_gets_info(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
         headers = token
-        result = session.get(endpoint, verify=False)
+        result = session.get(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
@@ -136,12 +136,11 @@ def test_posts_info(endpoint: str, json_data: Dict[str, Any]) -> None:
             files = {
                 'zip': ('EGAIS.zip', open('EGAIS.zip', 'rb'), 'application/zip'),
             }
-            result = session.post(endpoint, params=json_data, files=files, verify=False)
+            result = session.post(endpoint, headers=headers, params=json_data, files=files, verify=False)
         else:
-            result = session.post(endpoint, json=json_data, verify=False)
+            result = session.post(endpoint, headers=headers, json=json_data, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
-
 
 
