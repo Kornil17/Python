@@ -7,7 +7,7 @@ from typing import Dict, Any
 
 logger.add('debug.log', format='{time} {level} {message}', level='INFO')
 
-
+url = 'lk-conductor.api.monitor-utm.ru'
 
 def get_token() -> Dict[str, str]:
     token = requests.get('https://lk-test.egais.ru/lk-conductor/tools/token?role=developer')
@@ -16,7 +16,7 @@ def get_token() -> Dict[str, str]:
         'Authorization': token
     }
     return headers
-@allure.feature('Corrector')
+
 @pytest.mark.get_methods
 @pytest.mark.corr_methods
 @pytest.mark.parametrize(
@@ -33,7 +33,7 @@ def get_token() -> Dict[str, str]:
 
     ]
 )
-def gets(endpoint: str) -> None:
+def gets_corr(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
         token = get_token()
@@ -42,7 +42,7 @@ def gets(endpoint: str) -> None:
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
 
-@allure.feature('Corrector')
+
 @pytest.mark.post_methods
 @pytest.mark.corr_methods
 @pytest.mark.parametrize(
@@ -51,7 +51,7 @@ def gets(endpoint: str) -> None:
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/1594/letter', {"branch":"МРУ Росалкогольрегулирования по ЦФО","docDate":"2024-01-24","docNumber":"92100882","email":"test@mail.ru","inn":"7714698320","orgName":"ООО СИМЭНЕРГО","sadDate":"2024-01-24","sadNum":"56284802"}),
     ]
 )
-def posts(endpoint: str, json_data: Dict[str, Any]) -> None:
+def posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
     logger.debug(f'Start posts method with endpoint - {endpoint}')
     try:
         token = get_token()
@@ -60,13 +60,13 @@ def posts(endpoint: str, json_data: Dict[str, Any]) -> None:
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
 
-@allure.feature('Corrector')
+
 @pytest.mark.put_methods
 @pytest.mark.corr_methods
 @pytest.mark.parametrize(
     ['https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/changeValueIsVerified/1']
 )
-def puts(endpoint: str) -> None:
+def puts_corr(endpoint: str) -> None:
     logger.debug(f'Start puts method with endpoint - {endpoint}')
     try:
         token = get_token()
@@ -76,7 +76,7 @@ def puts(endpoint: str) -> None:
         logger.error(f'Got ERROR - {error}')
 
 
-@allure.feature('Info')
+
 @pytest.mark.get_methods
 @pytest.mark.info_methods
 @pytest.mark.parametrize(
@@ -88,7 +88,7 @@ def puts(endpoint: str) -> None:
         'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/monitoring/statsByTypeOfDelivery?dateFrom=2023-01-01&dateTo=2024-01-26',
     ]
 )
-def gets(endpoint: str) -> None:
+def gets_info(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
         token = get_token()
@@ -97,7 +97,7 @@ def gets(endpoint: str) -> None:
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
 
-@allure.feature('Info')
+
 @pytest.mark.post_methods
 @pytest.mark.info_methods
 @pytest.mark.parametrize(
@@ -106,7 +106,7 @@ def gets(endpoint: str) -> None:
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/253/uploadZip', {"email":"test@mail.ru","inn":"1233214567"}),
     ]
 )
-def posts(endpoint: str, json_data: Dict[str, Any]) -> None:
+def posts_info(endpoint: str, json_data: Dict[str, Any]) -> None:
     logger.debug(f'Start posts method with endpoint - {endpoint}')
     try:
         token = get_token()
