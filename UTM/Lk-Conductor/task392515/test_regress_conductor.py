@@ -40,7 +40,7 @@ def test_gets_corr(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
         headers = token
-        result = requests.get(endpoint, headers=headers)
+        result = requests.get(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
@@ -61,7 +61,7 @@ def test_posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
     logger.debug(f'Start posts method with endpoint - {endpoint}')
     try:
         headers = token
-        result = requests.post(endpoint, headers=headers, json=json_data)
+        result = requests.post(endpoint, headers=headers, json=json_data, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
@@ -79,7 +79,7 @@ def test_puts_corr(endpoint: str) -> None:
     logger.debug(f'Start puts method with endpoint - {endpoint}')
     try:
         headers = token
-        result = requests.post(endpoint, headers=headers)
+        result = requests.post(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
@@ -104,7 +104,7 @@ def test_gets_info(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
         headers = token
-        result = requests.get(endpoint, headers=headers)
+        result = requests.get(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
@@ -129,9 +129,9 @@ def test_posts_info(endpoint: str, json_data: Dict[str, Any]) -> None:
             files = {
                 'zip': ('EGAIS.zip', open('EGAIS.zip', 'rb'), 'application/zip'),
             }
-            result = requests.post(endpoint, headers=headers, params=json_data, files=files)
+            result = requests.post(endpoint, headers=headers, params=json_data, files=files, verify=False)
         else:
-            result = requests.post(endpoint, headers=headers, json=json_data)
+            result = requests.post(endpoint, headers=headers, json=json_data, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
