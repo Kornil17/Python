@@ -19,7 +19,7 @@ def get_token() -> Dict[str, str]:
 
 @pytest.mark.get_methods
 @pytest.mark.corr_methods
-@pytest.mark.parametrize(
+@pytest.mark.parametrize('endpoint',
     [
         'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/1',
         'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/1/diagram',
@@ -45,7 +45,7 @@ def test_gets_corr(endpoint: str) -> None:
 
 @pytest.mark.post_methods
 @pytest.mark.corr_methods
-@pytest.mark.parametrize(
+@pytest.mark.parametrize('endpoint', 'json_data',
     [
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/1593', {"branch":"МРУ Росалкогольрегулирования по ЦФО","checkId":5,"docDate":"2023-10-26","docNumber":"92100882","email":"test@mail.ru","inn":"7714698320","kpp":"271744622","orgName":"ООО СИМЭНЕРГО","sadDate":"2024-01-24","sadNum":"56284802","status":2002}),
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/1594/letter', {"branch":"МРУ Росалкогольрегулирования по ЦФО","docDate":"2024-01-24","docNumber":"92100882","email":"test@mail.ru","inn":"7714698320","orgName":"ООО СИМЭНЕРГО","sadDate":"2024-01-24","sadNum":"56284802"}),
@@ -63,7 +63,7 @@ def test_posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
 
 @pytest.mark.put_methods
 @pytest.mark.corr_methods
-@pytest.mark.parametrize(
+@pytest.mark.parametrize('endpoint',
     ['https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/changeValueIsVerified/1']
 )
 def test_puts_corr(endpoint: str) -> None:
@@ -79,7 +79,7 @@ def test_puts_corr(endpoint: str) -> None:
 
 @pytest.mark.get_methods
 @pytest.mark.info_methods
-@pytest.mark.parametrize(
+@pytest.mark.parametrize('endpoint',
     [
         'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/253',
         'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/253/diagram',
@@ -100,7 +100,7 @@ def test_gets_info(endpoint: str) -> None:
 
 @pytest.mark.post_methods
 @pytest.mark.info_methods
-@pytest.mark.parametrize(
+@pytest.mark.parametrize('endpoint', 'json_data',
     [
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/253', {"docDate":"2023-12-29","docNumber":"1323","email":"test@mail.ru","inn":"1234567891","orgName":"test","sadDate":"2024-01-26","sadNum":"123321","status":2002}),
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/253/uploadZip', {"email":"test@mail.ru","inn":"1233214567"}),
