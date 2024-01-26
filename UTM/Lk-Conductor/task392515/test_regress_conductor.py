@@ -33,7 +33,7 @@ def get_token() -> Dict[str, str]:
 
     ]
 )
-def gets_corr(endpoint: str) -> None:
+def test_gets_corr(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
         token = get_token()
@@ -51,7 +51,7 @@ def gets_corr(endpoint: str) -> None:
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/1594/letter', {"branch":"МРУ Росалкогольрегулирования по ЦФО","docDate":"2024-01-24","docNumber":"92100882","email":"test@mail.ru","inn":"7714698320","orgName":"ООО СИМЭНЕРГО","sadDate":"2024-01-24","sadNum":"56284802"}),
     ]
 )
-def posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
+def test_posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
     logger.debug(f'Start posts method with endpoint - {endpoint}')
     try:
         token = get_token()
@@ -66,7 +66,7 @@ def posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
 @pytest.mark.parametrize(
     ['https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/changeValueIsVerified/1']
 )
-def puts_corr(endpoint: str) -> None:
+def test_puts_corr(endpoint: str) -> None:
     logger.debug(f'Start puts method with endpoint - {endpoint}')
     try:
         token = get_token()
@@ -88,7 +88,7 @@ def puts_corr(endpoint: str) -> None:
         'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/monitoring/statsByTypeOfDelivery?dateFrom=2023-01-01&dateTo=2024-01-26',
     ]
 )
-def gets_info(endpoint: str) -> None:
+def test_gets_info(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
         token = get_token()
@@ -106,7 +106,7 @@ def gets_info(endpoint: str) -> None:
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/253/uploadZip', {"email":"test@mail.ru","inn":"1233214567"}),
     ]
 )
-def posts_info(endpoint: str, json_data: Dict[str, Any]) -> None:
+def test_posts_info(endpoint: str, json_data: Dict[str, Any]) -> None:
     logger.debug(f'Start posts method with endpoint - {endpoint}')
     try:
         token = get_token()
