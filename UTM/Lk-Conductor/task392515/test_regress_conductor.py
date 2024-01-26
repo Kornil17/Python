@@ -17,8 +17,8 @@ def get_token() -> Dict[str, str]:
     }
     return headers
 @allure.feature('Corrector')
-@pytest.get_methods
-@pytest.corr_methods
+@pytest.mark.get_methods
+@pytest.mark.corr_methods
 @pytest.mark.parametrize(
     [
         'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/1',
@@ -43,8 +43,8 @@ def gets(endpoint: str) -> None:
         logger.error(f'Got ERROR - {error}')
 
 @allure.feature('Corrector')
-@pytest.post_methods
-@pytest.corr_methods
+@pytest.mark.post_methods
+@pytest.mark.corr_methods
 @pytest.mark.parametrize(
     [
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/1593', {"branch":"МРУ Росалкогольрегулирования по ЦФО","checkId":5,"docDate":"2023-10-26","docNumber":"92100882","email":"test@mail.ru","inn":"7714698320","kpp":"271744622","orgName":"ООО СИМЭНЕРГО","sadDate":"2024-01-24","sadNum":"56284802","status":2002}),
@@ -61,8 +61,8 @@ def posts(endpoint: str, json_data: Dict[str, Any]) -> None:
         logger.error(f'Got ERROR - {error}')
 
 @allure.feature('Corrector')
-@pytest.put_methods
-@pytest.corr_methods
+@pytest.mark.put_methods
+@pytest.mark.corr_methods
 @pytest.mark.parametrize(
     ['https://lk-test.egais.ru/lk-conductor/dashboard/conductor/corr/changeValueIsVerified/1']
 )
@@ -77,8 +77,8 @@ def puts(endpoint: str) -> None:
 
 
 @allure.feature('Info')
-@pytest.get_methods
-@pytest.info_methods
+@pytest.mark.get_methods
+@pytest.mark.info_methods
 @pytest.mark.parametrize(
     [
         'https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/253',
@@ -98,8 +98,8 @@ def gets(endpoint: str) -> None:
         logger.error(f'Got ERROR - {error}')
 
 @allure.feature('Info')
-@pytest.post_methods
-@pytest.info_methods
+@pytest.mark.post_methods
+@pytest.mark.info_methods
 @pytest.mark.parametrize(
     [
         ('https://lk-test.egais.ru/lk-conductor/dashboard/conductor/info/253', {"docDate":"2023-12-29","docNumber":"1323","email":"test@mail.ru","inn":"1234567891","orgName":"test","sadDate":"2024-01-26","sadNum":"123321","status":2002}),
