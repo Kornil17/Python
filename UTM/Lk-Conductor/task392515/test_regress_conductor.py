@@ -14,9 +14,9 @@ session = requests.Session()
 # Отключение верификации сертификата
 session.verify = False
 
-url = 'lk-conductor.api.monitor-utm.ru'
-# url = 'lk-test.egais.ru'
-def get_token() -> Dict[str, str]:
+# url = 'lk-conductor.api.monitor-utm.ru'
+url = 'lk-test.egais.ru'
+def get_token() -> Dict:
     token = session.get('http://lk-test.egais.ru/lk-conductor/tools/token?role=developer')
     headers = {
         'accept': '*/*',
@@ -46,7 +46,7 @@ def token():
 def test_gets_corr(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
-        headers = token
+        headers = get_token()
         result = session.get(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
@@ -67,7 +67,7 @@ def token():
 def test_posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
     logger.debug(f'Start posts method with endpoint - {endpoint}')
     try:
-        headers = token
+        headers = get_token()
         result = session.post(endpoint, headers=headers,  json=json_data, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
@@ -85,7 +85,7 @@ def token():
 def test_puts_corr(endpoint: str) -> None:
     logger.debug(f'Start puts method with endpoint - {endpoint}')
     try:
-        headers = token
+        headers = get_token()
         result = session.post(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
@@ -110,7 +110,7 @@ def token():
 def test_gets_info(endpoint: str) -> None:
     logger.debug(f'Start gets method with endpoint - {endpoint}')
     try:
-        headers = token
+        headers = get_token()
         result = session.get(endpoint, headers=headers, verify=False)
         logger.info(f"Got result - {result} from endpoint - {endpoint}")
     except Exception as error:
@@ -131,7 +131,7 @@ def token():
 def test_posts_info(endpoint: str, json_data: Dict[str, Any]) -> None:
     logger.debug(f'Start posts method with endpoint - {endpoint}')
     try:
-        headers = token
+        headers = get_token()
         if 'uploadZip' in endpoint:
             files = {
                 'zip': ('EGAIS.zip', open('EGAIS.zip', 'rb'), 'application/zip'),
