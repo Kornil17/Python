@@ -48,7 +48,7 @@ def test_gets_corr(endpoint: str) -> None:
     try:
         headers = token
         result = session.get(endpoint, verify=False)
-        logger.info(f"Got result - {result} from endpoint - {endpoint}")
+        logger.info(f"Got result - {result.text} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
 
@@ -69,7 +69,7 @@ def test_posts_corr(endpoint: str, json_data: Dict[str, Any]) -> None:
     try:
         headers = token
         result = session.post(endpoint, json=json_data, verify=False)
-        logger.info(f"Got result - {result} from endpoint - {endpoint}")
+        logger.info(f"Got result - {result.text} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
 
@@ -87,7 +87,7 @@ def test_puts_corr(endpoint: str) -> None:
     try:
         headers = token
         result = session.post(endpoint, verify=False)
-        logger.info(f"Got result - {result} from endpoint - {endpoint}")
+        logger.info(f"Got result - {result.text} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
 
@@ -112,7 +112,7 @@ def test_gets_info(endpoint: str) -> None:
     try:
         headers = token
         result = session.get(endpoint, verify=False)
-        logger.info(f"Got result - {result} from endpoint - {endpoint}")
+        logger.info(f"Got result - {result.text} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
 
@@ -139,7 +139,7 @@ def test_posts_info(endpoint: str, json_data: Dict[str, Any]) -> None:
             result = session.post(endpoint, params=json_data, files=files, verify=False)
         else:
             result = session.post(endpoint, json=json_data, verify=False)
-        logger.info(f"Got result - {result} from endpoint - {endpoint}")
+        logger.info(f"Got result - {result.text} from endpoint - {endpoint}")
     except Exception as error:
         logger.error(f'Got ERROR - {error}')
 
