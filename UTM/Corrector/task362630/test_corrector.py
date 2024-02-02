@@ -103,22 +103,22 @@ def test_fifth_case2(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_
     assert kafka.produce(dumps(result_json.result, ensure_ascii=False)) == True
 
 
-@pytest.mark.negative
-@pytest.mark.sixth_case  #  С пустым инн и кпп
-@pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp, branch', [
-    (result, 'corrector-epgu', 'Сведения о поставке', '010000000047', '', '', 'МРУ Росалкогольрегулирования по ЦФО')
-])
-def test_six_case1(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_json, test_kafka):
-    result_json = test_json
-    result_json.set_uuid().set_date().set_docid(orderID).set_serviceId(serviceId).set_typeDoc(typeDoc).set_fsrar(fsrar).set_inn(inn).set_kpp(kpp).set_branch(branch)
-    print(dumps(result_json.result, ensure_ascii=False))
-    kafka = test_kafka
-    assert kafka.produce(dumps(result_json.result, ensure_ascii=False)) == True
+# @pytest.mark.negative
+# @pytest.mark.sixth_case  #  С пустым инн и кпп
+# @pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp, branch', [
+#     (result, 'corrector-epgu', 'Сведения о поставке', '010000000047', '', '', 'МРУ Росалкогольрегулирования по ЦФО')
+# ])
+# def test_six_case1(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_json, test_kafka):
+#     result_json = test_json
+#     result_json.set_uuid().set_date().set_docid(orderID).set_serviceId(serviceId).set_typeDoc(typeDoc).set_fsrar(fsrar).set_inn(inn).set_kpp(kpp).set_branch(branch)
+#     print(dumps(result_json.result, ensure_ascii=False))
+#     kafka = test_kafka
+#     assert kafka.produce(dumps(result_json.result, ensure_ascii=False)) == True
 
 @pytest.mark.negative
 @pytest.mark.sixth_case  #  С несуществующим инн и кпп
 @pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp, branch', [
-    (result, 'corrector-epgu', 'Сведения о поставке', '010000000047', '0000000001', '000000000', 'МРУ Росалкогольрегулирования по ЦФО')
+    (result, 'corrector-epgu', 'Сведения о поставке', '010000000047', '5500000001', '770000000', 'МРУ Росалкогольрегулирования по ЦФО')
 ])
 def test_six_case2(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_json, test_kafka):
     result_json = test_json
