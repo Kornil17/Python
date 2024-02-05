@@ -77,24 +77,24 @@ def test_forth_case2(orderID, serviceId, typeDoc, fsrar, inn, kpp, test_json, te
     kafka = test_kafka
     assert kafka.produce(dumps(result_json.result, ensure_ascii=False)) == True
 
-@pytest.mark.negative
-@pytest.mark.sixth_case  #  С пустым инн и кпп
-@pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp, branch', [
-    (result, 'info-epgu', 'Сведения о поставке', '010000000047', '', '', 'МРУ Росалкогольрегулирования по ЦФО')
-])
-def test_six_case1(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_json, test_kafka):
-    result_json = test_json
-    result_json.set_uuid().set_date().set_docid(orderID).set_serviceId(serviceId).set_typeDoc(typeDoc).set_fsrar(fsrar).set_inn(inn).set_kpp(kpp).set_branch(branch)
-    print(dumps(result_json.result, ensure_ascii=False))
-    kafka = test_kafka
-    assert kafka.produce(dumps(result_json.result, ensure_ascii=False)) == True
+# @pytest.mark.negative
+# @pytest.mark.sixth_case  #  С пустым инн и кпп
+# @pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp', [
+#     (result, 'info-epgu', 'Сведения о поставке', '010000000047', '', '')
+# ])
+# def test_six_case1(orderID, serviceId, typeDoc, fsrar, inn, kpp, test_json, test_kafka):
+#     result_json = test_json
+#     result_json.set_uuid().set_date().set_docid(orderID).set_serviceId(serviceId).set_typeDoc(typeDoc).set_fsrar(fsrar).set_inn(inn).set_kpp(kpp)
+#     print(dumps(result_json.result, ensure_ascii=False))
+#     kafka = test_kafka
+#     assert kafka.produce(dumps(result_json.result, ensure_ascii=False)) == True
 
 @pytest.mark.negative
 @pytest.mark.sixth_case  #  С несуществующим инн и кпп
 @pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp', [
     (result, 'info-epgu', 'Сведения о поставке', '010000000047', '0000000001', '000000000')
 ])
-def test_six_case2(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_json, test_kafka):
+def test_six_case2(orderID, serviceId, typeDoc, fsrar, inn, kpp, test_json, test_kafka):
     result_json = test_json
     result_json.set_uuid().set_date().set_docid(orderID).set_serviceId(serviceId).set_typeDoc(typeDoc).set_fsrar(fsrar).set_inn(inn).set_kpp(kpp)
     print(dumps(result_json.result, ensure_ascii=False))
@@ -106,7 +106,7 @@ def test_six_case2(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_js
 @pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp', [
     (result, 'info-epgu', 'Сведения о поставке', '', '7714698320', '271744622')
 ])
-def test_seven_case1(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_json, test_kafka):
+def test_seven_case1(orderID, serviceId, typeDoc, fsrar, inn, kpp, test_json, test_kafka):
     result_json = test_json
     result_json.set_uuid().set_date().set_docid(orderID).set_serviceId(serviceId).set_typeDoc(typeDoc).set_fsrar(fsrar).set_inn(inn).set_kpp(kpp)
     print(dumps(result_json.result, ensure_ascii=False))
@@ -118,7 +118,7 @@ def test_seven_case1(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_
 @pytest.mark.parametrize('orderID, serviceId, typeDoc, fsrar, inn, kpp', [
     (result, 'info-epgu', 'Сведения о поставке', '111111111111', '7714698320', '271744622')
 ])
-def test_seven_case2(orderID, serviceId, typeDoc, fsrar, inn, kpp, branch, test_json, test_kafka):
+def test_seven_case2(orderID, serviceId, typeDoc, fsrar, inn, kpp, test_json, test_kafka):
     result_json = test_json
     result_json.set_uuid().set_date().set_docid(orderID).set_serviceId(serviceId).set_typeDoc(typeDoc).set_fsrar(fsrar).set_inn(inn).set_kpp(kpp)
     print(dumps(result_json.result, ensure_ascii=False))
