@@ -4,7 +4,7 @@ logging.basicConfig(level=logging.INFO,format='%(asctime)s-%(filename)s: %(level
 class Kafka:
     def __init__(self):
         # self.contur = 'gitlab-ci.ru:9092'
-        self.contur = '10.10.4.28:9092'
+        self.contur = 'test-kafka1.fsrar.ru:9092'
         self.topic = 'test-smev-leveler-in-request'
         self.producer = Producer({'bootstrap.servers':self.contur})
     def produce(self, messages):
