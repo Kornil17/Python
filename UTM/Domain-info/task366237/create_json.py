@@ -8,7 +8,7 @@ class Create:
         self.result = self.open_file()
 
     def open_file(self):
-        with open('/home/kornilov/PycharmProjects/Python/UTM/Domain-info/task366237/test.json') as f:
+        with open('./test.json') as f:
             jsons = loads(f.read())
         return jsons
 
