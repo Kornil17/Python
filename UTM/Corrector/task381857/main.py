@@ -21,8 +21,8 @@ def main():
     logger.info('check status equal (2002, 2003)')
     if status in ["2002", "2003"]:
         result_leveler_data["responseContent"]["serviceStatus"] = status
-        result_leveler_data["responseContent"]["attachments"] = [{"path": leveler_data[4].replace('Application.zip', f'response/{doc_number}.zip')}]
-        result_leveler_data["responseContent"]["attachments"].append({"path": leveler_data[4].replace('Application.zip', f'response/Визуализация_ОТВЕТ_ЦА.pdf')})
+        result_leveler_data["responseContent"]["attachments"] = [{"path": leveler_data[4].replace('Application.zip', f'response/{doc_number}.pdf')}]
+        # result_leveler_data["responseContent"]["attachments"].append({"path": leveler_data[4].replace('Application.zip', f'response/Визуализация_ОТВЕТ_ЦА.pdf')})
         # result_leveler_data["responseContent"]["attachments"] = [{"path": leveler_data[4].replace('Application.zip', f'response/Визуализация_ИСХ_ЦА.pdf')}]
         # result_leveler_data["responseContent"]["attachments"].append({"path": leveler_data[4].replace('Application.zip', f'response/Pril.zip')})
     logger.info(f"formed result json {result_leveler_data}")
