@@ -1,5 +1,14 @@
+import bisect
+import datetime
 import json
-from  dataclasses import dataclass
+import queue
+import random
+import threading
+import time
+from asyncio import AbstractEventLoop
+from dataclasses import dataclass
+
+import numpy as np
 #
 #
 # class Test:
@@ -86,8 +95,6 @@ from  dataclasses import dataclass
 # # print(urllib.parse.unquote('%5B%22isProcessed%22,%22=%22,%22true%22%5D&page=0&size=20'))
 #
 # print(urllib.parse.unquote('%5B%22isProcessed%22,%22=%22,%22false'))
-
-
 
 
 # class Cat:
@@ -197,27 +204,26 @@ import requests
 
 from collections import UserList
 
-
 # class NumberList(UserList):
 #     def __init__(self, it=[]):
 #         if len(it) == 0:
 #             super().__init__(it)
 #         else:
 #             super().__init__(self._validate(i) for i in it)
-# 
+#
 #     @staticmethod
 #     def _validate(value):
 #         if isinstance(value, (int, float)):
 #             return value
 #         raise TypeError('Элементами экземпляра класса NumberList должны быть числа')
-# 
+#
 #     def __add__(self, other):
 #         if isinstance(other, list):
 #             return NumberList(self.data + other)
 #         elif isinstance(other, NumberList):
 #             return NumberList(self.data + other.data)
 #         return NotImplemented
-# 
+#
 #     def __iadd__(self, other):
 #         self.data += self.validate(other)
 #         return self
@@ -225,19 +231,19 @@ from collections import UserList
 #         if not isinstance(item, int):
 #             raise TypeError('Элементами экземпляра класса NumberList должны быть числа')
 #         self.data[i] = item
-# 
-# 
+#
+#
 #     def insert(self, index, item):
 #         self.data.insert(index, self._validate(item))
-# 
+#
 #     def append(self, item):
 #         self.data.append(self._validate(item))
-# 
+#
 #     def extend(self, other):
 #         self.data.extend(self._validate(other) for item in other)
-# 
+#
 # n = NumberList([1, 2, 3])
-# 
+#
 # try:
 #     n[1] = '5'
 # except TypeError as e:
@@ -354,8 +360,8 @@ from collections import UserList
 #     FRIDAY = 4
 #     SATURDAY = 5
 #     SUNDAY = 6
-# 
-# 
+#
+#
 # class NextDate:
 #     def __init__(self, today, weekday, after_today):
 #         self.today = today
@@ -731,52 +737,1341 @@ import sys
 from time import perf_counter
 
 
-def timer(func: callable)->Callable:
+def timer(func: callable) -> Callable:
     def wrapper(*args, **kwargs):
         start = perf_counter()
         result = func(*args, **kwargs)
         end = perf_counter()
-        print(f"Time: {((end - start) / 1) * 100}", f"Memory: {sys.getsizeof(result)}",sep='\n')
+        print(f"Time: {((end - start) / 1) * 100}", f"Memory: {sys.getsizeof(result)}", sep='\n')
         return result
+
     return wrapper
+
 
 from random import choice
 from dataclasses import dataclass
 from datetime import date
 from typing import Generator
 from itertools import groupby, product
-from enum import Enum
+from enum import Enum, IntEnum, unique, auto
 import string
 from functools import singledispatchmethod
 
-class BasicPlan:
-        can_stream = True
-        can_download = True
-        has_SD = True
-        has_HD = False
-        has_UHD = False
-        num_of_devices = 1
-        price = '8.99$'
+import re
+from abc import ABC
+from functools import total_ordering
+from dataclasses import dataclass, field
+from rstr import xeger
 
-class SilverPlan(BasicPlan):
-        has_HD = True
-        num_of_devices = 2
-        price = '12.99$'
+# class Regex:
+#     """
+#     class for get string by regex
+#     """
+#     _pattern = r'([а-я]\s)\.([а-я]\s)\.([а-я])'
+#     @classmethod
+#     def get_result(cls, data: str) -> None:
+#         result = re.sub(cls._pattern, "ФИО", data)
+#         print(result)
+#
+# Regex.get_result(input())
 
-class GoldPlan(BasicPlan):
-        has_HD = True
-        has_UHD = True
-        num_of_devices = 4
-        price = '15.99$'
+from copy import deepcopy
+
+from copy import deepcopy
+from pandas import Series, Index, DataFrame
+# class Regex:
+#     def __init__(self) -> None:
+#         self.pattern = r'(\d+):([a-z\d]+):([a-z\d]+)'
+#         self.result = []
+#     def __call__(self, data: list[str]) -> list[tuple[str, ...]]:
+#         for i in data:
+#             if re.findall(self.pattern, i, re.I):
+#                 self.result.append(re.findall(self.pattern, i, re.I))
+#         return self.result
+# Regex(sys.stdin)
+
+from copy import deepcopy
+
+from copy import deepcopy
+
+from copy import deepcopy
+
+from random import randint
+# from random import choice
+
+from collections import defaultdict
 
 
+def func(a, b, c) -> dict[int]:
+    """
+    test function
+    :param a:
+    :param b:
+    :param c:
+    :return:
+    """
 
 
+# from pandas import read_excel
+#
+# dt = read_excel('~/AllCombinations.xlsx')
+# dt = dt.set_index(dt.columns[0])
+# n = dt.apply(lambda row: row.to_dict(), axis=1).tolist()
+# for i in n:
+#     a = i['comment'].split()
+#     print(a[0], a[1], a[2])
+#     break
+
+# n = {'test':1, '2':45}
+# m = list(n.items())
+# print(dict(m))
+
+import argparse
+#
+# values = argparse.ArgumentParser(description='Пример парсинга значений из консоли')
+# values.add_argument('--test', help='test value', default='123')
+# args = values.parse_args()
+# print(args.test)
+from abc import ABC, abstractmethod
+# class ArgsParser(ABC):
+#     @abstractmethod
+#     def add_arguments(self):
+#         pass
+#     @abstractmethod
+#     def parse_arguments(self):
+#         pass
+#
+# class Parser(ArgsParser):
+#     def __init__(self, **kwargs):
+#         self._parametrs = kwargs
+#         self.args = argparse.ArgumentParser(description='get values from console')
+#     def add_arguments(self):
+#         for key, value in self._parametrs.items():
+#             self.args.add_argument(key, help=f'get values by {key}', default=value)
+#
+#     def parse_arguments(self):
+#         parser = self.args.parse_args()
+#         for key in self._parametrs.keys():
+#             print(parser.__dict__[key[2:]])
+#
+#
+# parser = Parser(**{'--test':123, '--main':'python'})
+# parser.add_arguments()
+# parser.parse_arguments()
+
+import pandas as pd
+#
+# def color_negative(val):
+#     color = 'white'
+#     if isinstance(val, int):
+#         color = 'red' if val < 0 else 'black'
+#         return f"color: {color}"
+#     else:
+#         return "background-color: blue"
+#
+# df = pd.read_excel('~/AllCombinations.xlsx')
+# print(df.to_string())
+#
+# styled_df = df.style.applymap(color_negative)
+# styled_df.to_excel('~/Downloads/output.xlsx', index=False)
+
+# import sys, os
+#
+# while True:
+#     sys.stdout.write('Введите два числа и операцию по аналогии с калькулятором (+, -, *, /): ' + os.linesep)
+#     user_input = sys.stdin.readline().strip()
+#
+#     if user_input == 'exit':
+#         break
+#
+#     try:
+#         result = eval(user_input)
+#         sys.stdout.write(f"Результат операции: {result}" + os.linesep)
+#     except Exception as e:
+#         sys.stdout.write(f"Ошибка: {e}" + os.linesep)
+
+# TODO test todo task
+# import pandas as pd
+# from bs4 import BeautifulSoup
+# text = """<p data-rtc-uid="19d62a05-9a7b-4756-a984-f4c579a4cc04"><br data-rtc-uid="86ebc166-799e-40f5-997b-4c6774924f21"></p><table class="relative-table mce-item-table" style="border-collapse: collapse; width: 845px; height: unset;" data-rtc-uid="8993c052-35a0-4fcd-b162-8f2c19a48819" data-widthmode="wide" data-lastwidth="845px" id="mce_1"><colgroup data-rtc-uid="93565d29-183a-457d-947a-4af3b4079c6f"><col data-rtc-uid="58f04697-3166-4e8e-837d-91103545cf4c" style="width: 485px;"><col data-rtc-uid="e134c6ec-0619-4100-a1fa-14d3d6445738" style="width: 129px;"><col data-rtc-uid="27a842a8-4fef-4568-bc97-465467bb08bf" style="width: 167px;"><col data-rtc-uid="a3735680-91c2-4386-8a4f-7f0d6597df17" style="width: 62px;"></colgroup><tbody data-rtc-uid="5f20fd1c-543a-4db0-a1ab-3be018d02396"><tr data-rtc-uid="e0f0fd28-9321-4b37-8d13-7d82c62c8a19" style="height: 52.7917px;"><td data-rtc-uid="d19e583f-23cd-470d-8019-5d56d65285f4" style="height: 52.7917px;">Transactions</td><td data-rtc-uid="7007d4f3-d717-4dce-9171-f1a6672ff64b" style="height: 52.7917px;">% в профиле</td><td data-rtc-uid="249909d2-3bc8-4d9e-bbd0-49152c2b0448" style="height: 52.7917px;">Интенсивность(o/ч)</td><td data-rtc-uid="5db08dc4-3fcf-46e9-87cb-a0265c2ed817" style="height: 52.7917px;">SLA</td></tr><tr data-rtc-uid="b04afb8a-ade5-4de8-b904-84e8f05af1ad" style="height: 52.7917px;"><td data-rtc-uid="6abac2b0-76ca-48a9-84ef-4c836b8cb0ec" style="height: 52.7917px;"><p data-rtc-uid="cde0c2d5-e918-48ab-8f67-98696d78d88d">PUT/search/api/v1/person_preferences/tabs/{var}<br data-rtc-uid="91999b52-ea52-4256-9f9b-562a18e4cf1b"></p></td><td data-rtc-uid="de8410ad-7433-41d3-9c15-854b8f9faba9" style="height: 52.7917px;">7.14</td><td data-rtc-uid="0d911489-18c5-4924-86d8-ef47fc0bb12c" style="height: 52.7917px;">555428</td><td data-rtc-uid="697af051-8ade-4c20-82cd-0127658bfad3" style="height: 52.7917px;">0.5</td></tr><tr data-rtc-uid="20e536b1-8959-416e-ad3e-d39adde93b07" style="height: 33.3333px;"><td data-rtc-uid="509dee36-2861-4609-986d-0bc8cfe53252" style="height: 33.3333px;"><p data-rtc-uid="cde0c2d5-e918-48ab-8f67-98696d78d88d">GET/admin/source/{var}<br data-rtc-uid="30f48a34-e729-4eac-af54-a2bf0df3c0e1"></p></td><td data-rtc-uid="c685ff88-7cf4-4be4-901d-5f96c6af1fa3" style="height: 33.3333px;"><span style="color: #232431;" data-rtc-uid="9e2894df-fa23-40e4-a56c-4e0b417fac4d">7.14</span></td><td data-rtc-uid="33a9be77-703e-4149-8ef1-c9fd6a9cb581" style="height: 33.3333px;"><span style="color: #232431;" data-rtc-uid="4b5129c4-c3f2-403b-bf57-372e87aad7bc">555428</span></td><td data-rtc-uid="ba685ace-8fbf-4d1a-9604-8ea4b29d6a2e" style="height: 33.3333px;"><span style="color: #232431;" data-rtc-uid="44810d14-1831-4e70-93ca-e48e8bb52849">0.5</span></td></tr></tbody></table>"""
+# result = pd.read_html("""<p data-rtc-uid="19d62a05-9a7b-4756-a984-f4c579a4cc04"><br data-rtc-uid="86ebc166-799e-40f5-997b-4c6774924f21"></p><table class="relative-table mce-item-table" style="border-collapse: collapse; width: 845px; height: unset;" data-rtc-uid="8993c052-35a0-4fcd-b162-8f2c19a48819" data-widthmode="wide" data-lastwidth="845px" id="mce_1"><colgroup data-rtc-uid="93565d29-183a-457d-947a-4af3b4079c6f"><col data-rtc-uid="58f04697-3166-4e8e-837d-91103545cf4c" style="width: 485px;"><col data-rtc-uid="e134c6ec-0619-4100-a1fa-14d3d6445738" style="width: 129px;"><col data-rtc-uid="27a842a8-4fef-4568-bc97-465467bb08bf" style="width: 167px;"><col data-rtc-uid="a3735680-91c2-4386-8a4f-7f0d6597df17" style="width: 62px;"></colgroup><tbody data-rtc-uid="5f20fd1c-543a-4db0-a1ab-3be018d02396"><tr data-rtc-uid="e0f0fd28-9321-4b37-8d13-7d82c62c8a19" style="height: 52.7917px;"><td data-rtc-uid="d19e583f-23cd-470d-8019-5d56d65285f4" style="height: 52.7917px;">Transactions</td><td data-rtc-uid="7007d4f3-d717-4dce-9171-f1a6672ff64b" style="height: 52.7917px;">% в профиле</td><td data-rtc-uid="249909d2-3bc8-4d9e-bbd0-49152c2b0448" style="height: 52.7917px;">Интенсивность(o/ч)</td><td data-rtc-uid="5db08dc4-3fcf-46e9-87cb-a0265c2ed817" style="height: 52.7917px;">SLA</td></tr><tr data-rtc-uid="b04afb8a-ade5-4de8-b904-84e8f05af1ad" style="height: 52.7917px;"><td data-rtc-uid="6abac2b0-76ca-48a9-84ef-4c836b8cb0ec" style="height: 52.7917px;"><p data-rtc-uid="cde0c2d5-e918-48ab-8f67-98696d78d88d">PUT/search/api/v1/person_preferences/tabs/{var}<br data-rtc-uid="91999b52-ea52-4256-9f9b-562a18e4cf1b"></p></td><td data-rtc-uid="de8410ad-7433-41d3-9c15-854b8f9faba9" style="height: 52.7917px;">7.14</td><td data-rtc-uid="0d911489-18c5-4924-86d8-ef47fc0bb12c" style="height: 52.7917px;">555428</td><td data-rtc-uid="697af051-8ade-4c20-82cd-0127658bfad3" style="height: 52.7917px;">0.5</td></tr><tr data-rtc-uid="20e536b1-8959-416e-ad3e-d39adde93b07" style="height: 33.3333px;"><td data-rtc-uid="509dee36-2861-4609-986d-0bc8cfe53252" style="height: 33.3333px;"><p data-rtc-uid="cde0c2d5-e918-48ab-8f67-98696d78d88d">GET/admin/source/{var}<br data-rtc-uid="30f48a34-e729-4eac-af54-a2bf0df3c0e1"></p></td><td data-rtc-uid="c685ff88-7cf4-4be4-901d-5f96c6af1fa3" style="height: 33.3333px;"><span style="color: #232431;" data-rtc-uid="9e2894df-fa23-40e4-a56c-4e0b417fac4d">7.14</span></td><td data-rtc-uid="33a9be77-703e-4149-8ef1-c9fd6a9cb581" style="height: 33.3333px;"><span style="color: #232431;" data-rtc-uid="4b5129c4-c3f2-403b-bf57-372e87aad7bc">555428</span></td><td data-rtc-uid="ba685ace-8fbf-4d1a-9604-8ea4b29d6a2e" style="height: 33.3333px;"><span style="color: #232431;" data-rtc-uid="44810d14-1831-4e70-93ca-e48e8bb52849">0.5</span></td></tr></tbody></table>""")[0]
+# # print(result.to_string())
+# soup = BeautifulSoup(text, 'html.parser')
+#
+# values = [element.get_text() for element in soup.find_all(text=True) if element.strip()]
+# print(values)
+# # Убираем специальные символы из текстовых значений
+# cleaned_values = [re.sub(r'[^\x00-\x7F]+', '', value) for value in values]
+#
+# # Заменяем старые значения на очищенные в исходном HTML
+# for old_value, new_value in zip(values, cleaned_values):
+#     text = text.replace(old_value, new_value)
+#
+# print(text)
+
+# df = DataFrame(columns=["Название системы", "Процентная нагрузка", "Результат"], data=[("Платежи", "250", 100), ("Переводы", "500", 100), ("Баланс", "1000", 100)])
+#
+# html_text = ''
+# with open('text_replace.html', 'r', encoding='UTF8') as f:
+#     html_text = f.read()
+#
+# with open('result_replace.html', 'w', encoding='UTF8') as f:
+#     html_text = html_text.replace('%%%pivot_table%%%', df.to_html())
+#     f.write(html_text)
+
+# import asyncio
+# async def func1():
+#     for i in range(5):
+#         print(f"func1 - {i}")
+#         await asyncio.sleep(randint(1, 5))
+#
+# async def func2():
+#     for i in range(5):
+#         print(f"func2 - {i}")
+#         await asyncio.sleep(randint(1, 5))
+#
+# # Создаем цикл событий asyncio
+# loop = asyncio.get_event_loop()
+#
+# # Запускаем асинхронные функции
+# tasks = [
+#     asyncio.ensure_future(func1()),
+#     asyncio.ensure_future(func2())
+# ]
+#
+# # Запускаем обе задачи параллельно
+# loop.run_until_complete(asyncio.gather(*tasks))
+#
+# # Завершение цикла событий
+# loop.close()
+
+# from sys import stdout
+# class Singleton:
+#     _instances = {}
+#
+#     def __new__(cls, *args, **kwargs):
+#         if cls not in cls._instances:
+#             cls._instances[cls] = super(Singleton, cls).__new__(cls, *args, **kwargs)
+#         return cls._instances[cls]
+#
+#
+# class UpperCase(type):
+#     def __new__(cls, name, bases, dct):
+#         attrs = {name.upper(): value for name, value in dct.items() if not name.startswith("_")}
+#         other_attrs = {name: value for name, value in dct.items() if name.startswith("_")}
+#         attrs.update(other_attrs)
+#         return super().__new__(cls, name, bases, attrs)
+# class Other(metaclass=UpperCase):
+#     bar = True
+#     def __init__(self, name):
+#         self.name = name
+#
+# other_instance = Other("Dima")
+# other_instance2 = Other("Oleg")
+#
+# singleton = Singleton()
+#
+# singleton.other_instance = other_instance
+# singleton.other_instance2 = other_instance2
+#
+# stdout.write(f"first -> {singleton.other_instance.name}, second -> {singleton.other_instance2.name}")
+import os
+# print(os.name)
+# print(os.environ)
+# print(os.getlogin())
+# print(os.getpid())
+# print(os.uname())
+# print(os.getcwd())
+# print(os.listdir(path="."))
+# print(*os.walk(".", topdown=True))
+# print(os.path)
+# print(os.path.abspath("."))
+# print(os.path.basename(os.path.abspath(".")))
+# print(os.path.dirname(os.path.abspath(".")))
+# print(os.path.relpath(os.path.abspath(".")))
+# print(os.path.split(os.path.abspath("./API")))
+# print(os.path.join(os.path.abspath("./API"), "../KAFKA/my_kafka.py"))
 
 
+# files = []
+#
+#
+# def recurs_find_files(path):
+#
+#     if os.path.isfile(path) and os.path.basename(path).endswith(".py") and not os.path.basename(path).startswith("_"):
+#         files.append((os.path.basename(path), os.path.abspath(path)))
+#         return path
+#     elif os.path.isdir(path) and "lib" not in path:
+#         for file in os.listdir(path):
+#             if not file.startswith("."):
+#                 full_path = os.path.join(path, file)
+#                 recurs_find_files(full_path)
+#     return files
+#
+# # print(*recurs_find_files(os.path.abspath(".")), sep="\n")
+# print(*recurs_find_files("/home"), sep="\n")
+
+# import requests
+# from requests.adapters import HTTPAdapter
+# from requests.packages.urllib3.util.retry import Retry
+#
+# session = requests.session()
+#
+# retry_strategy = Retry(
+#     total=5,
+#     backoff_factor=1,
+#     status_forcelist=[500, 400],
+#     allowed_methods=["GET", "POST"]
+# )
+# adapter = HTTPAdapter(max_retries=retry_strategy)
+#
+# session.mount("http://", adapter)
+# session.mount("https://", adapter)
+# response = session.get("http://localhost:8000/retry")
+# print(response.status_code)
 
 
+# from concurrent.futures import ThreadPoolExecutor
+# import time
+#
+#
+# # Функция, которая будет выполняться в потоке для обработки данных
+# def process_data(data):
+#     # Здесь можно добавить вашу логику обработки данных
+#     print(f"Processing data: {data}")
+#     # Добавим небольшую задержку для демонстрационных целей
+#     time.sleep(1)
+#     return f"Processed {data}"
+#
+#
+# # Функция для обработки данных в нескольких потоках
+# def process_data_in_parallel(data_list):
+#     with ThreadPoolExecutor() as executor:
+#         # Запускаем обработку данных в нескольких потоках
+#         # map() автоматически распределяет задачи по доступным потокам
+#         results = executor.map(process_data, data_list, timeout=2)
+#
+#     # Преобразуем результаты выполнения задач в список
+#     processed_data = list(results)
+#     return processed_data
+#
+#
+# # Пример использования
+# if __name__ == "__main__":
+#     data_to_process = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#     processed_data = process_data_in_parallel(data_to_process)
+#     print("Processed data:", processed_data)
+
+# import threading
+# import queue
+# from concurrent.futures import ThreadPoolExecutor
+# data = queue.Queue()
+#
+# def worker(data):
+#     current_thread_name = threading.current_thread().name
+#     print(f"Текущий поток: {current_thread_name}")
+#     time.sleep(2)
+#     print(f"Поток {current_thread_name} получил данные ->{data}")
+#
+#
+# datas = [1, 2, 3]
+#
+# with ThreadPoolExecutor(max_workers=3) as executor:
+#     results = executor.map(worker, datas)
+#     print(executor._max_workers)
+#
+# for result in results:
+#     print(result)
+
+# import multiprocessing
+# import queue
+# data = queue.Queue()
+#
+# def worker():
+#     print(f"Процесс {multiprocessing.Process.name} начал свою работу")
+#     d = data.get()
+#     print(f"Процесс {multiprocessing.Process.name} получил данные {d}")
+#     return random.randint(1, 2)
+# th = []
+# for i in range(3):
+#     process = multiprocessing.Process(target=worker, name=f"Process_{i}")
+#     th.append(process)
+#     process.start()
+#
+# for i in range(3):
+#     data.put(i)
+#
+# for i in th:
+#     i.join()
+
+# from sqlalchemy import Boolean, Date, DateTime, Float, Integer, String, Text, Numeric, Time, create_engine
+# from sqlalchemy.orm import declarative_base, Mapped, mapped_column, sessionmaker, as_declarative, declared_attr
+# from typing import Optional
+# from datetime import date, datetime
+# engine = create_engine(
+#     url='postgresql://{username}:{password}@{host}:{port}/{db_name}',
+#     echo=True
+# )
+# Session = sessionmaker(bind=engine)
+#
+# # Создание базового класса, более новый подход declarative_base()
+# @as_declarative()
+# class Base:
+#     @declared_attr
+#     def __tablename__(cls):
+#         return cls.__name__.lower()
+# class Example(Base):
+#     """
+#     Пример модели таблицы
+#     :param id: Уникальный индентификатор
+#     :type: int
+#     """
+#     __tablename__ = "example"
+#
+#     id: Mapped[int] = mapped_column(primary_key=True, type_=Integer, nullable=False, index=True, unique=True, autoincrement=True, doc="Уникальный индентификатор")
+#     string_col: Mapped[str] = mapped_column(type_=String, nullable=False, index=True, unique=False, default='default_value')
+#     int_col: Mapped[int] = mapped_column(type_=Integer, nullable=True, index=False, unique=False, default=None)
+#     float_col: Mapped[float] = mapped_column(type_=Float, nullable=False, index=True, unique=False, default=0.0)
+#     boolean_col: Mapped[bool] = mapped_column(type_=Boolean, nullable=False, index=True, unique=False, default=False)
+#     date_col: Mapped[date] = mapped_column(type_=Date, nullable=False, index=True, unique=False, default=datetime.date.today())
+#     datetime_col: Mapped[datetime] = mapped_column(type_=DateTime, nullable=False, index=True, unique=False, default=datetime.datetime.now())
+#     time_col: Mapped[time] = mapped_column(type_=Time, nullable=False, index=False, unique=False, default=datetime.time())
+#     text_col: Mapped[str] = mapped_column(type_=Text, nullable=False, index=False, unique=True, default='default_text')
+
+# import threading
+# from threading import Thread
+#
+#
+# def summ(a, b):
+#     print(threading.current_thread().name)
+#     print(threading.current_thread().is_alive())
+#     print(a + b)
+#
+#
+# class UserThread(Thread):
+#
+#     def init(self, group=None, target=None, name=None,
+#                  args=(), kwargs=None, daemon=None):
+#         super().init(group=None, target=None, name=None,
+#                  args=(), kwargs=None, daemon=None)
+#         self.active = False
+#
+#     def run(self):
+#         try:
+#             print(f"Я запустил работу функции {self._target.__name__}")
+#             self.active = True
+#             self._target(*self._args, **self._kwargs)
+#         except Exception as error:
+#             raise Exception(error)
+#
+#
+# usthr = UserThread(target=summ, name="Test", args=(1, 2))
+# print(usthr.__dict__, dir(usthr), sep='\n')
+# usthr.run()
 
 
+# from flask import Flask
+# from prometheus_client import Gauge, generate_latest, CONTENT_TYPE_LATEST, push_to_gateway, CollectorRegistry
+# app = Flask(__name__)
+#
+# registry = CollectorRegistry()
+# threads = Gauge("threads_metric", "Threads", labelnames=["name"], registry=registry)
+# q = queue.Queue()
+# def func():
+#     while True:
+#         for i in range(1):
+#             t = threading.Thread(name=f"Thread_func - {random.randint(1, 3)}", daemon=True)
+#             q.put(t.name)
+#             t.start()
+#         print(threading.current_thread().name)
+#         currents = {t: random.randint(1, 10) for t in q.queue}
+#         for key, value in currents.items():
+#             threads.labels(name=key).set(value=value)
+#         push_to_gateway(gateway="localhost:9091", job="myjob", registry=registry)
+#         time.sleep(5)
+#         while not q.empty():
+#             q.get_nowait()
+#
+# # @app.route('/metrics')
+# # def metrics():
+# #     print(q.queue)
+# #     currents = {t: random.randint(1, 10) for t in q.queue}
+# #     for key, value in currents.items():
+# #         threads.labels(name=key).set(value=value)
+# #     return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}
+#
+#
+# if __name__ == '__main__':
+#     t = threading.Thread(target=func, name="FuncThread", daemon=True)
+#     print(threading.active_count(), threading.enumerate(), sep='\n')
+#     t.start()
+#     app.run(host="localhost", port=7777)
+# import asyncio
+# async def func():
+#     print("Start func")
+#     time.sleep(5)
+#     print("End func")
+#
+# async def main():
+#     print("Start process")
+#     asyncio.create_task(func())
+#     print("Hey baby")
+#
+#
+# asyncio.run(main())
+
+# # Пример тестирования с помощью моков
+# def get_joke():
+#     url = "https://api.chucknorris.io/jokes/random"
+#     try:
+#         response = requests.get(url=url, timeout=10)
+#         response.raise_for_status()
+#         joke = response.json()["value"]
+#         return joke
+#     except requests.exceptions.Timeout:
+#         return "No jokes"
+#     except requests.exceptions.ConnectionError:
+#         return "No jokes"
+#     except requests.exceptions.HTTPError:
+#         return "No jokes"
+#
+# def len_joke():
+#     joke = get_joke()
+#     return len(joke)
+#
+# print(len_joke())
+#
+# import unittest
+# from unittest.mock import patch, MagicMock
+#
+# class TestLenJoke(unittest.TestCase):
+#     @patch("test.get_joke")
+#     def test_len_joke(self, mock_get_joke):
+#         mock_get_joke.return_value = "one"
+#         result = len_joke()
+#         self.assertEquals(result, 3)
+#     @patch("test.requests")
+#     def test_get_joke(self, mock_requests):
+#         mock_response = MagicMock()
+#         mock_response.status_code = 200
+#         mock_response.json.return_value = {"value": "hello world"}
+#         mock_requests.get.return_value = mock_response
+#         self.assertEquals(get_joke(), "hello world")
+#
+#
+#     @patch("test.requests.get")
+#     def test_exception_get_joke(self, mock_requests):
+#         mock_requests.side_effect = requests.exceptions.Timeout("Seems the server is down")
+#         self.assertEqual(get_joke(), "No jokes")
+#
+#     @patch("test.requests.get")
+#     def test_exception_raise_status_get_joke(self, mock_requests_get):
+#         mock_requests_get.side_effect = requests.exceptions.HTTPError("status code not 200")
+#         self.assertEquals(get_joke(), "No jokes")
+
+# import pandas as pd
+#
+# # Создадим тестовые датафреймы
+# df_test = pd.DataFrame({
+#     'Компонент': ['Postgress cluster', 'Postgress cluster', 'Postgress cluster', 'Postgress cluster'],
+#     'Имя': ['dp_app1', 'dp_app2', 'dp_app3', 'dp_pay1'],
+#     'Server/Pod': [1, 1, 1, None],
+#     'Процент нагрузки': [100, 100, 100, 100]
+# })
+#
+# df_prod1 = pd.DataFrame({
+#     'Компонент': ['Postgress cluster', 'Postgress cluster', 'Postgress cluster'],
+#     'Имя': ['dp_app1', 'dp_app2', 'dp_app3'],
+#     'Server/Pod': [1, 1, 1],
+#     'Процент нагрузки': [50, 2, 50]
+# })
+#
+# df_prod2 = pd.DataFrame({
+#     'Компонент': ['Postgress cluster', 'Postgress cluster'],
+#     'Имя': ['dp_app1', 'dp_app2'],
+#     'Server/Pod': [1, 1],
+#     'Процент нагрузки': [50, 4]
+# })
+#
+# print(df_test)
+# # Объединим датафреймы по столбцу "Компонент" с помощью pd.concat
+# result = pd.concat([df_test, df_prod1, df_prod2], ignore_index=True).fillna(0)
+#
+# print(result)
+#
+# # Добавим столбцы с процентами нагрузки для PROD1 и PROD2
+# result['TEST'] = result['Процент нагрузки'].where(result['Имя'].isin(df_prod1['Имя']), 0)
+# result['PROD1'] = result['Процент нагрузки'].where(result['Имя'].isin(df_prod1['Имя']), 0)
+# result['PROD2'] = result['Процент нагрузки'].where(result['Имя'].isin(df_prod2['Имя']), 0)
+#
+# # Отсортируем колонки в определенном порядке
+# result = result[['Компонент', 'Имя', 'Server/Pod', 'Процент нагрузки', 'TEST',  'PROD1', 'PROD2']].fillna(0)
+# print(result)
+#
+# # Сформируем сводную таблицу с помощью pd.pivot_table
+# result = pd.pivot_table(result, values='Процент нагрузки', index='Компонент', columns='Имя', aggfunc='mean')
+#
+# print(result)
+
+# import asyncio
+#
+#
+# # имитация  асинхронного соединения с некой периферией
+# async def get_conn(host, port):
+#     class Conn:
+#         async def put_data(self):
+#             print('Отправка данных...')
+#             await asyncio.sleep(2)
+#             print('Данные отправлены.')
+#
+#         async def get_data(self):
+#             print('Получение данных...')
+#             await asyncio.sleep(2)
+#             print('Данные получены.')
+#
+#         async def close(self):
+#             print('Завершение соединения...')
+#             await asyncio.sleep(2)
+#             print('Соединение завершено.')
+#
+#     print('Устанавливаем соединение...')
+#     await asyncio.sleep(2)
+#     print('Соединение установлено.')
+#     return Conn()
+#
+#
+# class Connection:
+#     # этот конструктор будет выполнен в заголовке with
+#     def __init__(self, host, port):
+#         self.host = host
+#         self.port = port
+#
+#     # этот метод будет неявно выполнен при входе в with
+#     async def __aenter__(self):
+#         self.conn = await get_conn(self.host, self.port)
+#         return self.conn
+#
+#     # этот метод будет неявно выполнен при выходе из with
+#     async def __aexit__(self, exc_type, exc, tb):
+#         await self.conn.close()
+#
+#
+# async def main():
+#     async with Connection('localhost', 9001) as conn:
+#         send_task = asyncio.create_task(conn.put_data())
+#         receive_task = asyncio.create_task(conn.get_data())
+#
+#         # операции отправки и получения данных выполняем конкурентно
+#         await send_task
+#         await receive_task
+#
+#
+# asyncio.run(main())
+
+# import asyncio
+# import time
+# from aiohttp import ClientSession
+#
+#
+# async def get_weather(city):
+#     async with ClientSession() as session:
+#         url = f'http://api.openweathermap.org/data/2.5/weather'
+#         params = {'q': city, 'APPID': '2a4ff86f9aaa70041ec8e82db64abf56'}
+#
+#         async with session.get(url=url, params=params) as response:
+#             weather_json = await response.json()
+#             print(f'{city}: {weather_json["weather"][0]["main"]}')
+#
+#
+# async def main(cities_):
+#     tasks = []
+#     for city in cities_:
+#         tasks.append(asyncio.create_task(get_weather(city)))
+#
+#     for task in tasks:
+#         await task
+#
+#
+# cities = ['Moscow', 'St. Petersburg', 'Rostov-on-Don', 'Kaliningrad', 'Vladivostok',
+#           'Minsk', 'Beijing', 'Delhi', 'Istanbul', 'Tokyo', 'London', 'New York']
+#
+# print(time.strftime('%X'))
+#
+# asyncio.run(main(cities))
+#
+# print(time.strftime('%X'))
 
 
+# def wrap_func(*args, **kwargs):
+#     print("Возвращаем функцию возврата обертки...")
+#     def wrap(func):
+#         print("Возвращаем обертку...")
+#         print(f"Результат -> {sum(args)}")
+#         def wrapper(*args, **kwargs):
+#             print("Работает обертка....")
+#             result = func(*args, **kwargs)
+#             print("Заканчиваем работу обертки...")
+#             return result
+#         return wrapper
+#     return wrap
+# @wrap_func(1, 2)
+# def func(a, b, c):
+#     return a + b + c
+#
+# # func = wrap(func)
+# # func = wrap_func(1, 2)(func)
+# print("Вызываем функцию")
+# print(func(1, 2, 3))
+
+import flask
+import asyncio
+import aiohttp
+
+# app = flask.Flask(__name__)
+#
+# # Асинхронно
+#
+# async def req():
+#     print("Выполняю запрос")
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get("https://api.chucknorris.io/jokes/random") as response:
+#             print(f"Запрос выполнен успешно -> {await response.json()}")
+#             await asyncio.sleep(3)
+# @app.route("/")
+# async def hello():
+#     print(time.strftime("%X"))
+#     print("Я принимаю и выполняю запрос...")
+#     task = asyncio.create_task(req())
+#     await task
+#     print("Я закончил обработку запроса и возвращаю результат")
+#     print(time.strftime("%X"))
+#     return "Привет"
+
+# Синхронно
+# async def req():
+#     print("Выполняю запрос")
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get("https://api.chucknorris.io/jokes/random") as response:
+#             print(f"Запрос выполнен успешно -> {await response.json()}")
+#             await asyncio.sleep(3)
+# @app.route("/")
+# def hello():
+#     print(time.strftime("%X"))
+#     print("Я принимаю и выполняю запрос...")
+#     time.sleep(3)
+#     print("Я закончил обработку запроса и возвращаю результат")
+#     print(time.strftime("%X"))
+#     return "Привет"
+
+# if __name__ == "__main__":
+#     app.run(host="localhost", port=7777, threaded=False)
+
+# def simple_gen():
+#     while True:
+#         x = yield
+#         print(f"Получили x={x} и умножили {x * 2}")
+#
+# gen = simple_gen()
+# print(next(gen))
+# gen.send(2)
+# gen.send(4)
+
+# import fastapi
+# import uvicorn
+import flask
+import asyncio
+import aiohttp
+
+
+#
+# app = fastapi.FastAPI()
+
+# Асинхронный код
+# async def req():
+#     print("Выполняю запрос")
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get("https://api.chucknorris.io/jokes/random") as response:
+#             print(f"Запрос выполнен успешно -> {await response.json()}")
+#             await asyncio.sleep(3)
+# @app.get("/")
+# async def hello():
+#     print(time.strftime("%X"))
+#     print("Я принимаю и выполняю запрос...")
+#     await asyncio.gather(req())
+#     print("Я закончил обработку запроса и возвращаю результат")
+#     print(time.strftime("%X"))
+#     return "Hello"
+
+# # Синхронный код
+# def req():
+#     print("Выполняю запрос")
+#     response = requests.get("https://api.chucknorris.io/jokes/random")
+#     print(f"Запрос выполнен успешно -> {response.json()['value']}")
+#     time.sleep(3)
+# @app.get("/")
+# def hello():
+#     print(time.strftime("%X"))
+#     print("Я принимаю и выполняю запрос...")
+#     req()
+#     print("Я закончил обработку запроса и возвращаю результат")
+#     print(time.strftime("%X"))
+#     return "Hello"
+#
+#
+# if __name__ == "__main__":
+#     uvicorn.run(app=app, host="localhost", port=7777)
+
+# app = flask.Flask(__name__)
+# Асинхронный код
+# async def req():
+#     print("Выполняю запрос")
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get("https://api.chucknorris.io/jokes/random") as response:
+#             print(f"Запрос выполнен успешно -> {await response.json()}")
+#             await asyncio.sleep(3)
+# @app.route("/")
+# async def hello():
+#     print(time.strftime("%X"))
+#     print("Я принимаю и выполняю запрос...")
+#     await asyncio.gather(req())
+#     print("Я закончил обработку запроса и возвращаю результат")
+#     print(time.strftime("%X"))
+#     return "Hello"
+
+# Синхронный код
+# def req():
+#     print("Выполняю запрос")
+#     response = requests.get("https://api.chucknorris.io/jokes/random")
+#     print(f"Запрос выполнен успешно -> {response.json()['value']}")
+#     time.sleep(3)
+# @app.route("/")
+# def hello():
+#     print(time.strftime("%X"))
+#     print("Я принимаю и выполняю запрос...")
+#     time.sleep(2)
+#     req()
+#     print("Я закончил обработку запроса и возвращаю результат")
+#     print(time.strftime("%X"))
+#     return "Hello"
+#
+# if __name__ == "__main__":
+#     app.run(host="localhost", port=7777)
+
+# Асинхронный код
+# async def req():
+#     print("Выполняю запрос")
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get("https://api.chucknorris.io/jokes/random") as response:
+#             print(f"Запрос выполнен успешно -> {await response.json()}")
+#             await asyncio.sleep(3)
+# async def hello():
+#     print(time.strftime("%X"))
+#     print("Я принимаю и выполняю запрос...")
+#     await asyncio.gather(req(), req())
+#     print("Я закончил обработку запроса и возвращаю результат")
+#     print(time.strftime("%X"))
+#     return "Hello"
+#
+# asyncio.run(hello())
+
+# Синхронный код
+# def req():
+#     print("Выполняю запрос")
+#     response = requests.get("https://api.chucknorris.io/jokes/random")
+#     print(f"Запрос выполнен успешно -> {response.json()['value']}")
+#     time.sleep(3)
+# def hello():
+#     print(time.strftime("%X"))
+#     print("Я принимаю и выполняю запрос...")
+#     time.sleep(2)
+#     req()
+#     req()
+#     print("Я закончил обработку запроса и возвращаю результат")
+#     print(time.strftime("%X"))
+#     return "Hello"
+#
+# hello()
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        result = func(*args, **kwargs)
+        print(f"Result time: {(time.perf_counter() - start):.3f} - Second & MiliSecond")
+        return result
+
+    return wrapper
+
+
+# async def req():
+#     try:
+#         async with aiohttp.ClientSession() as session:
+#             async with session.get("https://api.chucknorris.io/jokes/random") as response:
+#                 result = await response.json()
+#                 return result["value"]
+#     except ConnectionError:
+#         raise ConnectionError()
+#
+# @timer
+# async def main():
+#     tasks = asyncio.gather(req(), req())
+#     result = await tasks
+#     print(*result, sep="\n", end=".")
+#
+# asyncio.run(main())
+
+# def req():
+#     try:
+#         response = requests.get("https://api.chucknorris.io/jokes/random")
+#         return response.json()["value"]
+#     except ConnectionError:
+#         raise ConnectionError()
+#
+# @timer
+# def main():
+#     tasks = [req() for _ in range(2)]
+#     print(*tasks, sep="\n", end=".")
+#
+# main()
+
+# images = [
+#     "https://i.pinimg.com/originals/52/28/d8/5228d856819f806ea3aec253e87929ad.jpg",
+#     "https://i.ebayimg.com/images/g/vfUAAOSwolhkfwRp/s-l1200.webp",
+#     "https://i.imgur.com/ZQMoo9G.jpg"
+# ]
+# async def save_to_disc(file):
+#     with open(f"{random.randint(1, 10)}_image.png", "wb") as f:
+#         f.write(file)
+#
+# async def req():
+#     try:
+#         async with aiohttp.ClientSession() as session:
+#             async with session.get(url=f"{random.choice(images)}") as response:
+#                 result = await response.read()
+#                 return result
+#     except ConnectionError:
+#         raise ConnectionError()
+# @timer
+# async def main():
+#     response = await asyncio.gather(req(), req(), req())
+#     await asyncio.gather(save_to_disc(response[0]), save_to_disc(response[1]), save_to_disc(response[2]))
+#
+# asyncio.run(main())
+
+# import flask
+# import requests
+#
+# app = flask.Flask(__name__, template_folder='templates')
+#
+# @app.route("/")
+# def func():
+#     return flask.render_template("./eexample.html")
+# @app.route("/index")
+# def index():
+#     url = "https://jsonplaceholder.typicode.com/posts"
+#     data = {"title": "My Post", "body": "This is the body of my post", "userId": 1}
+#     headers = {"Content-Type": "application/json"}
+#
+#     response = requests.post(url, headers=headers, data=data)
+#     return response.text
+#
+# if __name__ == "__main__":
+#     app.run("localhost", 7777)
+
+# from requests import Session
+#
+#
+# class AsyncRequest(Session):
+#     """
+#
+#     """
+#
+#     def __init__(
+#             self,
+#             *args,
+#             **kwargs
+#     ):
+#         super().__init__(*args, **kwargs)
+#         self.my_flag = kwargs.get("my_flag", False)
+#
+#     def request(self, *args, **kwargs):
+#         if self.my_flag:
+#             print("Hello World!")
+#         else:
+#             super().request(*args, **kwargs)
+#
+#
+# asr = AsyncRequest(my_flag=True)
+# print(asr.my_flag)
+# asr.request(method="get", url="http://localhost:7777")
+
+
+# def func(data):
+#     if len(data) <= 2:
+#         return data
+#     datas = sorted(data.copy(), key=lambda x: x["id"])
+#     uniq = []
+#     result = []
+#     for d in sorted(data, key=lambda x: x["id"]):
+#         if d["report_uuid"] not in uniq:
+#             uniq.append(d["report_uuid"])
+#             result.append(d)
+#             del datas[datas.index(d)]
+#     return result + func(datas)
+# original_array = [
+#     {"id": 1, "report_uuid": 123457, "data": []},
+#     {"id": 6, "report_uuid": 123457, "data": []},
+#     {"id": 2, "report_uuid": 123457, "data": []},
+#     {"id": 3, "report_uuid": 123457, "data": []},
+#     {"id": 4, "report_uuid": 623456, "data": []},
+#     {"id": 5, "report_uuid": 623456, "data": []},
+#     {"id": 7, "report_uuid": 723456, "data": []},
+#     {"id": 8, "report_uuid": 823456, "data": []},
+#     {"id": 9, "report_uuid": 723456, "data": []},
+#     {"id": 10, "report_uuid": 923456, "data": []},
+# ]
+#
+# print(*func(original_array), sep="\n")
+
+#
+# def sort_duplicates_data(data: list[dict], key: str) -> list[dict]:
+#     """
+#     Функция изменения порядка очереди
+#     :param data: Список словарей с данными по дашбордам
+#     :param key: Ключ сортировки списка
+#     :return: Отсортированный список
+#     """
+#     if len(data) <= 2:
+#         return sorted(data, key=lambda x: x["id"])
+#
+#     uniq_report_uuid = set()
+#     result = []
+#
+#     # Идем по отсортированному по id списку
+#     for d in sorted(data, key=lambda x: x["id"]):
+#
+#         # Если нет дубликатов в ключе сортировки
+#         if d[key] not in uniq_report_uuid:
+#             uniq_report_uuid.add(d[key])
+#
+#             # Добавляем в результат
+#             result.append(d)
+#
+#     # Удаляем из data уже добавленные в результат элементы
+#     remaining_data = [d for d in data if d not in result]
+#
+#     # Рекурсивно вызываем функцию для оставшихся элементов
+#     return result + sort_duplicates_data(remaining_data, key)
+#
+#
+#
+# original_array = [
+#     {"id": 1, "report_uuid": 123457, "data": []},
+#     {"id": 6, "report_uuid": 123457, "data": []},
+#     {"id": 2, "report_uuid": 123457, "data": []},
+#     {"id": 3, "report_uuid": 123457, "data": []},
+#     {"id": 4, "report_uuid": 623456, "data": []},
+#     {"id": 5, "report_uuid": 623456, "data": []},
+#     {"id": 7, "report_uuid": 723456, "data": []},
+#     {"id": 8, "report_uuid": 823456, "data": []},
+#     {"id": 9, "report_uuid": 723456, "data": []},
+#     {"id": 10, "report_uuid": 923456, "data": []},
+# ]
+#
+# print(*func(original_array, "report_uuid"), sep="\n")
+# import selectors
+# import socket
+# from selectors import SelectorKey
+# from typing import List, Tuple
+#
+# selector = selectors.DefaultSelector()
+# server_socket = socket.socket()
+# server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+# server_address = ('127.0.0.1', 8000)
+# server_socket.setblocking(False)
+# server_socket.bind(server_address)
+# server_socket.listen()
+# selector.register(server_socket, selectors.EVENT_READ)
+#
+# while True:
+#     events: List[Tuple[SelectorKey, int]] = selector.select(timeout=1)
+#     if len(events) == 0:
+#         print('Событий нет, подожду еще!')
+#     for event, _ in events:
+#         event_socket = event.fileobj
+#         if event_socket == server_socket:
+#             connection, address = server_socket.accept()
+#             connection.setblocking(False)
+#             print(f"Получен запрос на подключение от {address}")
+#             selector.register(connection, selectors.EVENT_READ)
+#         else:
+#             data = event_socket.recv(1024)
+#             print(f"Получены данные: {data}")
+#             event_socket.send(data)
+# import socket
+#
+# async def echo(connection: socket, loop: AbstractEventLoop) -> None:
+#     try:
+#         while data := await loop.sock_recv(connection, 1024):
+#             if data == b'boom\n':
+#                 raise Exception("Неожиданная ошибка сети")
+#             await loop.sock_sendall(connection, data)
+#     except Exception as error:
+#         await loop.sock_sendall(connection, (str(error) + "\n").encode())
+#     finally:
+#         connection.close()
+#         os.abort()
+#
+# async def listen_for_connections(server_socket: socket, loop: AbstractEventLoop):
+#     while True:
+#         connection, address = await loop.sock_accept(server_socket)
+#         connection.setblocking(False)
+#         print(f"Получен запрос на подключение от {address}")
+#         asyncio.create_task(echo(connection, loop))
+#
+#
+# async def main():
+#     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+#     server_address = ('127.0.0.1', 8000)
+#     server_socket.setblocking(False)
+#     server_socket.bind(server_address)
+#     server_socket.listen()
+#
+#     await listen_for_connections(server_socket, asyncio.get_event_loop())
+#
+# asyncio.run(main())
+#
+# import asyncio
+# import socket
+# from types import TracebackType
+# from typing import Optional, Type
+#
+#
+# class ConnectedSocket:
+#     def __init__(self, server_socket):
+#
+#         self._connection = None
+#         self._server_socket = server_socket
+#
+#     async def __aenter__(self):
+#
+#         print('Вход в контекстный менеджер, ожидание подключения')
+#         loop = asyncio.get_event_loop()
+#         connection, address = await loop.sock_accept(self._server_socket)
+#         self._connection = connection
+#         print('Подключение подтверждено')
+#         return self._connection
+#
+#     async def __aexit__(self,
+#                         exc_type: Optional[Type[BaseException]],
+#                         exc_val: Optional[BaseException],
+#                         exc_tb: Optional[TracebackType]):
+#         print('Выход из контекстного менеджера')
+#         self._connection.close()
+#         print('Подключение закрыто')
+#
+#
+# async def main():
+#     loop = asyncio.get_event_loop()
+#
+#     server_socket = socket.socket()
+#     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+#     server_address = ('127.0.0.1', 8000)
+#     server_socket.setblocking(False)
+#     server_socket.bind(server_address)
+#     server_socket.listen()
+#
+#     async with ConnectedSocket(server_socket) as connection:
+#         data = await loop.sock_recv(connection, 1024)
+#         print(data)
+#
+#
+# asyncio.run(main())
+
+# import asyncio
+# import aiohttp
+# from aiohttp import ClientSession
+#
+#
+# async def fetch_status(session: ClientSession,
+#                        url: str) -> int:
+#     ten_millis = aiohttp.ClientTimeout(total=.01)
+#     async with session.get(url, timeout=ten_millis) as result:
+#         return result.status
+#
+#
+# async def main():
+#     session_timeout = aiohttp.ClientTimeout(total=1, connect=.1)
+#     async with aiohttp.ClientSession(timeout=session_timeout) as session:
+#         await fetch_status(session, 'https://example.com')
+# asyncio.run(main())
+
+# import asyncio
+# import aiohttp
+#
+# async def first():
+#     print("Start first")
+#     async with aiohttp.ClientSession() as session:
+#         await asyncio.sleep(randint(1, 3))
+#         async with session.get("https://example.com") as response:
+#             return response.status
+#
+# async def second():
+#     print("Start second")
+#     async with aiohttp.ClientSession() as session:
+#         await asyncio.sleep(randint(20, 40))
+#         async with session.get("https://example.com") as response:
+#             return response.status
+# async def func_count():
+#     for i in range(1000):
+#         await asyncio.sleep(5)
+#         print(f"Ready {i}")
+# async def main():
+#     tasks = [asyncio.create_task(first()), asyncio.create_task(second())]
+#     print(20 * 80)
+#     for i in range(2):
+#         print(i)
+#     tas = asyncio.create_task(func_count())
+#     for task in asyncio.as_completed(tasks):
+#         result = await task
+#         print(result)
+#     await tas
+#
+# asyncio.run(main())
+# import pandas as pd
+# CPU_Limits_df = pd.DataFrame({'POD': ['app', 'app', 'app'], 'Container': ['payg', 'payg', 'payg3'], 'Timestamp': [None, None, None], 'Value': [3, 5, 10]})
+# RAM_Limits_df = pd.DataFrame({'POD': ['app'], 'Container': ['payg'], 'Timestamp': [None], 'Value': [5]})
+# CPU_df = pd.DataFrame({'POD': ['app'], 'Container': ['payg'], 'Timestamp': [None], 'Value': [10]})
+# RAM_df = pd.DataFrame({'POD': ['app'], 'Container': ['payg'], 'Timestamp': [None], 'Value': [15]})
+# df_dict = {'CPU_Limits': CPU_Limits_df, 'RAM_Limits': RAM_Limits_df, 'CPU': CPU_df, 'RAM': RAM_df}
+#
+#
+# def transform_data(df_dict):
+#     """
+#     Transforms the data in the provided dictionaries into a single DataFrame with a multi-level index.
+#
+#     Args:
+#         df_dict (dict): A dictionary where the keys are the metric names and the values are the corresponding DataFrames.
+#
+#     Returns:
+#         pd.DataFrame: A DataFrame with a multi-level index (pod, container, metrics) and the corresponding values.
+#     """
+#     # Create a list to store the transformed data
+#     result = []
+#
+#     # Iterate over all unique pods and containers
+#     for pod in set(sum([df['POD'].tolist() for df in df_dict.values()], [])):
+#         for container in set(sum([df['Container'].tolist() for df in df_dict.values()], [])):
+#             for metric in df_dict.keys():
+#                 # Create a dictionary to store the row data
+#                 row = {'pod': pod, 'container': container, 'metrics': metric, 'value': 0}
+#
+#                 # Get the DataFrame for the current metric, if it exists
+#                 df = df_dict.get(metric, None)
+#                 if df is not None:
+#                     # Check if the current pod and container exist in the DataFrame
+#                     mask = (df['POD'] == pod) & (df['Container'] == container)
+#                     if mask.any():
+#                         row['value'] = df.loc[mask, 'Value'].values[0]
+#
+#                 # Append the row to the result list
+#                 result.append(row)
+#
+#     # Create a DataFrame from the result list and set the index
+#     data = pd.DataFrame(result)
+#     data = data.set_index(['pod', 'container', 'metrics'])
+#
+#     return data
+
+# print(transform_data(df_dict))
+# df = pd.DataFrame({'POD': ['app'], 'Container': ['payg', 'payg2', 'payg3'], 'Timestamp': [None], 'Value': [3, 5, 10]})
+#
+# max_length = max(len(column) for column in df.columns)
+# df = df.reindex(columns=df.columns.tolist() + list(range(max_length - len(df.columns))))
+# df.fillna(None, inplace=True)
+# for key, df in df_dict.items():
+#     df["Metrics"] = key
+# result = pd.concat(df_dict.values())
+# print(result)
+# pv = result.pivot_table(index=["POD", "Container", "Metrics"], values="Value", aggfunc=np.sum, fill_value=0)
+# t = pv.info
+# print(pv)
+
+# from multiprocessing import Process, Value, current_process
+#
+# def increment_value(shared_val: Value) -> None:
+#     print(current_process().name)
+#     shared_val.value += 1
+#     print(shared_val.value)
+# if __name__ == "__main__":
+#     integer = Value("i", 0)
+#     p = [Process(target=increment_value, args=(integer,)) for _ in range(2)]
+#     [i.start() for i in p]
+#     [i.join() for i in p]
+
+# from concurrent.futures import ProcessPoolExecutor
+# import asyncio
+# from multiprocessing import Value
+# shared_counter: Value
+# def init(counter: Value):
+#     global shared_counter
+#     shared_counter = counter
+# def increment():
+#     with shared_counter.get_lock():
+#         shared_counter.value += 1
+#
+# async def main():
+#     counter = Value('d', 0)
+#     with ProcessPoolExecutor(initializer=init,
+#         initargs=(counter,)) as pool:
+#         await asyncio.get_running_loop().run_in_executor(pool, increment)
+#     print(counter.value)
+# if __name__ == "__main__":
+#     asyncio.run(main())
+
+# import asyncio
+# import asyncpg
+# from typing import List, Dict
+# from concurrent.futures.process import ProcessPoolExecutor
+# product_query = \
+# """
+# SELECT
+# p.product_id,
+# p.product_name,
+# p.brand_id,
+# s.sku_id,187
+# pc.product_color_name,
+# ps.product_size_name
+# FROM product as p
+# JOIN sku as s on s.product_id = p.product_id
+# JOIN product_color as pc on pc.product_color_id = s.product_color_id
+# JOIN product_size as ps on ps.product_size_id = s.product_size_id
+# WHERE p.product_id = 100"""
+# async def query_product(pool):
+#     async with pool.acquire() as connection:
+#         return await connection.fetchrow(product_query)
+# async def query_products_concurrently(pool, queries):
+#     queries = [query_product(pool) for _ in range(queries)]
+#     return await asyncio.gather(*queries)
+# def run_in_new_loop(num_queries: int) -> List[Dict]:
+#     async def run_queries():
+#         async with asyncpg.create_pool(host='127.0.0.1',
+#                                         port=5432,
+#                                         user='postgres',
+#                                         password='password',
+#                                         database='products',
+#                                         min_size=6,
+#                                         max_size=6) as pool:
+#             return await query_products_concurrently(pool, num_queries)
+#     results = [dict(result) for result in asyncio.run(run_queries())]
+#     return results
+# async def main():
+#     loop = asyncio.get_running_loop()
+#     pool = ProcessPoolExecutor()
+#     tasks = [loop.run_in_executor(pool, run_in_new_loop, 10000) for _ in
+#     range(5)]
+#     all_results = await asyncio.gather(*tasks)
+#     total_queries = sum([len(result) for result in all_results])
+#     print(f'Извлечено товаров из базы данных: {total_queries}.')
+# if __name__ == "__main__":
+#     asyncio.run(main())
