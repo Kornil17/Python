@@ -743,16 +743,40 @@ def timer(func: callable)->Callable:
 from random import choice
 from dataclasses import dataclass
 from datetime import date
-import sys
-
-
-import itertools as it
 from typing import Generator
-from operator import mul, add
-from string import ascii_uppercase
+from itertools import groupby, product
+from enum import Enum
+import string
+from functools import singledispatchmethod
 
-from itertools import dropwhile,takewhile
+class BasicPlan:
+        can_stream = True
+        can_download = True
+        has_SD = True
+        has_HD = False
+        has_UHD = False
+        num_of_devices = 1
+        price = '8.99$'
 
-from urllib import parse
-print(parse.unquote('http://10.10.5.202:5015/api/Organization/saveOrganizWeb?aOper=I&aIsnDoc=0&aHighNode=0&aClassifName=%D0%A1%D0%98%D0%9C%D0%AD%D0%9D%D0%95%D0%A0%D0%93%D0%9E%20(331222333456/333456789)&aDue=%20&aMailForAll=0&aIsnAddrCategory=-1&aDue_region=0.2I723.&aAddress=127434,%20%D0%B3.%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,%20%D1%83%D0%BB.%20%D0%94%D1%83%D0%B1%D0%BA%D0%B8&aFullname=%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D1%81%20%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E%20%22%D0%A2%D0%95%D0%A1%D0%A2%22&aInn=331222333456&aEmail='))
+class SilverPlan(BasicPlan):
+        has_HD = True
+        num_of_devices = 2
+        price = '12.99$'
+
+class GoldPlan(BasicPlan):
+        has_HD = True
+        has_UHD = True
+        num_of_devices = 4
+        price = '15.99$'
+
+
+
+
+
+
+
+
+
+
+
 
